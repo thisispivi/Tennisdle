@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
     "preview": "vite preview",
-    "prepare": "cd .. & husky install",
+    "prepare": "cd .. & husky",
     "lint": "eslint src",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
