@@ -1,2 +1,2 @@
-import Wrap from "./Wrap/Wrap.vue";
-export { Wrap };
+import SingleGuess from "./Guess/Guess.vue";
+export { SingleGuess };

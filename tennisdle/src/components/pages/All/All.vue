@@ -1,6 +1,6 @@
 <script setup>
 import { Base } from "../../templates";
-import { Wrap } from "../../organisms";
+import { Wrap } from "../../molecules";
 import { Card } from "../../molecules";
 import { players } from "../../../assets/index";
 import { SelectLanguage } from "../../molecules";

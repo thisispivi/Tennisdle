@@ -19,6 +19,25 @@
     "image": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/b\/bc\/Blake_Estoril_Open_2009_2.jpg\/220px-Blake_Estoril_Open_2009_2.jpg"
   },
   {
+    "player": "Rafael Nadal",
+    "country": "Spain",
+    "birthDate": 518140800000,
+    "height": "1.85",
+    "yearTurnedPro": "2001",
+    "yearRetired": "2024",
+    "isRightHanded": false,
+    "isTwoHandedBackhand": true,
+    "careerTitles": "92",
+    "highestRanking": "1",
+    "noAusOpenTitles": 2,
+    "noFrenchOpenTitles": 14,
+    "noWimbledonTitles": 2,
+    "noUSOpenTitles": 4,
+    "noTourFinalsTitles": 0,
+    "noOlympicTitles": 1,
+    "image": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/7\/71\/Rafael_Nadal_en_2024_%28cropped%29.jpg\/220px-Rafael_Nadal_en_2024_%28cropped%29.jpg"
+  },
+  {
     "player": "Jannik Sinner",
     "country": "Italy",
     "birthDate": 997920000000,
@@ -264,25 +283,6 @@
     "noTourFinalsTitles": 0,
     "noOlympicTitles": 0,
     "image": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/a0\/Hurkacz_RG22_%282%29_%2852144092826%29.jpg\/200px-Hurkacz_RG22_%282%29_%2852144092826%29.jpg"
-  },
-  {
-    "player": "Rafael Nadal",
-    "country": "Spain",
-    "birthDate": 518140800000,
-    "height": "1.85",
-    "yearTurnedPro": "2001",
-    "yearRetired": "2024",
-    "isRightHanded": false,
-    "isTwoHandedBackhand": true,
-    "careerTitles": "92",
-    "highestRanking": "1",
-    "noAusOpenTitles": 2,
-    "noFrenchOpenTitles": 14,
-    "noWimbledonTitles": 2,
-    "noUSOpenTitles": 4,
-    "noTourFinalsTitles": 0,
-    "noOlympicTitles": 1,
-    "image": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/7\/71\/Rafael_Nadal_en_2024_%28cropped%29.jpg\/220px-Rafael_Nadal_en_2024_%28cropped%29.jpg"
   },
   {
     "player": "F\u00e9lix Auger-Aliassime",

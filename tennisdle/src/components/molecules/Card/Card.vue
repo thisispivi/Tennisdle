@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Player } from "data/typings/player";
+import { Player } from "data/typings/Player";
 const { player } = defineProps<{ player: Player }>();
 
 function calculateAge(birthDate: number) {
