@@ -17,14 +17,3 @@
   background-color: v.$color600;
   border-radius: 0.625rem;
 }
-
-#link {
-  &::-webkit-scrollbar {
-    background-color: v.$backgroundDarkCard;
-  }
-  &:hover {
-    &::-webkit-scrollbar {
-      background-color: v.$backgroundDarkCardHover;
-    }
-  }
-}

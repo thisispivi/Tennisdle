@@ -56,6 +56,7 @@ const onLanguageClick = (lang: "en" | "it") => {
   .select-language__button {
     display: flex;
     align-items: center;
+    cursor: pointer;
     svg {
       width: 2rem;
       height: 2rem;
@@ -71,8 +72,8 @@ const onLanguageClick = (lang: "en" | "it") => {
   }
   .select-language__dropdown {
     position: absolute;
-    top: 2.5rem;
-    right: 0;
+    top: 3.5rem;
+    right: 2.5rem;
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(0.063rem);
     border-radius: 1rem;
@@ -87,7 +88,7 @@ const onLanguageClick = (lang: "en" | "it") => {
       @include m.transition(all, 0.4s);
       &.active {
         background-color: v.$color700;
-        color: white;
+        color: v.$headerBackgroundDark;
       }
       svg {
         width: 1.5rem;

@@ -1,10 +1,13 @@
-import { createMemoryHistory, createRouter } from "vue-router";
-import { Home } from "./components/pages";
+import { createWebHashHistory, createRouter } from "vue-router";
+import { All, Home } from "./components/pages";
 
-const routes = [{ path: "/", name: "home", component: Home }];
+const routes = [
+  { path: "/", name: "home", component: Home },
+  { path: "/all", name: "all", component: All },
+];
 
 const router = createRouter({
-  history: createMemoryHistory(),
+  history: createWebHashHistory(),
   routes,
 });
 

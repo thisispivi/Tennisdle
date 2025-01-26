@@ -1,21 +1,25 @@
 {
-  "links": {
-    "syrto": {
-      "title": "Syrto",
-      "description": "Syrto® Company Intelligence is an AI-driven platform designed to identify business opportunities, manage risks, and forecast the performance of clients and suppliers. The software combines Neural Networks and Machine Learning with financial expertise, offering a comprehensive solution for decision-making. By simplifying access to financial insights, Syrto® enables users to make informed business decisions."
-    },
-    "travelMap": {
-      "title": "Travel Map",
-      "description": "Travel Map is my personal web app designed to help me track and relive my travel experiences. I can visualize all the places I've visited with interactive markers on a dynamic map. For each destination, I can browse through a collection of photos, capturing the highlights of my journey, all within the app."
+  "page": {
+    "all": {
+      "title": "All Players"
     }
   },
-  "categories": {
-    "work": "Work",
-    "projects": "Projects"
-  },
-  "readMore": "Read more",
-  "readLess": "Read less",
-  "header": {
-    "description": "Full Stack Developer and Machine Learning consultant"
+  "card": {
+    "label": {
+      "age": "Age",
+      "height": "Height",
+      "yearTurnedPro": "Year Turned Pro",
+      "yearRetired": "Year Retired",
+      "isRightHanded": "Right Handed",
+      "isTwoHandedBackhand": "Two Handed Backhand",
+      "careerTitles": "Career Titles",
+      "highestRanking": "Highest Ranking",
+      "noAusOpenTitles": "No. of Australian Open Titles",
+      "noFrenchOpenTitles": "No. of French Open Titles",
+      "noWimbledonTitles": "No. of Wimbledon Titles",
+      "noUSOpenTitles": "No. of US Open Titles",
+      "noTourFinalsTitles": "No. of Tour Finals Titles",
+      "noOlympicTitles": "No. of Olympic Titles"
+    }
   }
 }

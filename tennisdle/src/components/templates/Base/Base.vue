@@ -1,16 +1,14 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
-defineProps({});
-
 const containerRef = ref<HTMLElement | null>(null);
-const headerClass = ref("header");
 </script>
 
 <template>
   <div class="base">
-    <Header :class="headerClass" />
-    <div ref="containerRef" class="container"></div>
+    <div ref="containerRef" class="container">
+      <slot />
+    </div>
   </div>
 </template>
 
@@ -23,6 +21,11 @@ const headerClass = ref("header");
   width: 100%;
   overflow-y: auto;
   height: 100%;
+  background: linear-gradient(
+    135deg,
+    v.$backgroundDark 0%,
+    v.$headerBackgroundDark 100%
+  );
   .container {
     display: flex;
     flex-direction: column;
