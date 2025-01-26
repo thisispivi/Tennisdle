@@ -6,16 +6,40 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "cd .. & husky install",
+    "lint": "eslint src",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "autoprefixer": "^10.4.20",
     "vue": "^3.5.13"
   },
   "devDependencies": {
+    "@rollup/plugin-node-resolve": "^16.0.0",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vue/tsconfig": "^0.7.0",
-    "typescript": "~5.6.2",
+    "eslint": "^9.19.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-config-xo": "^0.46.0",
+    "eslint-config-xo-typescript": "^7.0.0",
+    "eslint-plugin-vue": "^9.32.0",
+    "gh-pages": "^6.3.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.2",
+    "prettier": "3.4.2",
+    "sass": "^1.83.4",
+    "typescript": "^5.7.3",
     "vite": "^6.0.5",
+    "vite-plugin-qrcode": "^0.2.4",
+    "vite-svg-loader": "^5.1.0",
+    "vue-i18n": "^11.0.1",
+    "vue-router": "^4.5.0",
     "vue-tsc": "^2.2.0"
+  },
+  "lint-staged": {
+    "src/**/*.{js,vue,html,css}": "prettier --write",
+    "src/**/*.{js,vue}": "eslint --fix"
   }
 }
