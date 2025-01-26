@@ -1,0 +1,30 @@
+@use "./variables.scss" as v;
+@use "./mixins.scss" as m;
+
+::-webkit-scrollbar {
+  background-color: v.$backgroundDark;
+  width: 0.5rem;
+  border-radius: 2rem;
+  -webkit-background-clip: text;
+  @include m.transition(all, 0.2s, ease-in-out);
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 2rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: v.$color600;
+  border-radius: 0.625rem;
+}
+
+#link {
+  &::-webkit-scrollbar {
+    background-color: v.$backgroundDarkCard;
+  }
+  &:hover {
+    &::-webkit-scrollbar {
+      background-color: v.$backgroundDarkCardHover;
+    }
+  }
+}

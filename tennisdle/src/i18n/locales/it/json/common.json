@@ -1,0 +1,21 @@
+{
+  "links": {
+    "syrto": {
+      "title": "Syrto",
+      "description": "Syrto® Company Intelligence è una piattaforma basata sull'intelligenza artificiale progettata per identificare opportunità di business, gestire i rischi e prevedere le prestazioni di clienti e fornitori. Il software combina reti neurali e machine learning con competenze finanziarie, offrendo una soluzione completa per il processo decisionale. Semplificando l'accesso alle informazioni finanziarie, Syrto® consente agli utenti di prendere decisioni aziendali informate."
+    },
+    "travelMap": {
+      "title": "Travel Map",
+      "description": "Travel Map è la mia applicazione web personale progettata per aiutarmi a tracciare e rivivere le mie esperienze di viaggio. Posso visualizzare tutti i luoghi che ho visitato con marcatori interattivi su una mappa dinamica. Per ogni destinazione, posso sfogliare una raccolta di foto, catturando i momenti salienti del mio viaggio, tutto all'interno dell'app."
+    }
+  },
+  "categories": {
+    "work": "Lavoro",
+    "projects": "Progetti"
+  },
+  "readMore": "Leggi di più",
+  "readLess": "Leggi meno",
+  "header": {
+    "description": "Sviluppatore Full Stack e consulente di Machine Learning"
+  }
+}

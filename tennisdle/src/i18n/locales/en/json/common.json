@@ -1,0 +1,21 @@
+{
+  "links": {
+    "syrto": {
+      "title": "Syrto",
+      "description": "Syrto® Company Intelligence is an AI-driven platform designed to identify business opportunities, manage risks, and forecast the performance of clients and suppliers. The software combines Neural Networks and Machine Learning with financial expertise, offering a comprehensive solution for decision-making. By simplifying access to financial insights, Syrto® enables users to make informed business decisions."
+    },
+    "travelMap": {
+      "title": "Travel Map",
+      "description": "Travel Map is my personal web app designed to help me track and relive my travel experiences. I can visualize all the places I've visited with interactive markers on a dynamic map. For each destination, I can browse through a collection of photos, capturing the highlights of my journey, all within the app."
+    }
+  },
+  "categories": {
+    "work": "Work",
+    "projects": "Projects"
+  },
+  "readMore": "Read more",
+  "readLess": "Read less",
+  "header": {
+    "description": "Full Stack Developer and Machine Learning consultant"
+  }
+}
