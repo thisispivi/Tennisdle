@@ -1,21 +1,28 @@
-<script setup>
+<script setup lang="ts">
 import { Base } from "../../templates";
 import { players } from "../../../assets/index";
 import { ref } from "vue";
 import { SingleGuess, GuessHeader } from "../../organisms";
+import { Search } from "../../molecules";
+import { Player } from "../../../data/typings/Player";
 
 const numPlayers = players.length;
+const playerKeys = players.map((p) => p.player);
 
 const getRandomPlayer = () => {
   const randomIndex = Math.floor(Math.random() * numPlayers);
+  console.log(players[randomIndex]);
   return players[randomIndex];
 };
 
-const player = players[1];
+const player = ref<Player>(getRandomPlayer());
 
-const guess = ref([getRandomPlayer()]);
-const guessPlayer = () => {
-  guess.value.push(getRandomPlayer());
+const guess = ref<Player[]>([]);
+const guessPlayer = (playerKey: string) => {
+  const idx = playerKeys.indexOf(playerKey);
+  const playerObj = players[idx];
+  guess.value.unshift(playerObj);
+  if (playerObj.player === player.value.player) alert("WIN");
 };
 </script>
 
@@ -23,8 +30,7 @@ const guessPlayer = () => {
   <div class="guess">
     <Base>
       <div class="guess__content">
-        <p>{{ guess.player }}</p>
-        <button @click="guessPlayer">{{ $t("page.unlimited.button") }}</button>
+        <Search :all-keys="playerKeys" :select-player="guessPlayer" />
         <GuessHeader />
         <div class="guess__content__items">
           <SingleGuess
