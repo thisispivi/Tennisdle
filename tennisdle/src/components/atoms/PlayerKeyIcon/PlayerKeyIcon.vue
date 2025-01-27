@@ -3,10 +3,13 @@ import { Player } from "data/typings/Player";
 import {
   ATPFinalsIcon,
   AustralianOpenIcon,
+  BirthdayCakeIcon,
   CupIcon,
   FrenchOpenIcon,
+  HeightIcon,
   OlympicsIcon,
   RankingIcon,
+  TurnedProIcon,
   USOpenIcon,
   WimbledonIcon,
 } from "../../../assets";
@@ -39,14 +42,20 @@ const { playerKey } = defineProps<{ playerKey: keyof Player }>();
     v-else-if="playerKey === 'noOlympicTitles'"
     class="player-key-icon"
   />
-  <p v-else-if="playerKey === 'yearTurnedPro'">
-    {{ $t("playerKey.yearTurnedPro") }}
-  </p>
   <RankingIcon
     v-else-if="playerKey === 'highestRanking'"
     class="player-key-icon"
   />
   <CupIcon v-else-if="playerKey === 'careerTitles'" class="player-key-icon" />
+  <BirthdayCakeIcon
+    v-else-if="playerKey === 'birthDate'"
+    class="player-key-icon"
+  />
+  <HeightIcon v-else-if="playerKey === 'height'" class="player-key-icon" />
+  <TurnedProIcon
+    v-else-if="playerKey === 'yearTurnedPro'"
+    class="player-key-icon"
+  />
 </template>
 
 <style scoped lang="scss">

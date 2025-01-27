@@ -24,7 +24,7 @@ export const categories: (keyof Player)[] = [
   "height",
   "yearTurnedPro",
   "birthDate",
-  "country",
+  // "country",
   // "yearRetired",
   "careerTitles",
   "highestRanking",

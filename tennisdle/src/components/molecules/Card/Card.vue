@@ -1,11 +1,7 @@
 <script lang="ts" setup>
 import { Player } from "data/typings/Player";
+import { calculateAge } from "../../../utils/date";
 const { player } = defineProps<{ player: Player }>();
-
-function calculateAge(birthDate: number) {
-  const age_dt = new Date(Date.now() - new Date(birthDate).getTime());
-  return Math.abs(age_dt.getUTCFullYear() - 1970);
-}
 
 const data = [
   { key: "age", value: calculateAge(player.birthDate) },

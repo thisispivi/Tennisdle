@@ -1,7 +1,6 @@
 <script setup>
 import { Base } from "../../templates";
 import { players } from "../../../assets/index";
-import { SelectLanguage } from "../../molecules";
 import { ref } from "vue";
 import { SingleGuess, GuessHeader } from "../../organisms";
 
@@ -23,21 +22,18 @@ const guessPlayer = () => {
 <template>
   <div class="guess">
     <Base>
-      <div class="guess__header">
-        <h1>{{ $t("page.unlimited.title") }}</h1>
-        <h3>{{ player.player }}</h3>
-        <SelectLanguage />
-      </div>
       <div class="guess__content">
         <p>{{ guess.player }}</p>
         <button @click="guessPlayer">{{ $t("page.unlimited.button") }}</button>
         <GuessHeader />
-        <SingleGuess
-          v-for="p in guess"
-          :key="p.player"
-          :player="player"
-          :compare-player="p"
-        />
+        <div class="guess__content__items">
+          <SingleGuess
+            v-for="p in guess"
+            :key="p.player"
+            :player="player"
+            :compare-player="p"
+          />
+        </div>
       </div>
     </Base>
   </div>
@@ -60,10 +56,10 @@ const guessPlayer = () => {
     }
   }
   .guess__content {
-    height: calc(100% - 5rem);
+    height: calc(100% - 2rem);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     button {
       margin-top: 2rem;
@@ -76,6 +72,12 @@ const guessPlayer = () => {
       cursor: pointer;
       &:hover {
         background-color: v.$color800;
+      }
+    }
+    .guess__content__items {
+      overflow-y: auto;
+      .single-guess {
+        padding: 1.25rem;
       }
     }
   }

@@ -7,9 +7,7 @@ import { categories } from "../../../data/typings/Player";
 <template>
   <div class="guess-header">
     <Wrap>
-      <div class="guess-header__player">
-        <p>{{ $t("player") }}</p>
-      </div>
+      <div class="guess-header__player" />
       <div
         v-for="key in categories"
         :key="key"
@@ -54,14 +52,8 @@ import { categories } from "../../../data/typings/Player";
       padding: 0.5rem;
       text-align: center;
       svg {
-        width: 3rem;
-        height: 3rem;
-      }
-      &.careerTitles {
-        svg {
-          width: 2.5rem;
-          height: 2.5rem;
-        }
+        width: 2.5rem;
+        height: 2.5rem;
       }
     }
   }

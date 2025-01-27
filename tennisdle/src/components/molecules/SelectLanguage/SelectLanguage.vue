@@ -72,8 +72,8 @@ const onLanguageClick = (lang: "en" | "it") => {
   }
   .select-language__dropdown {
     position: absolute;
-    top: 3.5rem;
-    right: 2.5rem;
+    top: 2.5rem;
+    right: 0rem;
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(0.063rem);
     border-radius: 1rem;
