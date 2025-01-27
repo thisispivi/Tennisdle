@@ -2,8 +2,10 @@
 import { computed } from "vue";
 import { GuessDistance, GuessStatus } from "../../../data/typings/GuessStatus";
 import { TriangleIcon } from "../../../assets";
+import { Player } from "data/typings/Player";
 
-const { value, compareValue, diffThreshold } = defineProps<{
+const { value, compareValue, diffThreshold, playerKey } = defineProps<{
+  playerKey: keyof Player;
   value: number;
   compareValue: number;
   diffThreshold: number;
@@ -27,8 +29,11 @@ const higherOrLower = computed(() => {
 </script>
 
 <template>
-  <div :class="`diff-pill diff-pill--${status}`">
-    <p>{{ compareValue }}</p>
+  <div :class="`diff-pill diff-pill--${status} ${playerKey}`">
+    <p>
+      {{ playerKey === "height" ? compareValue.toFixed(2) : compareValue
+      }}{{ playerKey === "height" ? "m" : "" }}
+    </p>
     <TriangleIcon :class="`triangle-icon triangle-icon--${higherOrLower}`" />
   </div>
 </template>
@@ -37,26 +42,41 @@ const higherOrLower = computed(() => {
 @use "../../../styles/variables.scss" as v;
 .diff-pill {
   display: flex;
-  padding: 0.4rem 0.75rem;
+  padding: 0.5rem;
+  height: 4rem;
   border-radius: 0.5rem;
   font-size: 1rem;
   font-weight: bold;
   text-align: center;
   background-color: v.$headerBackgroundDark;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+  width: 4rem;
+  p {
+    font-size: 1.1rem;
+  }
+
   &.diff-pill--equal {
     background-color: #43a865;
     color: v.$headerBackgroundDark;
-    :deep(path) {
+    .triangle-icon:deep(path) {
       fill: v.$headerBackgroundDark;
     }
   }
   &.diff-pill--in-threshold {
     background-color: #b8b105;
     color: v.$headerBackgroundDark;
-    :deep(path) {
+    .triangle-icon:deep(path) {
       fill: v.$headerBackgroundDark;
+    }
+  }
+
+  &.highestRanking {
+    .triangle-icon {
+      transform: rotate(180deg);
+      &.triangle-icon--lower {
+        transform: rotate(0deg);
+      }
     }
   }
 
@@ -73,6 +93,12 @@ const higherOrLower = computed(() => {
     &.triangle-icon--lower {
       transform: rotate(180deg);
     }
+  }
+
+  .player-key-icon {
+    margin-right: 0.5rem;
+    height: 2.75rem;
+    width: 2.75rem;
   }
 }
 </style>

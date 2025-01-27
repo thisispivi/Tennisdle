@@ -3,7 +3,7 @@ import { Base } from "../../templates";
 import { players } from "../../../assets/index";
 import { SelectLanguage } from "../../molecules";
 import { ref } from "vue";
-import { SingleGuess } from "../../organisms";
+import { SingleGuess, GuessHeader } from "../../organisms";
 
 const numPlayers = players.length;
 
@@ -14,9 +14,9 @@ const getRandomPlayer = () => {
 
 const player = players[1];
 
-const guess = ref(getRandomPlayer());
+const guess = ref([getRandomPlayer()]);
 const guessPlayer = () => {
-  guess.value = getRandomPlayer();
+  guess.value.push(getRandomPlayer());
 };
 </script>
 
@@ -31,7 +31,13 @@ const guessPlayer = () => {
       <div class="guess__content">
         <p>{{ guess.player }}</p>
         <button @click="guessPlayer">{{ $t("page.unlimited.button") }}</button>
-        <SingleGuess :player="player" :compare-player="guess" />
+        <GuessHeader />
+        <SingleGuess
+          v-for="p in guess"
+          :key="p.player"
+          :player="player"
+          :compare-player="p"
+        />
       </div>
     </Base>
   </div>

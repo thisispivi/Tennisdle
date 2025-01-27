@@ -19,3 +19,21 @@ export interface Player {
 }
 
 export type Players = Player[];
+
+export const categories: (keyof Player)[] = [
+  "height",
+  "yearTurnedPro",
+  "birthDate",
+  "country",
+  // "yearRetired",
+  "careerTitles",
+  "highestRanking",
+  // "isRightHanded",
+  // "isTwoHandedBackhand",
+  "noAusOpenTitles",
+  "noFrenchOpenTitles",
+  "noWimbledonTitles",
+  "noUSOpenTitles",
+  "noTourFinalsTitles",
+  "noOlympicTitles",
+];

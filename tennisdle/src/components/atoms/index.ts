@@ -1,2 +1,3 @@
 import DiffPill from "./DiffPill/DiffPill.vue";
-export { DiffPill };
+import PlayerKeyIcon from "./PlayerKeyIcon/PlayerKeyIcon.vue";
+export { DiffPill, PlayerKeyIcon };

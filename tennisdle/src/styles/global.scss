@@ -31,6 +31,16 @@ body {
   p {
     margin: 0;
   }
+
+  .single-guess,
+  .guess-header {
+    .yearTurnedPro {
+      width: 5.6rem !important;
+    }
+    .height {
+      width: 5.8rem !important;
+    }
+  }
 }
 
 #app {
