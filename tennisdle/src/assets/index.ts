@@ -9,6 +9,7 @@ import ChevronIcon from "./icons/Chevron.svg";
 import CupIcon from "./icons/Cup.svg";
 import FrenchOpenIcon from "./icons/FrenchOpen.svg";
 import HeightIcon from "./icons/Height.svg";
+import Logo from "./icons/Logo.svg";
 import OlympicsIcon from "./icons/Olympics.svg";
 import RankingIcon from "./icons/Ranking.svg";
 import TriangleIcon from "./icons/Triangle.svg";
@@ -23,6 +24,7 @@ export {
   CupIcon,
   FrenchOpenIcon,
   HeightIcon,
+  Logo,
   OlympicsIcon,
   RankingIcon,
   TriangleIcon,

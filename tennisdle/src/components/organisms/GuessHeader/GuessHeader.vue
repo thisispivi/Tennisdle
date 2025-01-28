@@ -25,17 +25,16 @@ import { categories } from "../../../data/typings/Player";
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1.5rem;
+  padding: 1.5rem 0.75rem;
   padding-bottom: 0.5rem;
-  border-bottom: 0.128rem solid v.$color100;
+  border-bottom: 0.128rem solid v.$color800o;
   .guess-header__player {
     width: 16rem;
     display: flex;
     align-items: center;
-    p {
-      font-size: 1.1rem;
-      font-weight: 600;
-    }
+    height: 4rem;
+    border-radius: 0.5rem;
+    background-color: v.$headerBackgroundDark;
   }
   .wrap {
     gap: 0.5rem;

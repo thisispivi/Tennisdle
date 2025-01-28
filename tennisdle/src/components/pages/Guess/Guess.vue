@@ -83,7 +83,7 @@ const guessPlayer = (playerKey: string) => {
     .guess__content__items {
       overflow-y: auto;
       .single-guess {
-        padding: 1.25rem;
+        padding: 0.75rem;
       }
     }
   }
