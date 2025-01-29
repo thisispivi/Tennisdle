@@ -18,10 +18,10 @@ const { player, comparePlayer } = defineProps<{
       <DiffPill
         v-for="key in categories"
         :key="key"
-        :compare-value="Number(comparePlayer[key])"
+        :compare-value="comparePlayer[key]"
         :diff-threshold="3"
         :player-key="key"
-        :value="Number(player[key])"
+        :value="player[key]"
       />
     </Wrap>
   </div>
@@ -39,7 +39,7 @@ const { player, comparePlayer } = defineProps<{
     height: 4rem;
     display: flex;
     align-items: center;
-    background-color: v.$headerBackgroundDark;
+    background-color: v.$cardDark;
     border-radius: 0.5rem;
     p {
       font-size: 1.1rem;

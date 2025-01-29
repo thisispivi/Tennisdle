@@ -4,8 +4,9 @@
       "title": "All Players"
     }
   },
-  "card": {
+  "player": {
     "label": {
+      "name": "Player Name",
       "age": "Age",
       "height": "Height",
       "yearTurnedPro": "Year Turned Pro",
@@ -22,20 +23,8 @@
       "noOlympicTitles": "No. of Olympic Titles"
     }
   },
-  "playerKey": {
-    "age": "Age",
-    "height": "Height",
-    "yearTurnedPro": "Turned Pro",
-    "yearRetired": "Year Retired",
-    "isRightHanded": "Right Handed",
-    "isTwoHandedBackhand": "Two Handed Backhand",
-    "careerTitles": "Career Titles",
-    "highestRanking": "Highest Ranking",
-    "noAusOpenTitles": "No. of Australian Open Titles",
-    "noFrenchOpenTitles": "No. of French Open Titles",
-    "noWimbledonTitles": "No. of Wimbledon Titles",
-    "noUSOpenTitles": "No. of US Open Titles",
-    "noTourFinalsTitles": "No. of Tour Finals Titles",
-    "noOlympicTitles": "No. of Olympic Titles"
+  "boolean": {
+    "true": "Yes",
+    "false": "No"
   }
 }

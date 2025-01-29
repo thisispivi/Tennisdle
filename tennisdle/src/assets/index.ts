@@ -1,11 +1,12 @@
-import UnitedKingdomIcon from "./flags/UnitedKingdom.svg";
-import ItalyIcon from "./flags/Italy.svg";
+import UnitedKingdomIcon from "./flags/UK-rounded.svg";
+import ItalyIcon from "./flags/IT-rounded.svg";
 export { UnitedKingdomIcon, ItalyIcon };
 
 import ATPFinalsIcon from "./icons/ATPFinals.svg";
 import AustralianOpenIcon from "./icons/AustralianOpen.svg";
 import BirthdayCakeIcon from "./icons/BirthdayCake.svg";
 import ChevronIcon from "./icons/Chevron.svg";
+import CountryIcon from "./icons/Country.svg";
 import CupIcon from "./icons/Cup.svg";
 import FrenchOpenIcon from "./icons/FrenchOpen.svg";
 import HeightIcon from "./icons/Height.svg";
@@ -21,6 +22,7 @@ export {
   AustralianOpenIcon,
   BirthdayCakeIcon,
   ChevronIcon,
+  CountryIcon,
   CupIcon,
   FrenchOpenIcon,
   HeightIcon,

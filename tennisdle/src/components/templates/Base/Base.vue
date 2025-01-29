@@ -29,11 +29,7 @@ const containerRef = ref<HTMLElement | null>(null);
   width: 100%;
   overflow-y: auto;
   height: 100%;
-  background: linear-gradient(
-    135deg,
-    v.$backgroundDark 0%,
-    v.$headerBackgroundDark 100%
-  );
+  background: v.$backgroundDark;
   position: relative;
   .overlay {
     position: absolute;

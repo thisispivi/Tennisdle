@@ -7,7 +7,7 @@ import { categories } from "../../../data/typings/Player";
 <template>
   <div class="guess-header">
     <Wrap>
-      <div class="guess-header__player" />
+      <div class="guess-header__player">{{ $t("player.label.name") }}</div>
       <div
         v-for="key in categories"
         :key="key"
@@ -32,9 +32,10 @@ import { categories } from "../../../data/typings/Player";
     width: 16rem;
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 4rem;
     border-radius: 0.5rem;
-    background-color: v.$headerBackgroundDark;
+    background-color: v.$cardDark;
   }
   .wrap {
     gap: 0.5rem;
@@ -47,7 +48,7 @@ import { categories } from "../../../data/typings/Player";
       justify-content: center;
       align-items: center;
       border-radius: 0.5rem;
-      background-color: v.$headerBackgroundDark;
+      background-color: v.$cardDark;
       padding: 0.5rem;
       text-align: center;
       svg {

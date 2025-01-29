@@ -2,13 +2,13 @@ export interface Player {
   player: string;
   country: string | null;
   birthDate: number;
-  height: string | null;
-  yearTurnedPro: string | null;
-  yearRetired: string | null;
+  height: number | null;
+  yearTurnedPro: number | null;
+  yearRetired: number | null;
   isRightHanded: boolean | null;
   isTwoHandedBackhand: boolean | null;
-  careerTitles: string;
-  highestRanking: string | null;
+  careerTitles: number;
+  highestRanking: number | null;
   noAusOpenTitles: number;
   noFrenchOpenTitles: number;
   noWimbledonTitles: number;
@@ -24,10 +24,10 @@ export const categories: (keyof Player)[] = [
   "height",
   "yearTurnedPro",
   "birthDate",
-  // "country",
+  "country",
   // "yearRetired",
-  "careerTitles",
-  "highestRanking",
+  // "careerTitles",
+  // "highestRanking",
   // "isRightHanded",
   // "isTwoHandedBackhand",
   "noAusOpenTitles",
@@ -36,4 +36,6 @@ export const categories: (keyof Player)[] = [
   "noUSOpenTitles",
   "noTourFinalsTitles",
   "noOlympicTitles",
+  "isRightHanded",
+  "isTwoHandedBackhand",
 ];

@@ -4,6 +4,7 @@ import {
   ATPFinalsIcon,
   AustralianOpenIcon,
   BirthdayCakeIcon,
+  CountryIcon,
   CupIcon,
   FrenchOpenIcon,
   HeightIcon,
@@ -56,6 +57,7 @@ const { playerKey } = defineProps<{ playerKey: keyof Player }>();
     v-else-if="playerKey === 'yearTurnedPro'"
     class="player-key-icon"
   />
+  <CountryIcon v-else-if="playerKey === 'country'" class="player-key-icon" />
 </template>
 
 <style scoped lang="scss">

@@ -44,7 +44,7 @@ const data = [
   height: 25rem;
   padding: 1rem 1.5rem;
   width: auto;
-  background-color: v.$headerBackgroundDark;
+  background-color: v.$cardDark;
   border-radius: 0.5rem;
   box-shadow: 0 0.35rem 0.5rem 0.1rem rgba(0, 0, 0, 0.1);
 
