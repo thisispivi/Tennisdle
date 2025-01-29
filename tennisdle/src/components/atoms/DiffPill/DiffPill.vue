@@ -2,9 +2,9 @@
 import { computed } from "vue";
 import { GuessDistance, GuessStatus } from "../../../data/typings/GuessStatus";
 import { TriangleIcon } from "../../../assets";
-import { Player } from "data/typings/Player";
 import { areCountriesInSameContinent, countries } from "../../../utils/country";
 import { CountryFlag } from "..";
+import { Player } from "../../../data/typings/Player";
 
 const { value, compareValue, diffThreshold, playerKey } = defineProps<{
   playerKey: keyof Player;
@@ -60,7 +60,7 @@ const higherOrLower = computed(() => {
   <div :class="`diff-pill diff-pill--${status} ${playerKey}`">
     <p v-if="playerKey === 'height'">{{ Number(compareValue).toFixed(2) }}m</p>
     <p v-else-if="typeof compareValue === 'boolean'">
-      {{ compareValue ? "Yes" : "No" }}
+      {{ compareValue ? $t("boolean.true") : $t("boolean.false") }}
     </p>
     <CountryFlag
       v-else-if="typeof compareValue === 'string' && playerKey === 'country'"

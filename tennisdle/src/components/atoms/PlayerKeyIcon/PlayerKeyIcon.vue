@@ -58,6 +58,8 @@ const { playerKey } = defineProps<{ playerKey: keyof Player }>();
     class="player-key-icon"
   />
   <CountryIcon v-else-if="playerKey === 'country'" class="player-key-icon" />
+  <p v-else-if="playerKey === 'isRightHanded'">RH</p>
+  <p v-else-if="playerKey === 'isTwoHandedBackhand'">2HB</p>
 </template>
 
 <style scoped lang="scss">
@@ -66,5 +68,6 @@ const { playerKey } = defineProps<{ playerKey: keyof Player }>();
   max-height: 100%;
   width: auto;
   height: auto;
+  outline: none !important;
 }
 </style>

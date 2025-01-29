@@ -11,6 +11,7 @@ import { categories } from "../../../data/typings/Player";
       <div
         v-for="key in categories"
         :key="key"
+        v-tooltip="$t(`player.tooltip.${key}`)"
         :class="`guess-header__item ${key}`"
       >
         <PlayerKeyIcon :player-key="key" />

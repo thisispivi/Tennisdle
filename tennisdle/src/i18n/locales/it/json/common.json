@@ -1,25 +1,49 @@
 {
   "page": {
     "all": {
-      "title": "Tutti i Giocatori"
+      "title": "Tutti i giocatori"
     }
   },
-  "card": {
+  "player": {
     "label": {
+      "name": "Nome del giocatore",
       "age": "Età",
       "height": "Altezza",
-      "yearTurnedPro": "Primo anno da Pro",
-      "yearRetired": "Anno di Ritiro",
+      "country": "Nazione",
+      "yearTurnedPro": "Anno di inizio carriera",
+      "yearRetired": "Anno di ritiro",
       "isRightHanded": "Destrorso",
-      "isTwoHandedBackhand": "Rovescio a Due Mani",
-      "careerTitles": "Titoli in Carriera",
-      "highestRanking": "Miglior Classifica",
-      "noAusOpenTitles": "N. di Titoli Australian Open",
-      "noFrenchOpenTitles": "N. di Titoli French Open",
-      "noWimbledonTitles": "N. di Titoli Wimbledon",
-      "noUSOpenTitles": "N. di Titoli US Open",
-      "noTourFinalsTitles": "N. di Titoli Tour Finals",
-      "noOlympicTitles": "N. di Titoli Olimpici"
+      "isTwoHandedBackhand": "Rovescio a due mani",
+      "careerTitles": "Titoli in carriera",
+      "highestRanking": "Migliore posizione in classifica",
+      "noAusOpenTitles": "N. di titoli agli Australian Open",
+      "noFrenchOpenTitles": "N. di titoli al Roland Garros",
+      "noWimbledonTitles": "N. di titoli a Wimbledon",
+      "noUSOpenTitles": "N. di titoli agli US Open",
+      "noTourFinalsTitles": "N. di titoli alle Finals",
+      "noOlympicTitles": "N. di titoli olimpici"
+    },
+    "tooltip": {
+      "name": "Nome del giocatore",
+      "birthDate": "Età del giocatore",
+      "height": "Altezza del giocatore",
+      "country": "Nazione del giocatore",
+      "yearTurnedPro": "Anno in cui il giocatore è diventato professionista",
+      "yearRetired": "Anno in cui il giocatore si è ritirato",
+      "isRightHanded": "Indica se il giocatore è destrorso",
+      "isTwoHandedBackhand": "Indica se il giocatore ha il rovescio a due mani",
+      "careerTitles": "Numero di titoli vinti in carriera",
+      "highestRanking": "Migliore posizione in classifica raggiunta",
+      "noAusOpenTitles": "Numero di titoli agli Australian Open",
+      "noFrenchOpenTitles": "Numero di titoli al Roland Garros",
+      "noWimbledonTitles": "Numero di titoli a Wimbledon",
+      "noUSOpenTitles": "Numero di titoli agli US Open",
+      "noTourFinalsTitles": "Numero di titoli alle Finals",
+      "noOlympicTitles": "Numero di titoli olimpici"
     }
+  },
+  "boolean": {
+    "true": "Sì",
+    "false": "No"
   }
 }

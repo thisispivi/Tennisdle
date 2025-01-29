@@ -9,6 +9,7 @@
       "name": "Player Name",
       "age": "Age",
       "height": "Height",
+      "country": "Country",
       "yearTurnedPro": "Year Turned Pro",
       "yearRetired": "Year Retired",
       "isRightHanded": "Right Handed",
@@ -21,6 +22,24 @@
       "noUSOpenTitles": "No. of US Open Titles",
       "noTourFinalsTitles": "No. of Tour Finals Titles",
       "noOlympicTitles": "No. of Olympic Titles"
+    },
+    "tooltip": {
+      "name": "Player's name",
+      "birthDate": "Player's age",
+      "height": "Player's height",
+      "country": "Player's country",
+      "yearTurnedPro": "The year the player turned pro",
+      "yearRetired": "The year the player retired",
+      "isRightHanded": "Whether the player is right handed",
+      "isTwoHandedBackhand": "Whether the player has a two handed backhand",
+      "careerTitles": "The number of career titles the player has won",
+      "highestRanking": "The highest ranking the player has achieved",
+      "noAusOpenTitles": "The number of Australian Open titles the player has won",
+      "noFrenchOpenTitles": "The number of French Open titles the player has won",
+      "noWimbledonTitles": "The number of Wimbledon titles the player has won",
+      "noUSOpenTitles": "The number of US Open titles the player has won",
+      "noTourFinalsTitles": "The number of Tour Finals titles the player has won",
+      "noOlympicTitles": "The number of Olympic titles the player has won"
     }
   },
   "boolean": {
