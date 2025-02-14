@@ -14,27 +14,33 @@ const getRandomPlayer = () => {
   console.log(players[randomIndex]);
   return players[randomIndex];
 };
-
 const player = ref<Player>(getRandomPlayer());
 
-const guess = ref<Player[]>([]);
+const guesses = ref<Player[]>([]);
 const guessPlayer = (playerKey: string) => {
   const idx = playerKeys.indexOf(playerKey);
+  if (idx === -1) return;
   const playerObj = players[idx];
-  guess.value.unshift(playerObj);
+  guesses.value.unshift(playerObj);
+
   if (playerObj.player === player.value.player) alert("WIN");
 };
+const getAlreadyGuessed = () => guesses.value.map((p) => p.player);
 </script>
 
 <template>
   <div class="guess">
     <Base>
       <div class="guess__content">
-        <Search :all-keys="playerKeys" :select-player="guessPlayer" />
+        <Search
+          :all-keys="playerKeys"
+          :select-player="guessPlayer"
+          :already-guessed="getAlreadyGuessed()"
+        />
         <GuessHeader />
         <div class="guess__content__items">
           <SingleGuess
-            v-for="p in guess"
+            v-for="p in guesses"
             :key="p.player"
             :player="player"
             :compare-player="p"

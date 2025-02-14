@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Player } from "data/typings/Player";
+import { Player } from "../../../data/typings/Player";
 import {
   ATPFinalsIcon,
   AustralianOpenIcon,

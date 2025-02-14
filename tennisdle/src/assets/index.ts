@@ -37,9 +37,23 @@ export {
 
 import { calculateAge } from "../utils/date";
 import playersData from "./db/atp_players.json";
-import { Players } from "data/typings/Player";
-const players: Players = playersData.map((player) => ({
-  ...player,
-  birthDate: calculateAge(player.birthDate),
-}));
+import { Players } from "../data/typings/Player";
+const players: Players = playersData
+  .map((player) => ({
+    ...player,
+    birthDate: calculateAge(player.birthDate),
+  }))
+  .filter(
+    (player) =>
+      !(
+        player.yearTurnedPro &&
+        player.yearTurnedPro < 2000 &&
+        (player.noAusOpenTitles === 0 ||
+          player.noFrenchOpenTitles === 0 ||
+          player.noWimbledonTitles === 0 ||
+          player.noUSOpenTitles === 0 ||
+          player.noOlympicTitles === 0 ||
+          player.noTourFinalsTitles === 0)
+      )
+  );
 export { players };
