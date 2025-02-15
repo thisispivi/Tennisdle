@@ -20,6 +20,10 @@ const pages = [
 <template>
   <div class="home">
     <Base :current-page-key="'home'">
+      <div class="title-container">
+        <h1 class="welcome">{{ $t("page.home.welcome") }}</h1>
+        <p class="description">{{ $t("page.home.description") }}</p>
+      </div>
       <div class="home__all-pages">
         <PageCard v-for="page in pages" :key="page.title" v-bind="page" />
       </div>
@@ -28,31 +32,55 @@ const pages = [
 </template>
 
 <style lang="scss">
+@use "../../../styles/variables.scss" as v;
 .home {
   height: 100%;
   width: 100%;
-  .home__all-pages {
-    display: flex;
+  .container {
+    padding-block: 2rem;
     justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    padding: 2rem;
-    flex-wrap: wrap;
-    overflow-x: hidden;
-    width: 100%;
-    .page-card {
-      .overlay {
-        &.unlimited-atp {
-          object-position: 92% 50%;
-        }
-        &.unlimited-wta {
-          object-position: 60% 50%;
-        }
-        &.daily-atp {
-          object-position: 67% 50%;
-        }
-        &.daily-wta {
-          object-position: 38% 50%;
+    .title-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 3rem;
+      .description,
+      .welcome {
+        padding-inline: 2rem;
+        margin: 0;
+      }
+      .welcome {
+        color: v.$color700;
+        margin-bottom: 1rem;
+      }
+      .description {
+        font-size: 1.2rem;
+      }
+    }
+    .home__all-pages {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      padding-inline: 2rem;
+      flex-wrap: wrap;
+      overflow-x: hidden;
+      width: 100%;
+      .page-card {
+        .overlay {
+          &.unlimited-atp {
+            object-position: 92% 50%;
+          }
+          &.unlimited-wta {
+            object-position: 60% 50%;
+          }
+          &.daily-atp {
+            object-position: 67% 50%;
+          }
+          &.daily-wta {
+            object-position: 38% 50%;
+          }
         }
       }
     }

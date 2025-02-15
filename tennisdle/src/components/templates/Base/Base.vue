@@ -34,7 +34,8 @@ const containerRef = ref<HTMLElement | null>(null);
     align-items: center;
     margin-top: v.$headerHeight;
     width: 100%;
-    height: calc(100% - #{v.$headerHeight + 2.5rem});
+    height: 100%;
+    overflow: hidden;
     z-index: 5;
     @include m.transition;
   }

@@ -1,5 +1,10 @@
 {
   "page": {
+    "home": {
+      "title": "Home",
+      "welcome": "Welcome to Tennisdle, the tennis trivia game!",
+      "description": "Select a game mode to start playing."
+    },
     "all": {
       "title": "All Players"
     },

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { SelectLanguage } from "../../molecules";
-import { Logo } from "../../../assets";
+import { Logo, LogoText } from "../../../assets";
 import { useRoute, useRouter } from "vue-router";
 
 const routeName = useRoute().name?.toString() || "";
@@ -16,7 +16,7 @@ const toHome = () => {
   <div :class="`navbar ${routeName}`">
     <div class="navbar__website-logo" @click="toHome">
       <Logo class="logo" />
-      <h1>Tennisdle</h1>
+      <LogoText class="logo-text" />
     </div>
     <div class="navbar__page-title">
       <h2 v-if="pageName">{{ $t(`page.${pageName}.title`) }}</h2>
@@ -40,20 +40,19 @@ const toHome = () => {
   justify-content: space-around;
   align-items: center;
   padding-inline: 2rem;
-  cursor: pointer;
   $leftNRightWidth: 12.4rem;
   .navbar__website-logo {
     display: flex;
     align-items: center;
     width: $leftNRightWidth;
     flex-shrink: 0;
-    h1 {
-      font-size: 1.8rem;
-      font-weight: 600;
+    cursor: pointer;
+    .logo-text {
+      height: 1.8rem;
     }
     .logo {
-      width: 3.5rem;
-      height: 3.5rem;
+      width: 2.5rem;
+      height: 2.5rem;
       margin-right: 0.5rem;
       flex-shrink: 0;
     }
@@ -96,7 +95,7 @@ const toHome = () => {
         width: 5rem;
       }
       .navbar__website-logo {
-        h1 {
+        .logo-text {
           display: none;
         }
       }

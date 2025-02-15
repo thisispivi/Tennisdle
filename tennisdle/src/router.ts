@@ -1,6 +1,13 @@
 import { createWebHashHistory, createRouter } from "vue-router";
-import { All, Guess, Home } from "./components/pages";
-import { GuessUnlimitedAtpLoader } from "./components/pages/Guess/GuessUnlimitedAtp.loader";
+import {
+  All,
+  Guess,
+  GuessDailyAtpLoader,
+  GuessDailyWtaLoader,
+  GuessUnlimitedAtpLoader,
+  GuessUnlimitedWtaLoader,
+  Home,
+} from "./components/pages";
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -15,6 +22,29 @@ const router = createRouter({
           name: "unlimited-atp",
           component: Guess,
           props: { loader: GuessUnlimitedAtpLoader },
+        },
+        {
+          path: "wta",
+          name: "unlimited-wta",
+          component: Guess,
+          props: { loader: GuessUnlimitedWtaLoader },
+        },
+      ],
+    },
+    {
+      path: "/daily",
+      children: [
+        {
+          path: "atp",
+          name: "daily-atp",
+          component: Guess,
+          props: { loader: GuessDailyAtpLoader },
+        },
+        {
+          path: "wta",
+          name: "daily-wta",
+          component: Guess,
+          props: { loader: GuessDailyWtaLoader },
         },
       ],
     },

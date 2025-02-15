@@ -1,16 +1,16 @@
 import { Players, Player } from "../../../data/typings/Player";
 import { atpPlayers } from "../../../assets";
 
-type GuessUnlimitedAtpProps = {
+type GuessDailyWtaProps = {
   players: Players;
   playerToGuess: Player;
 };
 
 /**
- * Loader for GuessUnlimitedAtp component
- * @returns {GuessUnlimitedAtpProps} - Players and player to guess
+ * Loader for GuessDailyWta component
+ * @returns {GuessDailyWtaProps} - Players and player to guess
  */
-export default function GuessUnlimitedAtpLoader(): GuessUnlimitedAtpProps {
+export default function GuessDailyWtaLoader(): GuessDailyWtaProps {
   const numPlayers = atpPlayers.length;
 
   const getRandomPlayer = () => {

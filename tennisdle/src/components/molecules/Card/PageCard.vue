@@ -18,7 +18,7 @@ const navigateTo = () => {
   <div class="page-card" @click="navigateTo">
     <img :src="imageUrl" :alt="imageAlt" :class="`overlay ${title}`" />
     <div class="page-card__content">
-      <h3>{{ $t(`page.${title}.title`) }}</h3>
+      <h2>{{ $t(`page.${title}.title`) }}</h2>
       <p>{{ $t(`page.${title}.description`) }}</p>
     </div>
   </div>
@@ -30,8 +30,8 @@ const navigateTo = () => {
 
 .page-card {
   $borderRadius: 1rem;
-  height: 15rem;
-  width: 21rem;
+  height: 17rem;
+  width: 25rem;
   padding: 1rem 1.5rem;
   border-radius: 0.5rem;
   box-shadow: 0 0.35rem 0.5rem 0.1rem rgba(0, 0, 0, 0.1);
@@ -68,12 +68,13 @@ const navigateTo = () => {
     border-radius: $borderRadius;
     padding: 1rem 1.25rem;
     backdrop-filter: blur(0.5rem);
-    margin-bottom: -0.1rem;
+    margin-bottom: -0.6rem;
 
-    h3 {
+    h2 {
       margin: 0;
-      color: v.$color900;
-      margin-bottom: 0.5rem;
+      color: v.$color700;
+      margin-bottom: 0.7rem;
+      font-size: 1.5rem;
     }
   }
 }
