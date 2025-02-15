@@ -41,6 +41,7 @@ const toHome = () => {
   align-items: center;
   padding-inline: 2rem;
   $leftNRightWidth: 12.4rem;
+  z-index: 10;
   .navbar__website-logo {
     display: flex;
     align-items: center;

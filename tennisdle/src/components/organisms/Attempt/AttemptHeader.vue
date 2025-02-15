@@ -5,14 +5,14 @@ import { categories } from "../../../data/typings/Player";
 </script>
 
 <template>
-  <div class="guess-header">
+  <div class="attempt-header">
     <Wrap>
-      <div class="guess-header__player">{{ $t("player.label.name") }}</div>
+      <div class="attempt-header__player">{{ $t("player.label.name") }}</div>
       <div
         v-for="key in categories"
         :key="key"
         v-tooltip="$t(`player.tooltip.${key}`)"
-        :class="`guess-header__item ${key}`"
+        :class="`attempt-header__item ${key}`"
       >
         <PlayerKeyIcon :player-key="key" />
       </div>
@@ -22,14 +22,14 @@ import { categories } from "../../../data/typings/Player";
 
 <style scoped lang="scss">
 @use "../../../styles/variables.scss" as v;
-.guess-header {
+.attempt-header {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1.5rem 0.75rem;
   padding-bottom: 0.5rem;
   border-bottom: 0.128rem solid v.$color800o;
-  .guess-header__player {
+  .attempt-header__player {
     width: 16rem;
     display: flex;
     align-items: center;
@@ -42,7 +42,7 @@ import { categories } from "../../../data/typings/Player";
     gap: 0.5rem;
     justify-content: center;
     align-items: center;
-    .guess-header__item {
+    .attempt-header__item {
       width: 4rem;
       height: 4rem;
       display: flex;

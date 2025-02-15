@@ -35,7 +35,7 @@ const getAlreadyAttempted = () => attempts.value.map((p) => p.player);
           :already-attempted="getAlreadyAttempted()"
         />
         <AttemptHeader />
-        <div class="guess__content__items">
+        <div class="attempt__content__items">
           <Attempt
             v-for="a in attempts"
             :key="a.player"
@@ -83,9 +83,9 @@ const getAlreadyAttempted = () => attempts.value.map((p) => p.player);
         background-color: v.$color800;
       }
     }
-    .guess__content__items {
+    .attempt__content__items {
       overflow-y: auto;
-      .single-guess {
+      .single-attempt {
         padding: 0.75rem;
       }
     }

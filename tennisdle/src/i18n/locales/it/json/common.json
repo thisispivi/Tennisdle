@@ -1,7 +1,28 @@
 {
   "page": {
+    "home": {
+      "title": "Home",
+      "welcome": "Benvenuto a Tennisdle, il gioco di trivia sul tennis!",
+      "description": "Seleziona una modalità di gioco per iniziare a giocare."
+    },
     "all": {
-      "title": "Tutti i giocatori"
+      "title": "Tutti i Giocatori"
+    },
+    "daily-atp": {
+      "title": "Indovina il giocatore ATP giornaliero",
+      "description": "Indovina il giocatore ATP giornaliero in base alle informazioni fornite"
+    },
+    "unlimited-atp": {
+      "title": "Indovina i giocatori ATP illimitati",
+      "description": "Indovina il giocatore ATP in base alle informazioni fornite"
+    },
+    "daily-wta": {
+      "title": "Indovina la giocatrice WTA giornaliera",
+      "description": "Indovina la giocatrice WTA giornaliera in base alle informazioni fornite"
+    },
+    "unlimited-wta": {
+      "title": "Indovina le giocatrici WTA illimitate",
+      "description": "Indovina la giocatrice WTA in base alle informazioni fornite"
     }
   },
   "player": {

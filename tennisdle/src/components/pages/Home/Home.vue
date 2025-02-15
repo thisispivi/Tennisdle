@@ -44,11 +44,11 @@ const pages = [
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      margin-bottom: 3rem;
       .description,
       .welcome {
         padding-inline: 2rem;
         margin: 0;
+        text-align: center;
       }
       .welcome {
         color: v.$color700;
@@ -63,10 +63,11 @@ const pages = [
       justify-content: center;
       align-items: center;
       gap: 2rem;
-      padding-inline: 2rem;
+      padding: 3rem 2rem;
       flex-wrap: wrap;
       overflow-x: hidden;
       width: 100%;
+      max-width: 56rem;
       .page-card {
         .overlay {
           &.unlimited-atp {
