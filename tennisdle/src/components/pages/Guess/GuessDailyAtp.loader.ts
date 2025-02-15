@@ -1,4 +1,4 @@
-import { Players, Player } from "../../../data/typings/Player";
+import { Players, Player } from "../../../typings/Player";
 import { atpPlayers } from "../../../assets";
 
 type GuessDailyAtpProps = {

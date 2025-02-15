@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Player } from "../../../data/typings/Player";
+import { Player } from "../../../typings/Player";
 import { calculateAge } from "../../../utils/date";
 const { player } = defineProps<{ player: Player }>();
 

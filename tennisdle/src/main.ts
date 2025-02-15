@@ -8,5 +8,12 @@ import "./styles/scrollbar.scss";
 import "floating-vue/dist/style.css";
 import i18n from "./i18n";
 import FloatingVue from "floating-vue";
+import { createRedux } from "./redux/create";
+import { store } from "./redux/store";
 
-createApp(App).use(router).use(i18n).use(FloatingVue).mount("#app");
+createApp(App)
+  .use(router)
+  .use(i18n)
+  .use(FloatingVue)
+  .use(createRedux(store))
+  .mount("#app");

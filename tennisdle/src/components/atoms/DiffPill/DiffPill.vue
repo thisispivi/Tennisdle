@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { GuessDistance, GuessStatus } from "../../../data/typings/GuessStatus";
+import { GuessDistance, GuessStatus } from "../../../typings/GuessStatus";
 import { TriangleIcon } from "../../../assets";
 import { areCountriesInSameContinent, countries } from "../../../utils/country";
 import { CountryFlag } from "..";
-import { Player } from "../../../data/typings/Player";
+import { Player } from "../../../typings/Player";
 
 const { value, compareValue, diffThreshold, playerKey } = defineProps<{
   playerKey: keyof Player;

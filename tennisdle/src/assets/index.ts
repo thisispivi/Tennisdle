@@ -39,7 +39,7 @@ export {
 
 import { calculateAge } from "../utils/date";
 import playersData from "./db/atp_players.json";
-import { Players } from "../data/typings/Player";
+import { Players } from "../typings/Player";
 const atpPlayers: Players = playersData
   .map((player) => ({
     ...player,
@@ -50,12 +50,9 @@ const atpPlayers: Players = playersData
       !(
         player.yearTurnedPro &&
         player.yearTurnedPro < 2000 &&
-        (player.noAusOpenTitles === 0 ||
-          player.noFrenchOpenTitles === 0 ||
-          player.noWimbledonTitles === 0 ||
-          player.noUSOpenTitles === 0 ||
-          player.noOlympicTitles === 0 ||
-          player.noTourFinalsTitles === 0)
+        player.careerTitles < 30
       )
   );
+
+console.log(atpPlayers.length);
 export { atpPlayers };

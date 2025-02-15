@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Wrap } from "../../molecules";
 import { PlayerKeyIcon } from "../../atoms";
-import { categories } from "../../../data/typings/Player";
+import { categories } from "../../../typings/Player";
 </script>
 
 <template>

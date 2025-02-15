@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Wrap } from "../../molecules";
-import { categories, Player } from "../../../data/typings/Player";
+import { categories, Player } from "../../../typings/Player";
 import { DiffPill } from "../../atoms";
 const { playerToGuess: player, comparePlayer } = defineProps<{
   playerToGuess: Player;

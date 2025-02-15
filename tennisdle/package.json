@@ -13,9 +13,11 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.5.1",
     "autoprefixer": "^10.4.20",
     "floating-vue": "^5.2.2",
     "fuse.js": "^7.1.0",
+    "redux-persist": "^6.0.0",
     "vue": "^3.5.13"
   },
   "devDependencies": {

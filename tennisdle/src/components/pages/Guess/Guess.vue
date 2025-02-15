@@ -1,28 +1,38 @@
 <script setup lang="ts">
 import { Base } from "../../templates";
-import { ref } from "vue";
 import { Attempt, AttemptHeader } from "../../organisms";
 import { Search } from "../../molecules";
-import { Player } from "../../../data/typings/Player";
+import { Player } from "../../../typings/Player";
+import { useDispatch, useSelector } from "../../../redux/helpers";
+import { addAttempt, checkGame } from "../../../redux/slices/daily";
+import { getDateAsKey } from "../../../utils/date";
+import { computed } from "vue";
 
 const { loader } = defineProps<{
   loader: () => { players: Player[]; playerToGuess: Player };
 }>();
-console.log(loader);
 const { players, playerToGuess } = loader();
-
 const playerKeys = players.map((p) => p.player);
 
-const attempts = ref<Player[]>([]);
-const attemptPlayer = (playerKey: string) => {
-  const idx = playerKeys.indexOf(playerKey);
-  if (idx === -1) return;
-  const playerObj = players[idx];
-  attempts.value.unshift(playerObj);
+const store = useSelector((state) => state.dailyAtp);
+const dispatch = useDispatch();
 
-  if (playerObj.player === playerToGuess.player) alert("WIN");
+dispatch(checkGame());
+
+const game = computed(() => store.value.games[getDateAsKey()]);
+
+const attempts = computed(() =>
+  game.value.attempts
+    .map((a) => {
+      const player = players.find((p) => p.player === a);
+      return player;
+    })
+    .filter((p) => p !== undefined)
+);
+
+const attemptPlayer = (playerKey: string) => {
+  dispatch(addAttempt({ attempt: playerKey, toGuess: playerToGuess.player }));
 };
-const getAlreadyAttempted = () => attempts.value.map((p) => p.player);
 </script>
 
 <template>
@@ -32,7 +42,7 @@ const getAlreadyAttempted = () => attempts.value.map((p) => p.player);
         <Search
           :all-keys="playerKeys"
           :select-player="attemptPlayer"
-          :already-attempted="getAlreadyAttempted()"
+          :already-attempted="game.attempts"
         />
         <AttemptHeader />
         <div class="attempt__content__items">
