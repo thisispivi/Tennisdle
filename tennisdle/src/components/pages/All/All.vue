@@ -2,7 +2,7 @@
 import { Base } from "../../templates";
 import { Wrap } from "../../molecules";
 import { Card } from "../../molecules";
-import { players } from "../../../assets/index";
+import { atpPlayers } from "../../../assets/index";
 import { SelectLanguage } from "../../molecules";
 </script>
 
@@ -14,7 +14,11 @@ import { SelectLanguage } from "../../molecules";
         <SelectLanguage />
       </div>
       <Wrap>
-        <Card v-for="player in players" :key="player.player" :player="player" />
+        <Card
+          v-for="player in atpPlayers"
+          :key="player.player"
+          :player="player"
+        />
       </Wrap>
     </Base>
   </div>

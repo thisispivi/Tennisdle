@@ -2,6 +2,9 @@
   "page": {
     "all": {
       "title": "All Players"
+    },
+    "unlimited-atp": {
+      "title": "Guess unlimited ATP players"
     }
   },
   "player": {

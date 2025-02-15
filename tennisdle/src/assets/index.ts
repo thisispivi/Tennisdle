@@ -38,7 +38,7 @@ export {
 import { calculateAge } from "../utils/date";
 import playersData from "./db/atp_players.json";
 import { Players } from "../data/typings/Player";
-const players: Players = playersData
+const atpPlayers: Players = playersData
   .map((player) => ({
     ...player,
     birthDate: calculateAge(player.birthDate),
@@ -56,4 +56,4 @@ const players: Players = playersData
           player.noTourFinalsTitles === 0)
       )
   );
-export { players };
+export { atpPlayers };

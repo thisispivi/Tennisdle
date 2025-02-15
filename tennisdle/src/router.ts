@@ -1,15 +1,24 @@
 import { createWebHashHistory, createRouter } from "vue-router";
 import { All, Guess, Home } from "./components/pages";
-
-const routes = [
-  { path: "/", name: "home", component: Home },
-  { path: "/all", name: "all", component: All },
-  { path: "/unlimited", name: "unlimited", component: Guess },
-];
+import { GuessUnlimitedAtpLoader } from "./components/pages/Guess/GuessUnlimitedAtp.loader";
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes,
+  routes: [
+    { path: "/", name: "home", component: Home },
+    { path: "/all", name: "all", component: All },
+    {
+      path: "/unlimited",
+      children: [
+        {
+          path: "/atp",
+          name: "unlimited-atp",
+          component: Guess,
+          props: GuessUnlimitedAtpLoader,
+        },
+      ],
+    },
+  ],
 });
 
 export default router;

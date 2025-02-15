@@ -2,16 +2,16 @@
 import { Wrap } from "../../molecules";
 import { categories, Player } from "../../../data/typings/Player";
 import { DiffPill } from "../../atoms";
-const { player, comparePlayer } = defineProps<{
-  player: Player;
+const { playerToGuess: player, comparePlayer } = defineProps<{
+  playerToGuess: Player;
   comparePlayer: Player;
 }>();
 </script>
 
 <template>
-  <div class="single-guess">
+  <div class="single-attempt">
     <Wrap>
-      <div class="single-guess__player">
+      <div class="single-attempt__player">
         <img :src="comparePlayer.image" alt="avatar" />
         <p>{{ comparePlayer.player }}</p>
       </div>
@@ -29,11 +29,11 @@ const { player, comparePlayer } = defineProps<{
 
 <style scoped lang="scss">
 @use "../../../styles/variables.scss" as v;
-.single-guess {
+.single-attempt {
   display: flex;
   flex-direction: column;
   align-items: center;
-  .single-guess__player {
+  .single-attempt__player {
     padding: 0.5rem;
     width: 16rem;
     height: 4rem;

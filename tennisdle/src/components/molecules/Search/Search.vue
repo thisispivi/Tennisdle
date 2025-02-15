@@ -2,10 +2,10 @@
 import Fuse from "fuse.js";
 import { computed, ref } from "vue";
 
-const { allKeys, selectPlayer, alreadyGuessed } = defineProps<{
+const { allKeys, selectPlayer, alreadyAttempted } = defineProps<{
   allKeys: string[];
   selectPlayer: (player: string) => void;
-  alreadyGuessed: string[];
+  alreadyAttempted: string[];
 }>();
 
 const search = ref("");
@@ -18,7 +18,7 @@ const results = computed(() =>
   fuse
     .search(search.value)
     .map((result) => result.item)
-    .filter((item) => !alreadyGuessed.includes(item))
+    .filter((item) => !alreadyAttempted.includes(item))
 );
 
 const selectPlayerWClose = (player: string) => {

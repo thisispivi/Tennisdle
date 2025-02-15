@@ -1,49 +1,45 @@
 <script setup lang="ts">
 import { Base } from "../../templates";
-import { players } from "../../../assets/index";
 import { ref } from "vue";
-import { SingleGuess, GuessHeader } from "../../organisms";
+import { Attempt, GuessHeader } from "../../organisms";
 import { Search } from "../../molecules";
 import { Player } from "../../../data/typings/Player";
 
-const numPlayers = players.length;
+const { loader } = defineProps<{
+  loader: () => { players: Player[]; playerToGuess: Player };
+}>();
+const { players, playerToGuess } = loader();
+
 const playerKeys = players.map((p) => p.player);
 
-const getRandomPlayer = () => {
-  const randomIndex = Math.floor(Math.random() * numPlayers);
-  console.log(players[randomIndex]);
-  return players[randomIndex];
-};
-const player = ref<Player>(getRandomPlayer());
-
-const guesses = ref<Player[]>([]);
-const guessPlayer = (playerKey: string) => {
+const attempts = ref<Player[]>([]);
+const attemptPlayer = (playerKey: string) => {
   const idx = playerKeys.indexOf(playerKey);
   if (idx === -1) return;
   const playerObj = players[idx];
-  guesses.value.unshift(playerObj);
+  attempts.value.unshift(playerObj);
 
-  if (playerObj.player === player.value.player) alert("WIN");
+  if (playerObj.player === playerToGuess.player) alert("WIN");
 };
-const getAlreadyGuessed = () => guesses.value.map((p) => p.player);
+const getAlreadyAttempted = () => attempts.value.map((p) => p.player);
 </script>
 
 <template>
   <div class="guess">
-    <Base>
+    <Base :current-page-key="'guess'">
       <div class="guess__content">
         <Search
           :all-keys="playerKeys"
-          :select-player="guessPlayer"
-          :already-guessed="getAlreadyGuessed()"
+          :select-player="attemptPlayer"
+          :already-attempted="getAlreadyAttempted()"
         />
         <GuessHeader />
         <div class="guess__content__items">
-          <SingleGuess
-            v-for="p in guesses"
-            :key="p.player"
-            :player="player"
-            :compare-player="p"
+          <Attempt
+            v-for="a in attempts"
+            :key="a.player"
+            :player-to-guess="playerToGuess"
+            :compare-player="a"
           />
         </div>
       </div>
