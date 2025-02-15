@@ -3,7 +3,7 @@
 * {
   box-sizing: border-box;
   scroll-behavior: smooth;
-  font-family: "Poppins", sans-serif;
+  font-family: "Lexend", sans-serif;
 }
 
 html {
@@ -30,6 +30,10 @@ body {
 
   p {
     margin: 0;
+    font-weight: 300;
+  }
+  b {
+    font-weight: 700;
   }
 
   .single-guess,
@@ -38,7 +42,7 @@ body {
       width: 5.6rem !important;
     }
     .height {
-      width: 5.8rem !important;
+      width: 6.5rem !important;
     }
     .careerTitles {
       width: 4.3rem !important;

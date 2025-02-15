@@ -58,17 +58,17 @@ const higherOrLower = computed(() => {
 
 <template>
   <div :class="`diff-pill diff-pill--${status} ${playerKey}`">
-    <p v-if="playerKey === 'height'">{{ Number(compareValue).toFixed(2) }}m</p>
-    <p v-else-if="typeof compareValue === 'boolean'">
+    <b v-if="playerKey === 'height'">{{ Number(compareValue).toFixed(2) }}m</b>
+    <b v-else-if="typeof compareValue === 'boolean'">
       {{ compareValue ? $t("boolean.true") : $t("boolean.false") }}
-    </p>
+    </b>
     <CountryFlag
       v-else-if="typeof compareValue === 'string' && playerKey === 'country'"
       :country-code="countries[compareValue as keyof typeof countries]"
     />
-    <p v-else>
+    <b v-else>
       {{ compareValue }}
-    </p>
+    </b>
     <TriangleIcon
       v-if="typeof compareValue !== 'boolean' && playerKey !== 'country'"
       :class="`triangle-icon triangle-icon--${higherOrLower}`"
@@ -80,7 +80,7 @@ const higherOrLower = computed(() => {
 @use "../../../styles/variables.scss" as v;
 .diff-pill {
   display: flex;
-  padding: 0.5rem;
+  padding: 0.5rem 0.75rem;
   height: 4rem;
   border-radius: 0.5rem;
   font-size: 1rem;
@@ -90,8 +90,9 @@ const higherOrLower = computed(() => {
   justify-content: space-evenly;
   align-items: center;
   width: 4rem;
-  p {
-    font-size: 1.1rem;
+
+  &.country {
+    padding: 0.5rem;
   }
 
   &.diff-pill--equal {

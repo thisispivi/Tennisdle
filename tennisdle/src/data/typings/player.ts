@@ -22,7 +22,7 @@ export type Players = Player[];
 
 export const categories: (keyof Player)[] = [
   "height",
-  "yearTurnedPro",
+  // "yearTurnedPro",
   "birthDate",
   "country",
   // "yearRetired",

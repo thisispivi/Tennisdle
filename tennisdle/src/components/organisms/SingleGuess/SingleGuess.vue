@@ -42,7 +42,7 @@ const { player, comparePlayer } = defineProps<{
     background-color: v.$cardDark;
     border-radius: 0.5rem;
     p {
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 600;
     }
     img {
