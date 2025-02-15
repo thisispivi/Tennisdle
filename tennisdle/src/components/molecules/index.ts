@@ -1,5 +1,6 @@
-import Card from "./Card/Card.vue";
-export { Card };
+import PageCard from "./Card/PageCard.vue";
+import PlayerCard from "./Card/PlayerCard.vue";
+export { PageCard, PlayerCard };
 
 import Search from "./Search/Search.vue";
 export { Search };

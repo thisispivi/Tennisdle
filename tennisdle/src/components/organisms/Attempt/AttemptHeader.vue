@@ -36,7 +36,7 @@ import { categories } from "../../../data/typings/Player";
     justify-content: center;
     height: 4rem;
     border-radius: 0.5rem;
-    background-color: v.$cardDark;
+    background-color: v.$diffPillBackground;
   }
   .wrap {
     gap: 0.5rem;
@@ -49,7 +49,7 @@ import { categories } from "../../../data/typings/Player";
       justify-content: center;
       align-items: center;
       border-radius: 0.5rem;
-      background-color: v.$cardDark;
+      background-color: v.$diffPillBackground;
       padding: 0.5rem;
       text-align: center;
       svg {

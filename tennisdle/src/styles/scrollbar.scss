@@ -2,7 +2,7 @@
 @use "./mixins.scss" as m;
 
 ::-webkit-scrollbar {
-  background-color: v.$backgroundDark;
+  background-color: v.$background;
   width: 0.5rem;
   border-radius: 2rem;
   -webkit-background-clip: text;

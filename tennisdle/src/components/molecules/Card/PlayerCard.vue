@@ -22,14 +22,18 @@ const data = [
 </script>
 
 <template>
-  <div class="card">
+  <div class="player-card">
     <h3>{{ player.player }}</h3>
-    <div class="card__content">
+    <div class="player-card__content">
       <img :src="player.image" alt="avatar" />
-      <div class="card__content__items">
-        <div v-for="item in data" :key="item.key" class="card__content__item">
-          <p class="card__content__item__label">
-            {{ $t(`card.label.${item.key}`) }}
+      <div class="player-card__content__items">
+        <div
+          v-for="item in data"
+          :key="item.key"
+          class="player-card__content__item"
+        >
+          <p class="player-card__content__item__label">
+            {{ $t(`player-card.label.${item.key}`) }}
           </p>
           <b>{{ item.value }}</b>
         </div>
@@ -40,11 +44,11 @@ const data = [
 
 <style lang="scss" scoped>
 @use "../../../styles/variables.scss" as v;
-.card {
+.player-card {
   height: 25rem;
   padding: 1rem 1.5rem;
   width: auto;
-  background-color: v.$cardDark;
+  background-color: v.$cardBackground;
   border-radius: 0.5rem;
   box-shadow: 0 0.35rem 0.5rem 0.1rem rgba(0, 0, 0, 0.1);
 
@@ -53,7 +57,7 @@ const data = [
     color: v.$color900;
   }
 
-  .card__content {
+  .player-card__content {
     display: flex;
     img {
       height: 19.5rem;
@@ -62,7 +66,7 @@ const data = [
       object-position: 50% 0;
       border-radius: 0.25rem;
     }
-    .card__content__item {
+    .player-card__content__item {
       margin-left: 1.5rem;
       display: flex;
       justify-content: space-between;

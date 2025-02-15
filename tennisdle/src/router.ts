@@ -11,10 +11,10 @@ const router = createRouter({
       path: "/unlimited",
       children: [
         {
-          path: "/atp",
+          path: "atp",
           name: "unlimited-atp",
           component: Guess,
-          props: GuessUnlimitedAtpLoader,
+          props: { loader: GuessUnlimitedAtpLoader },
         },
       ],
     },

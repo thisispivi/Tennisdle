@@ -39,7 +39,7 @@ const { playerToGuess: player, comparePlayer } = defineProps<{
     height: 4rem;
     display: flex;
     align-items: center;
-    background-color: v.$cardDark;
+    background-color: v.$diffPillBackground;
     border-radius: 0.5rem;
     p {
       font-size: 1rem;

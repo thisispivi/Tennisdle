@@ -86,7 +86,7 @@ const higherOrLower = computed(() => {
   font-size: 1rem;
   font-weight: bold;
   text-align: center;
-  background-color: v.$cardDark;
+  background-color: v.$diffPillBackground;
   justify-content: space-evenly;
   align-items: center;
   width: 4rem;
@@ -97,16 +97,16 @@ const higherOrLower = computed(() => {
 
   &.diff-pill--equal {
     background-color: #43a865;
-    color: v.$cardDark;
+    color: v.$diffPillBackground;
     .triangle-icon:deep(path) {
-      fill: v.$cardDark;
+      fill: v.$diffPillBackground;
     }
   }
   &.diff-pill--in-threshold {
     background-color: #b8b105;
-    color: v.$cardDark;
+    color: v.$diffPillBackground;
     .triangle-icon:deep(path) {
-      fill: v.$cardDark;
+      fill: v.$diffPillBackground;
     }
   }
 

@@ -3,8 +3,21 @@
     "all": {
       "title": "All Players"
     },
+    "daily-atp": {
+      "title": "Guess daily ATP players",
+      "description": "Guess the daily ATP player based on the given information"
+    },
     "unlimited-atp": {
-      "title": "Guess unlimited ATP players"
+      "title": "Guess unlimited ATP players",
+      "description": "Guess the ATP player based on the given information"
+    },
+    "daily-wta": {
+      "title": "Guess daily WTA players",
+      "description": "Guess the daily WTA player based on the given information"
+    },
+    "unlimited-wta": {
+      "title": "Guess unlimited WTA players",
+      "description": "Guess the WTA player based on the given information"
     }
   },
   "player": {

@@ -1,15 +1,20 @@
 <script setup lang="ts">
 import { SelectLanguage } from "../../molecules";
 import { Logo } from "../../../assets";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 
 const routeName = useRoute().name?.toString() || "";
 const pageName = routeName === "home" ? "" : routeName;
+
+const router = useRouter();
+const toHome = () => {
+  if (routeName !== "home") router.push({ name: "home" });
+};
 </script>
 
 <template>
   <div :class="`navbar ${pageName}`">
-    <div class="navbar__website-logo">
+    <div class="navbar__website-logo" @click="toHome">
       <Logo class="logo" />
       <h1>Tennisdle</h1>
     </div>
@@ -35,6 +40,7 @@ const pageName = routeName === "home" ? "" : routeName;
   justify-content: space-around;
   align-items: center;
   padding-inline: 2rem;
+  cursor: pointer;
   $leftNRightWidth: 12.4rem;
   .navbar__website-logo {
     display: flex;

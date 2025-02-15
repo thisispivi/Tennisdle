@@ -88,7 +88,7 @@ const onLanguageClick = (lang: "en" | "it") => {
       @include m.transition(all, 0.4s);
       &.active {
         background-color: v.$color700;
-        color: v.$cardDark;
+        color: v.$cardBackground;
       }
       svg {
         width: 1.5rem;

@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import { Base } from "../../templates";
 import { ref } from "vue";
-import { Attempt, GuessHeader } from "../../organisms";
+import { Attempt, AttemptHeader } from "../../organisms";
 import { Search } from "../../molecules";
 import { Player } from "../../../data/typings/Player";
 
 const { loader } = defineProps<{
   loader: () => { players: Player[]; playerToGuess: Player };
 }>();
+console.log(loader);
 const { players, playerToGuess } = loader();
 
 const playerKeys = players.map((p) => p.player);
@@ -33,7 +34,7 @@ const getAlreadyAttempted = () => attempts.value.map((p) => p.player);
           :select-player="attemptPlayer"
           :already-attempted="getAlreadyAttempted()"
         />
-        <GuessHeader />
+        <AttemptHeader />
         <div class="guess__content__items">
           <Attempt
             v-for="a in attempts"
