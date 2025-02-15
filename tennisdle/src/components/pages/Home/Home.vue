@@ -27,7 +27,7 @@ const pages = [
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .home {
   height: 100%;
   width: 100%;
@@ -38,6 +38,33 @@ const pages = [
     gap: 2rem;
     padding: 2rem;
     flex-wrap: wrap;
+    overflow-x: hidden;
+    width: 100%;
+    .page-card {
+      .overlay {
+        &.unlimited-atp {
+          object-position: 92% 50%;
+        }
+        &.unlimited-wta {
+          object-position: 60% 50%;
+        }
+        &.daily-atp {
+          object-position: 67% 50%;
+        }
+        &.daily-wta {
+          object-position: 38% 50%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 430px) {
+  .home__all-pages {
+    .page-card {
+      height: 18rem;
+      width: 100%;
+    }
   }
 }
 </style>

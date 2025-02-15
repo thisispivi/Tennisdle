@@ -13,7 +13,7 @@ const toHome = () => {
 </script>
 
 <template>
-  <div :class="`navbar ${pageName}`">
+  <div :class="`navbar ${routeName}`">
     <div class="navbar__website-logo" @click="toHome">
       <Logo class="logo" />
       <h1>Tennisdle</h1>
@@ -76,6 +76,13 @@ const toHome = () => {
     flex-shrink: 0;
     .select-language {
       font-size: 1rem;
+    }
+  }
+
+  &.home {
+    .navbar__options,
+    .navbar__website-logo {
+      width: auto;
     }
   }
 }

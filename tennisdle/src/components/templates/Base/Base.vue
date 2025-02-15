@@ -24,6 +24,7 @@ const containerRef = ref<HTMLElement | null>(null);
   flex-direction: column;
   width: 100%;
   overflow-y: auto;
+  overflow-x: hidden;
   height: 100%;
   background: v.$background;
   position: relative;
