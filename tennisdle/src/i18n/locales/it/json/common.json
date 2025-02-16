@@ -75,5 +75,15 @@
   "boolean": {
     "true": "Sì",
     "false": "No"
+  },
+  "modal": {
+    "won": {
+      "title": "Congratulazioni!",
+      "description": "Hai indovinato il giocatore odierno correttamente!"
+    },
+    "lost": {
+      "title": "Peccato!",
+      "description": "Non hai indovinato il giocatore odierno correttamente. Riprova domani!"
+    }
   }
 }

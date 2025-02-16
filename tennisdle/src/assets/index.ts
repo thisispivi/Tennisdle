@@ -6,6 +6,7 @@ import ATPFinalsIcon from "./icons/ATPFinals.svg";
 import AustralianOpenIcon from "./icons/AustralianOpen.svg";
 import BirthdayCakeIcon from "./icons/BirthdayCake.svg";
 import ChevronIcon from "./icons/Chevron.svg";
+import CloseIcon from "./icons/Close.svg";
 import CountryIcon from "./icons/Country.svg";
 import CupIcon from "./icons/Cup.svg";
 import FrenchOpenIcon from "./icons/FrenchOpen.svg";
@@ -23,6 +24,7 @@ export {
   AustralianOpenIcon,
   BirthdayCakeIcon,
   ChevronIcon,
+  CloseIcon,
   CountryIcon,
   CupIcon,
   FrenchOpenIcon,

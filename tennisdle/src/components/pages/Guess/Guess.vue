@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { Base } from "../../templates";
-import { Attempt, AttemptHeader } from "../../organisms";
+import { Attempt, AttemptHeader, Modal } from "../../organisms";
 import { Lives, Search } from "../../molecules";
 import { Player } from "../../../typings/Player";
 import { useDispatch, useSelector } from "../../../redux/helpers";
 import { addAttempt, checkGame } from "../../../redux/slices/daily";
 import { getDateAsKey } from "../../../utils/date";
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import ConfettiExplosion from "vue-confetti-explosion";
 
 const { loader } = defineProps<{
@@ -41,6 +41,9 @@ const attemptPlayer = (playerKey: string) => {
 
 const pageHeight = window.innerHeight;
 const pageWidth = window.innerWidth;
+
+const isModalOpen = ref(game.value.isWon || game.value.lives === 0 || false);
+const onClose = () => (isModalOpen.value = false);
 </script>
 
 <template>
@@ -53,6 +56,14 @@ const pageWidth = window.innerWidth;
         :particle-count="200"
       />
     </div>
+    <Modal
+      v-if="isModalOpen"
+      :is-won="game.isWon || false"
+      :is-lost="game.lives === 0"
+      :player="playerToGuess"
+      :is-open="isModalOpen"
+      :on-close="onClose"
+    />
     <Base>
       <div class="guess__content">
         <Lives :lives-remaining="game.lives" />
@@ -95,7 +106,7 @@ const pageWidth = window.innerWidth;
     align-items: center;
     padding-inline: 2rem;
     h1 {
-      color: v.$color900;
+      color: v.$color800;
     }
   }
   .guess__content {
@@ -116,7 +127,7 @@ const pageWidth = window.innerWidth;
       padding: 1rem 2rem;
       border: none;
       border-radius: 0.5rem;
-      background-color: v.$color900;
+      background-color: v.$color800;
       color: v.$color100;
       font-size: 1.5rem;
       cursor: pointer;

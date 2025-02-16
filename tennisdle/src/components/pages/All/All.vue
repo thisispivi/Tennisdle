@@ -34,7 +34,7 @@ const { players } = defineProps<{ players: Players }>();
     align-items: center;
     padding-inline: 2rem;
     h1 {
-      color: v.$color900;
+      color: v.$color800;
     }
   }
   .wrap {

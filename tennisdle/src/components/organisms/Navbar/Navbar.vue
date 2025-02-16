@@ -69,7 +69,7 @@ const toHome = () => {
     h2 {
       font-size: 1.5rem;
       font-weight: 600;
-      color: v.$color900;
+      color: v.$color800;
     }
   }
   .navbar__options {

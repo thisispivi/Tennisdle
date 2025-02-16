@@ -78,7 +78,7 @@ const data = [
 <style lang="scss" scoped>
 @use "../../../styles/variables.scss" as v;
 .player-card {
-  height: 23rem;
+  height: auto;
   padding: 1rem 1.5rem;
   width: auto;
   background-color: v.$cardBackground;
@@ -87,7 +87,7 @@ const data = [
 
   h3 {
     margin-top: 0rem;
-    color: v.$color900;
+    color: v.$color800;
     display: flex;
     height: 1.5rem;
     img {
@@ -101,8 +101,8 @@ const data = [
     display: flex;
     gap: 1.5rem 1rem;
     img {
-      height: 17.5rem;
-      width: 15rem;
+      height: 24rem;
+      width: 16rem;
       object-fit: cover;
       object-position: 50% 0;
       border-radius: 0.25rem;
@@ -111,6 +111,8 @@ const data = [
       display: flex;
       justify-content: space-between;
       font-size: 1rem;
+      border-bottom: 1px solid #e0e0e023;
+      padding-block: 0.2rem;
       p {
         margin: 0;
         margin-right: 0.8rem;

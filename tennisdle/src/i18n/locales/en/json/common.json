@@ -75,5 +75,15 @@
   "boolean": {
     "true": "Yes",
     "false": "No"
+  },
+  "modal": {
+    "won": {
+      "title": "Congratulations!",
+      "description": "You guessed today's player correctly!"
+    },
+    "lost": {
+      "title": "Better luck next time!",
+      "description": "You didn't guess today's player correctly. Try again tomorrow!"
+    }
   }
 }
