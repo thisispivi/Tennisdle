@@ -18,7 +18,8 @@
     "floating-vue": "^5.2.2",
     "fuse.js": "^7.1.0",
     "redux-persist": "^6.0.0",
-    "vue": "^3.5.13"
+    "vue": "^3.5.13",
+    "vue-confetti-explosion": "^1.0.2"
   },
   "devDependencies": {
     "@eslint/compat": "^1.2.6",
@@ -43,7 +44,7 @@
     "vite-svg-loader": "^5.1.0",
     "vue-i18n": "^11.1.1",
     "vue-router": "^4.5.0",
-    "vue-tsc": "^2.2.0"
+    "vue-tsc": "^2.2.2"
   },
   "lint-staged": {
     "src/**/*.{js,vue,html,css}": "prettier --write",

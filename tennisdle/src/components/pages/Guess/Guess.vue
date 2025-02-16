@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "../../../redux/helpers";
 import { addAttempt, checkGame } from "../../../redux/slices/daily";
 import { getDateAsKey } from "../../../utils/date";
 import { computed } from "vue";
+import ConfettiExplosion from "vue-confetti-explosion";
 
 const { loader } = defineProps<{
   loader: () => { players: Player[]; playerToGuess: Player; isAtp: boolean };
@@ -37,10 +38,21 @@ const attemptPlayer = (playerKey: string) => {
     addAttempt({ attempt: playerKey, toGuess: playerToGuess.player, isAtp })
   );
 };
+
+const pageHeight = window.innerHeight;
+const pageWidth = window.innerWidth;
 </script>
 
 <template>
   <div class="guess">
+    <div v-if="game.isWon" class="centered-explosion">
+      <ConfettiExplosion
+        :duration="3000"
+        :stage-height="pageHeight"
+        :stage-width="pageWidth"
+        :particle-count="400"
+      />
+    </div>
     <Base :current-page-key="'guess'">
       <div class="guess__content">
         <Lives :lives-remaining="game.lives" />
@@ -68,6 +80,13 @@ const attemptPlayer = (playerKey: string) => {
 .guess {
   height: 100%;
   width: 100%;
+  .centered-explosion {
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+  }
   .guess__header {
     height: 5rem;
     width: 100%;

@@ -27,7 +27,7 @@ const toHome = () => {
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use "../../../styles/variables.scss" as v;
 .navbar {
   display: flex;
@@ -56,6 +56,9 @@ const toHome = () => {
       height: 2.5rem;
       margin-right: 0.5rem;
       flex-shrink: 0;
+      .text-logo {
+        display: none;
+      }
     }
   }
   .navbar__page-title {
@@ -89,16 +92,64 @@ const toHome = () => {
 
 @media screen and (max-width: 850px) {
   .navbar {
-    &.unlimited-atp {
+    .text-logo {
+      display: block !important;
+    }
+    &.unlimited-atp,
+    &.daily-atp,
+    &.unlimited-wta,
+    &.daily-wta {
       padding-inline: 1rem;
       .navbar__options,
       .navbar__website-logo {
         width: 5rem;
       }
+      .navbar__options {
+        .select-language {
+          .select-language__dropdown {
+            right: 1rem;
+          }
+        }
+      }
       .navbar__website-logo {
         .logo-text {
           display: none;
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .navbar {
+    &.unlimited-atp,
+    &.daily-atp,
+    &.unlimited-wta,
+    &.daily-wta {
+      padding-inline: 0.5rem;
+      .navbar__options {
+        width: 3.8rem;
+        .select-language {
+          .select-language__dropdown {
+            right: 0.5rem;
+          }
+        }
+      }
+      .navbar__website-logo {
+        width: 3rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .navbar {
+    &.unlimited-atp,
+    &.daily-atp,
+    &.unlimited-wta,
+    &.daily-wta {
+      .navbar__page-title {
+        padding: 0;
       }
     }
   }
