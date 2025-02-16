@@ -52,7 +52,7 @@ const navigateTo = () => {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: calc(100% - 0.6rem);
     object-fit: cover;
     opacity: 0.7;
     border-radius: $borderRadius;
@@ -68,7 +68,6 @@ const navigateTo = () => {
     border-radius: $borderRadius;
     padding: 1rem 1.25rem;
     backdrop-filter: blur(0.5rem);
-    margin-bottom: -0.6rem;
 
     h2 {
       margin: 0;

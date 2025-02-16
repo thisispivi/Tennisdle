@@ -50,7 +50,7 @@ const pageWidth = window.innerWidth;
         :duration="3000"
         :stage-height="pageHeight"
         :stage-width="pageWidth"
-        :particle-count="400"
+        :particle-count="200"
       />
     </div>
     <Base>

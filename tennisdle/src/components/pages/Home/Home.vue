@@ -56,6 +56,7 @@ const pages = [
       }
       .description {
         font-size: 1.2rem;
+        margin-bottom: 2rem;
       }
     }
     .home__all-pages {
@@ -63,7 +64,7 @@ const pages = [
       justify-content: center;
       align-items: center;
       gap: 2rem;
-      padding: 3rem 2rem;
+      padding: 1rem 2rem;
       flex-wrap: wrap;
       overflow-x: hidden;
       width: 100%;
