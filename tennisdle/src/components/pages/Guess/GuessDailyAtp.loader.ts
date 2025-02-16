@@ -1,5 +1,6 @@
 import { Players, Player } from "../../../typings/Player";
-import { atpPlayers } from "../../../assets";
+import { atpPlayers, schedule } from "../../../assets";
+import { isDatesEqual } from "../../../utils/date";
 
 type GuessDailyAtpProps = {
   players: Players;
@@ -11,13 +12,14 @@ type GuessDailyAtpProps = {
  * @returns {GuessDailyAtpProps} - Players and player to guess
  */
 export default function GuessDailyAtpLoader(): GuessDailyAtpProps {
-  const numPlayers = atpPlayers.length;
+  const playerKey = schedule.find((s) =>
+    isDatesEqual(s.date, new Date())
+  )?.atpPlayer;
 
-  const getRandomPlayer = () => {
-    const randomIndex = Math.floor(Math.random() * numPlayers);
-    console.log(atpPlayers[randomIndex]);
-    return atpPlayers[randomIndex];
-  };
+  const player = atpPlayers.find((p) => p.player === playerKey);
+  if (!player) throw new Error("Player not found");
 
-  return { players: atpPlayers, playerToGuess: getRandomPlayer() };
+  console.log(player);
+
+  return { players: atpPlayers, playerToGuess: player };
 }

@@ -7,7 +7,7 @@ export interface Player {
   yearRetired: number | null;
   isRightHanded: boolean | null;
   isTwoHandedBackhand: boolean | null;
-  careerTitles: number;
+  careerTitles: number | null;
   highestRanking: number | null;
   noAusOpenTitles: number;
   noFrenchOpenTitles: number;

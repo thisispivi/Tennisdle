@@ -38,21 +38,38 @@ export {
 };
 
 import { calculateAge } from "../utils/date";
-import playersData from "./db/atp_players.json";
 import { Players } from "../typings/Player";
-const atpPlayers: Players = playersData
-  .map((player) => ({
-    ...player,
-    birthDate: calculateAge(player.birthDate),
-  }))
-  .filter(
-    (player) =>
-      !(
-        player.yearTurnedPro &&
-        player.yearTurnedPro < 2000 &&
-        player.careerTitles < 30
-      )
-  );
 
-console.log(atpPlayers.length);
-export { atpPlayers };
+import allAtpPlayersData from "./db/atp_players.json";
+const allAtpPlayers: Players = allAtpPlayersData.map((player) => ({
+  ...player,
+  birthDate: calculateAge(player.birthDate),
+}));
+
+import atpPlayersData from "./db/atp_players_filtered.json";
+const atpPlayers: Players = atpPlayersData.map((player) => ({
+  ...player,
+  birthDate: calculateAge(player.birthDate),
+}));
+
+import allWtaPlayersData from "./db/wta_players.json";
+const allWtaPlayers: Players = allWtaPlayersData.map((player) => ({
+  ...player,
+  birthDate: calculateAge(player.birthDate),
+}));
+
+import wtaPlayersData from "./db/wta_players_filtered.json";
+const wtaPlayers: Players = wtaPlayersData.map((player) => ({
+  ...player,
+  birthDate: calculateAge(player.birthDate),
+}));
+
+export { allAtpPlayers, atpPlayers, allWtaPlayers, wtaPlayers };
+
+import { Schedule } from "../typings/Schedule";
+import scheduleData from "./db/player_schedule.json";
+const schedule: Schedule[] = scheduleData.map((schedule) => ({
+  ...schedule,
+  date: new Date(schedule.date),
+}));
+export { schedule };

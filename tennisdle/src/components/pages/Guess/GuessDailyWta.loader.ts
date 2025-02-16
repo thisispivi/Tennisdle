@@ -1,5 +1,6 @@
 import { Players, Player } from "../../../typings/Player";
-import { atpPlayers } from "../../../assets";
+import { wtaPlayers, schedule } from "../../../assets";
+import { isDatesEqual } from "../../../utils/date";
 
 type GuessDailyWtaProps = {
   players: Players;
@@ -11,13 +12,14 @@ type GuessDailyWtaProps = {
  * @returns {GuessDailyWtaProps} - Players and player to guess
  */
 export default function GuessDailyWtaLoader(): GuessDailyWtaProps {
-  const numPlayers = atpPlayers.length;
+  const playerKey = schedule.find((s) =>
+    isDatesEqual(s.date, new Date())
+  )?.wtaPlayer;
 
-  const getRandomPlayer = () => {
-    const randomIndex = Math.floor(Math.random() * numPlayers);
-    console.log(atpPlayers[randomIndex]);
-    return atpPlayers[randomIndex];
-  };
+  const player = wtaPlayers.find((p) => p.player === playerKey);
+  if (!player) throw new Error("Player not found");
 
-  return { players: atpPlayers, playerToGuess: getRandomPlayer() };
+  console.log(player);
+
+  return { players: wtaPlayers, playerToGuess: player };
 }
