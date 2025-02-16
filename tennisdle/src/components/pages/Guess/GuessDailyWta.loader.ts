@@ -5,6 +5,7 @@ import { isDatesEqual } from "../../../utils/date";
 type GuessDailyWtaProps = {
   players: Players;
   playerToGuess: Player;
+  isAtp: boolean;
 };
 
 /**
@@ -21,5 +22,5 @@ export default function GuessDailyWtaLoader(): GuessDailyWtaProps {
 
   console.log(player);
 
-  return { players: wtaPlayers, playerToGuess: player };
+  return { players: wtaPlayers, playerToGuess: player, isAtp: false };
 }

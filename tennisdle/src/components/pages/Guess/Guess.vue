@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Base } from "../../templates";
 import { Attempt, AttemptHeader } from "../../organisms";
-import { Search } from "../../molecules";
+import { Lives, Search } from "../../molecules";
 import { Player } from "../../../typings/Player";
 import { useDispatch, useSelector } from "../../../redux/helpers";
 import { addAttempt, checkGame } from "../../../redux/slices/daily";
@@ -9,17 +9,19 @@ import { getDateAsKey } from "../../../utils/date";
 import { computed } from "vue";
 
 const { loader } = defineProps<{
-  loader: () => { players: Player[]; playerToGuess: Player };
+  loader: () => { players: Player[]; playerToGuess: Player; isAtp: boolean };
 }>();
-const { players, playerToGuess } = loader();
+const { players, playerToGuess, isAtp } = loader();
 const playerKeys = players.map((p) => p.player);
 
 const store = useSelector((state) => state.dailyAtp);
 const dispatch = useDispatch();
 
-dispatch(checkGame());
+dispatch(checkGame({ isAtp }));
 
-const game = computed(() => store.value.games[getDateAsKey()]);
+const game = computed(
+  () => store.value[isAtp ? "atpGames" : "wtaGames"][getDateAsKey()]
+);
 
 const attempts = computed(() =>
   game.value.attempts
@@ -31,7 +33,9 @@ const attempts = computed(() =>
 );
 
 const attemptPlayer = (playerKey: string) => {
-  dispatch(addAttempt({ attempt: playerKey, toGuess: playerToGuess.player }));
+  dispatch(
+    addAttempt({ attempt: playerKey, toGuess: playerToGuess.player, isAtp })
+  );
 };
 </script>
 
@@ -39,6 +43,7 @@ const attemptPlayer = (playerKey: string) => {
   <div class="guess">
     <Base :current-page-key="'guess'">
       <div class="guess__content">
+        <Lives :lives-remaining="game.lives" />
         <Search
           :all-keys="playerKeys"
           :select-player="attemptPlayer"
@@ -80,6 +85,13 @@ const attemptPlayer = (playerKey: string) => {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    .lives {
+      margin-top: 2rem;
+    }
+    .search {
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
     button {
       margin-top: 2rem;
       padding: 1rem 2rem;

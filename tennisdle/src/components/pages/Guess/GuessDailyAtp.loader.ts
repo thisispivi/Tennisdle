@@ -5,6 +5,7 @@ import { isDatesEqual } from "../../../utils/date";
 type GuessDailyAtpProps = {
   players: Players;
   playerToGuess: Player;
+  isAtp: boolean;
 };
 
 /**
@@ -21,5 +22,5 @@ export default function GuessDailyAtpLoader(): GuessDailyAtpProps {
 
   console.log(player);
 
-  return { players: atpPlayers, playerToGuess: player };
+  return { players: atpPlayers, playerToGuess: player, isAtp: true };
 }

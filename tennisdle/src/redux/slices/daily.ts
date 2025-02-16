@@ -1,35 +1,53 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { DailyGame } from "../../typings/DailyGame";
 import { getDateAsKey } from "../../utils/date";
+import { NUM_LIVES } from "../../utils/params";
 
-export const dailyAtpSlice = createSlice({
-  name: "daily-atp",
+interface CheckGamePayload {
+  isAtp: boolean;
+}
+
+interface AddAttemptPayload {
+  isAtp: boolean;
+  attempt: string;
+  toGuess: string;
+}
+
+const initializeGame = (): DailyGame => ({
+  date: getDateAsKey(),
+  lives: NUM_LIVES,
+  attempts: [],
+  isWon: false,
+});
+
+export const dailySlice = createSlice({
+  name: "daily",
   initialState: {
-    games: {} as Record<string, DailyGame>,
+    atpGames: {} as Record<string, DailyGame>,
+    wtaGames: {} as Record<string, DailyGame>,
   },
   reducers: {
-    checkGame: (state) => {
-      const game = state.games[getDateAsKey()];
+    checkGame: (state, action: PayloadAction<CheckGamePayload>) => {
+      const { isAtp } = action.payload;
+      const gameKey = isAtp ? "atpGames" : "wtaGames";
+      const game = state[gameKey][getDateAsKey()];
       if (!game) {
-        const newGame: DailyGame = {
-          date: getDateAsKey(),
-          lives: 6,
-          attempts: [],
-          isWon: false,
-        };
-        state.games[getDateAsKey()] = newGame;
+        state[gameKey][getDateAsKey()] = initializeGame();
       }
     },
-    addAttempt: (state, action) => {
-      const game = state.games[getDateAsKey()];
-      if (!game) return;
-      if (game.isWon || game.lives === 0) return;
-      const { attempt, toGuess } = action.payload;
+    addAttempt: (state, action: PayloadAction<AddAttemptPayload>) => {
+      const { isAtp, attempt, toGuess } = action.payload;
+      const gameKey = isAtp ? "atpGames" : "wtaGames";
+      const game = state[gameKey][getDateAsKey()];
+      if (!game || game.isWon || game.lives === 0) return;
       game.attempts.unshift(attempt);
-      if (attempt === toGuess) game.isWon = true;
-      else game.lives--;
+      if (attempt === toGuess) {
+        game.isWon = true;
+      } else {
+        game.lives--;
+      }
     },
   },
 });
 
-export const { checkGame, addAttempt } = dailyAtpSlice.actions;
+export const { checkGame, addAttempt } = dailySlice.actions;

@@ -1,14 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { dailyAtpSlice } from "./slices/daily";
 import { persistReducer, persistStore } from "redux-persist";
-import storage from "redux-persist/lib/storage"; // defaults to localStorage for web
+import storage from "redux-persist/lib/storage";
+import { dailySlice } from "./slices/daily";
 
 const persistConfig = {
   key: "root",
   storage,
 };
 
-const persistedReducer = persistReducer(persistConfig, dailyAtpSlice.reducer);
+const persistedReducer = persistReducer(persistConfig, dailySlice.reducer);
 
 export const store = configureStore({
   reducer: {
