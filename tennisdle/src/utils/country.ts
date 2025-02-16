@@ -17,6 +17,7 @@ export const countries = {
   GreatBritain: "GB",
   Greece: "GR",
   Italy: "IT",
+  Japan: "JP",
   Mexico: "MX",
   Netherlands: "NL",
   NewZealand: "NZ",

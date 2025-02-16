@@ -5,8 +5,13 @@
       "welcome": "Benvenuto a Tennisdle, il gioco di trivia sul tennis!",
       "description": "Seleziona una modalità di gioco per iniziare a giocare."
     },
-    "all": {
-      "title": "Tutti i Giocatori"
+    "all-atp": {
+      "title": "Tutti i giocatori ATP",
+      "description": "Visualizza tutti i giocatori ATP disponibili nel gioco con le loro informazioni."
+    },
+    "all-wta": {
+      "title": "Tutte le giocatrici WTA",
+      "description": "Visualizza tutte le giocatrici WTA disponibili nel gioco con le loro informazioni."
     },
     "daily-atp": {
       "title": "Indovina il giocatore ATP giornaliero",
@@ -33,8 +38,8 @@
       "country": "Nazione",
       "yearTurnedPro": "Anno di inizio carriera",
       "yearRetired": "Anno di ritiro",
-      "isRightHanded": "Destrorso",
-      "isTwoHandedBackhand": "Rovescio a due mani",
+      "isRightHanded": "Mano dominante",
+      "isTwoHandedBackhand": "Stile del rovescio",
       "careerTitles": "Titoli in carriera",
       "highestRanking": "Migliore posizione in classifica",
       "noAusOpenTitles": "N. di titoli agli Australian Open",
@@ -42,7 +47,11 @@
       "noWimbledonTitles": "N. di titoli a Wimbledon",
       "noUSOpenTitles": "N. di titoli agli US Open",
       "noTourFinalsTitles": "N. di titoli alle Finals",
-      "noOlympicTitles": "N. di titoli olimpici"
+      "noOlympicTitles": "N. di titoli olimpici",
+      "rightHanded": "Destrorso",
+      "leftHanded": "Mancino",
+      "twoHandedBackhand": "Due mani",
+      "oneHandedBackhand": "Una mano"
     },
     "tooltip": {
       "name": "Nome del giocatore",

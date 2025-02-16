@@ -1,5 +1,7 @@
 import All from "./All/All.vue";
-export { All };
+import AllAtpLoader from "./All/AllAtp.loader";
+import AllWtaLoader from "./All/AllWta.loader";
+export { All, AllAtpLoader, AllWtaLoader };
 
 import Guess from "./Guess/Guess.vue";
 import GuessDailyAtpLoader from "./Guess/GuessDailyAtp.loader";

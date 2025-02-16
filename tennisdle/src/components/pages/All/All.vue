@@ -1,21 +1,18 @@
-<script setup>
+<script setup lang="ts">
 import { Base } from "../../templates";
 import { Wrap } from "../../molecules";
 import { PlayerCard } from "../../molecules";
-import { atpPlayers } from "../../../assets/index";
-import { SelectLanguage } from "../../molecules";
+import { Players } from "../../../typings/Player";
+
+const { players } = defineProps<{ players: Players }>();
 </script>
 
 <template>
   <div class="all">
     <Base>
-      <div class="all__header">
-        <h1>{{ $t("page.all.title") }}</h1>
-        <SelectLanguage />
-      </div>
       <Wrap>
         <PlayerCard
-          v-for="player in atpPlayers"
+          v-for="player in players"
           :key="player.player"
           :player="player"
         />
@@ -24,7 +21,7 @@ import { SelectLanguage } from "../../molecules";
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use "../../../styles/variables.scss" as v;
 .all {
   height: 100%;
@@ -42,6 +39,15 @@ import { SelectLanguage } from "../../molecules";
   }
   .wrap {
     padding-inline: 1.5rem;
+    height: calc(100% - 2rem);
+  }
+}
+
+@media (max-width: 410px) {
+  .all {
+    .wrap {
+      padding-inline: 0;
+    }
   }
 }
 </style>

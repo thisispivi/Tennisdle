@@ -2,14 +2,12 @@
 import { ref } from "vue";
 import { Navbar } from "../../organisms";
 
-const { currentPageKey } = defineProps<{ currentPageKey: string }>();
-
 const containerRef = ref<HTMLElement | null>(null);
 </script>
 
 <template>
   <div class="base">
-    <Navbar :current-page-key="currentPageKey" />
+    <Navbar />
     <div ref="containerRef" class="container">
       <slot />
     </div>

@@ -5,8 +5,13 @@
       "welcome": "Welcome to Tennisdle, the tennis trivia game!",
       "description": "Select a game mode to start playing."
     },
-    "all": {
-      "title": "All Players"
+    "all-atp": {
+      "title": "All ATP Players",
+      "description": "See all ATP players available in the game with their information."
+    },
+    "all-wta": {
+      "title": "All WTA Players",
+      "description": "See all WTA players available in the game with their information."
     },
     "daily-atp": {
       "title": "Guess daily ATP players",
@@ -33,8 +38,8 @@
       "country": "Country",
       "yearTurnedPro": "Year Turned Pro",
       "yearRetired": "Year Retired",
-      "isRightHanded": "Right Handed",
-      "isTwoHandedBackhand": "Two Handed Backhand",
+      "isRightHanded": "Dominant Hand",
+      "isTwoHandedBackhand": "Backend Style",
       "careerTitles": "Career Titles",
       "highestRanking": "Highest Ranking",
       "noAusOpenTitles": "No. of Australian Open Titles",
@@ -42,7 +47,11 @@
       "noWimbledonTitles": "No. of Wimbledon Titles",
       "noUSOpenTitles": "No. of US Open Titles",
       "noTourFinalsTitles": "No. of Tour Finals Titles",
-      "noOlympicTitles": "No. of Olympic Titles"
+      "noOlympicTitles": "No. of Olympic Titles",
+      "rightHanded": "Right",
+      "leftHanded": "Left",
+      "twoHandedBackhand": "Two-handed",
+      "oneHandedBackhand": "One-handed"
     },
     "tooltip": {
       "name": "Player's name",

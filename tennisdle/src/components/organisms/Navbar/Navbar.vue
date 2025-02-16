@@ -13,7 +13,7 @@ const toHome = () => {
 </script>
 
 <template>
-  <div :class="`navbar ${routeName}`">
+  <div :class="`navbar navbar--${routeName}`">
     <div class="navbar__website-logo" @click="toHome">
       <Logo class="logo" />
       <LogoText class="logo-text" />
@@ -95,10 +95,12 @@ const toHome = () => {
     .text-logo {
       display: block !important;
     }
-    &.unlimited-atp,
-    &.daily-atp,
-    &.unlimited-wta,
-    &.daily-wta {
+    &.navbar--unlimited-atp,
+    &.navbar--daily-atp,
+    &.navbar--unlimited-wta,
+    &.navbar--daily-wta,
+    &.navbar--all-wta,
+    &.navbar--all-atp {
       padding-inline: 1rem;
       .navbar__options,
       .navbar__website-logo {
@@ -120,12 +122,14 @@ const toHome = () => {
   }
 }
 
-@media screen and (max-width: 370px) {
+@media screen and (max-width: 385px) {
   .navbar {
-    &.unlimited-atp,
-    &.daily-atp,
-    &.unlimited-wta,
-    &.daily-wta {
+    &.navbar--unlimited-atp,
+    &.navbar--daily-atp,
+    &.navbar--unlimited-wta,
+    &.navbar--daily-wta,
+    &.navbar--all-wta,
+    &.navbar--all-atp {
       padding-inline: 0.5rem;
       .navbar__options {
         width: 3.8rem;
@@ -144,10 +148,12 @@ const toHome = () => {
 
 @media screen and (max-width: 300px) {
   .navbar {
-    &.unlimited-atp,
-    &.daily-atp,
-    &.unlimited-wta,
-    &.daily-wta {
+    &.navbar--unlimited-atp,
+    &.navbar--daily-atp,
+    &.navbar--unlimited-wta,
+    &.navbar--daily-wta,
+    &.navbar--all-wta,
+    &.navbar--all-atp {
       .navbar__page-title {
         padding: 0;
       }

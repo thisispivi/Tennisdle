@@ -1,6 +1,8 @@
 import { createWebHashHistory, createRouter } from "vue-router";
 import {
   All,
+  AllAtpLoader,
+  AllWtaLoader,
   Guess,
   GuessDailyAtpLoader,
   GuessDailyWtaLoader,
@@ -13,7 +15,24 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes: [
     { path: "/", name: "home", component: Home },
-    { path: "/all", name: "all", component: All },
+    {
+      path: "/all",
+      name: "all",
+      children: [
+        {
+          path: "atp",
+          name: "all-atp",
+          component: All,
+          props: { players: AllAtpLoader().players },
+        },
+        {
+          path: "wta",
+          name: "all-wta",
+          component: All,
+          props: { players: AllWtaLoader().players },
+        },
+      ],
+    },
     {
       path: "/unlimited",
       children: [

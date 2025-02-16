@@ -19,7 +19,7 @@ const pages = [
 
 <template>
   <div class="home">
-    <Base :current-page-key="'home'">
+    <Base>
       <div class="title-container">
         <h1 class="welcome">{{ $t("page.home.welcome") }}</h1>
         <p class="description">{{ $t("page.home.description") }}</p>

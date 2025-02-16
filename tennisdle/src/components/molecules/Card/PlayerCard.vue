@@ -1,29 +1,43 @@
 <script lang="ts" setup>
+import { countries } from "../../../utils/country";
 import { Player } from "../../../typings/Player";
-import { calculateAge } from "../../../utils/date";
+import { CountryFlag } from "../../atoms";
+
 const { player } = defineProps<{ player: Player }>();
 
 const data = [
-  { key: "age", value: calculateAge(player.birthDate) },
-  { key: "height", value: player.height + "m" },
-  { key: "yearTurnedPro", value: player.yearTurnedPro },
-  { key: "yearRetired", value: player.yearRetired },
-  { key: "isRightHanded", value: player.isRightHanded },
+  { key: "age", value: player.birthDate },
+  { key: "height", value: player.height ? `${player.height}m` : "-" },
+  { key: "yearTurnedPro", value: player.yearTurnedPro || "-" },
+  { key: "yearRetired", value: player.yearRetired || "-" },
+  {
+    key: "isRightHanded",
+    value: player.isRightHanded !== null ? player.isRightHanded : "-",
+  },
   { key: "isTwoHandedBackhand", value: player.isTwoHandedBackhand },
-  { key: "careerTitles", value: player.careerTitles },
-  { key: "highestRanking", value: player.highestRanking },
-  { key: "noAusOpenTitles", value: player.noAusOpenTitles },
-  { key: "noFrenchOpenTitles", value: player.noFrenchOpenTitles },
-  { key: "noWimbledonTitles", value: player.noWimbledonTitles },
-  { key: "noUSOpenTitles", value: player.noUSOpenTitles },
-  { key: "noTourFinalsTitles", value: player.noTourFinalsTitles },
-  { key: "noOlympicTitles", value: player.noOlympicTitles },
+  {
+    key: "careerTitles",
+    value: player.careerTitles !== null ? player.careerTitles : "-",
+  },
+  { key: "highestRanking", value: player.highestRanking || "-" },
+  { key: "noAusOpenTitles", value: player.noAusOpenTitles || 0 },
+  { key: "noFrenchOpenTitles", value: player.noFrenchOpenTitles || 0 },
+  { key: "noWimbledonTitles", value: player.noWimbledonTitles || 0 },
+  { key: "noUSOpenTitles", value: player.noUSOpenTitles || 0 },
+  { key: "noTourFinalsTitles", value: player.noTourFinalsTitles || 0 },
+  { key: "noOlympicTitles", value: player.noOlympicTitles || 0 },
 ];
 </script>
 
 <template>
   <div class="player-card">
-    <h3>{{ player.player }}</h3>
+    <h3>
+      {{ player.player }}
+      <CountryFlag
+        v-if="player.country"
+        :country-code="countries[player.country as keyof typeof countries]"
+      />
+    </h3>
     <div class="player-card__content">
       <img :src="player.image" alt="avatar" />
       <div class="player-card__content__items">
@@ -33,9 +47,28 @@ const data = [
           class="player-card__content__item"
         >
           <p class="player-card__content__item__label">
-            {{ $t(`player-card.label.${item.key}`) }}
+            {{ $t(`player.label.${item.key}`) }}
           </p>
-          <b>{{ item.value }}</b>
+          <b
+            v-if="
+              item.key !== 'isRightHanded' && item.key !== 'isTwoHandedBackhand'
+            "
+            >{{ item.value }}
+          </b>
+          <b v-if="item.key === 'isRightHanded'">
+            {{
+              item.value
+                ? $t("player.label.rightHanded")
+                : $t("player.label.leftHanded")
+            }}
+          </b>
+          <b v-if="item.key === 'isTwoHandedBackhand'">
+            {{
+              item.value
+                ? $t("player.label.twoHandedBackhand")
+                : $t("player.label.oneHandedBackhand")
+            }}
+          </b>
         </div>
       </div>
     </div>
@@ -45,7 +78,7 @@ const data = [
 <style lang="scss" scoped>
 @use "../../../styles/variables.scss" as v;
 .player-card {
-  height: 25rem;
+  height: 23rem;
   padding: 1rem 1.5rem;
   width: auto;
   background-color: v.$cardBackground;
@@ -55,28 +88,50 @@ const data = [
   h3 {
     margin-top: 0rem;
     color: v.$color900;
+    display: flex;
+    height: 1.5rem;
+    img {
+      height: 1.5rem;
+      width: auto;
+      margin-left: 0.5rem;
+    }
   }
 
   .player-card__content {
     display: flex;
+    gap: 1.5rem 1rem;
     img {
-      height: 19.5rem;
+      height: 17.5rem;
       width: 15rem;
       object-fit: cover;
       object-position: 50% 0;
       border-radius: 0.25rem;
     }
     .player-card__content__item {
-      margin-left: 1.5rem;
       display: flex;
       justify-content: space-between;
-      font-size: 0.9rem;
+      font-size: 1rem;
       p {
         margin: 0;
-        margin-right: 1rem;
+        margin-right: 0.8rem;
       }
       b {
         color: v.$color600;
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .player-card {
+    height: auto;
+    .player-card__content {
+      display: flex;
+      flex-direction: column;
+      img {
+        width: 80dvw;
+        max-width: 18.75rem;
+        height: 20rem;
       }
     }
   }

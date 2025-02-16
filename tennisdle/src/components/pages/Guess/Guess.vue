@@ -53,7 +53,7 @@ const pageWidth = window.innerWidth;
         :particle-count="400"
       />
     </div>
-    <Base :current-page-key="'guess'">
+    <Base>
       <div class="guess__content">
         <Lives :lives-remaining="game.lives" />
         <Search
