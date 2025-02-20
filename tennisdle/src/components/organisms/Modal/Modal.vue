@@ -1,54 +1,95 @@
 <script setup lang="ts">
+import { defineProps, ref, watch } from "vue";
 import { CloseIcon } from "../../../assets";
-import PlayerCard from "../../../components/molecules/Card/PlayerCard.vue";
+import { PlayerCard } from "../../../components/molecules";
 import { Player } from "../../../typings/Player";
 
-const { isWon, isLost, player, isOpen, onClose } = defineProps<{
+const { isOpen, isWon, player, onClose } = defineProps<{
   isWon: boolean;
-  isLost: boolean;
-  player: Player;
   isOpen: boolean;
+  player: Player;
   onClose: () => void;
 }>();
 
-const i18nKey = isWon ? "won" : "lost";
+const i18nKey = ref(isWon ? "won" : "lost");
+
+watch(
+  () => isWon,
+  (newVal) => {
+    i18nKey.value = newVal ? "won" : "lost";
+  }
+);
 </script>
 
 <template>
-  <div v-if="(isWon || isLost) && isOpen" class="modal">
-    <div class="modal__content">
-      <CloseIcon class="modal__content__close" @click="onClose" />
-      <h2 class="modal__content__title">{{ $t(`modal.${i18nKey}.title`) }}</h2>
-      <p class="modal__content__text">
-        {{ $t(`modal.${i18nKey}.description`) }}
-      </p>
-      <div class="modal__content__container">
-        <PlayerCard :player="player" />
-      </div>
+  <transition name="modal-animation">
+    <div v-show="isOpen" class="modal">
+      <transition name="modal-animation-inner">
+        <div v-show="isOpen" class="modal-inner">
+          <CloseIcon class="modal-inner__close" @click="onClose" />
+          <h2 class="modal-inner__title">
+            {{ $t(`modal.${i18nKey}.title`) }}
+          </h2>
+          <p class="modal-inner__text">
+            {{ $t(`modal.${i18nKey}.description`) }}
+          </p>
+          <div class="modal-inner__container">
+            <PlayerCard :player="player" />
+          </div>
+        </div>
+      </transition>
     </div>
-  </div>
+  </transition>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 @use "../../../styles/variables.scss" as v;
 
+.modal-animation-enter-active,
+.modal-animation-leave-active {
+  transition: opacity 0.3s cubic-bezier(0.52, 0.02, 0.19, 1.02);
+}
+
+.modal-animation-enter-from,
+.modal-animation-leave-to {
+  opacity: 0;
+}
+
+.modal-animation-inner-enter-active {
+  transition: all 0.3s cubic-bezier(0.52, 0.02, 0.19, 1.02) 0.15s;
+}
+
+.modal-animation-inner-leave-active {
+  transition: all 0.3s cubic-bezier(0.52, 0.02, 0.19, 1.02);
+}
+
+.modal-animation-inner-enter-from {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.modal-animation-inner-leave-to {
+  transform: scale(0.8);
+}
+
 .modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 1000;
 
-  &__content {
-    max-height: 90%;
+  .modal-inner {
+    position: relative;
     max-width: 90%;
+    max-height: 90%;
     overflow-y: auto;
-    padding: 0rem 1rem;
+    padding: 1rem;
     border-top: 1.5rem solid v.$diffPillBackground;
     border-bottom: 1.5rem solid v.$diffPillBackground;
     border-left: 0.5rem solid v.$diffPillBackground;
@@ -57,7 +98,7 @@ const i18nKey = isWon ? "won" : "lost";
     border-radius: 0.75rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     text-align: center;
-    position: relative;
+    animation: zoomIn 0.3s forwards;
 
     &__close {
       position: absolute;

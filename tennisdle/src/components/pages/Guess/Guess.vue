@@ -42,8 +42,10 @@ const attemptPlayer = (playerKey: string) => {
 const pageHeight = window.innerHeight;
 const pageWidth = window.innerWidth;
 
-const isModalOpen = ref(game.value.isWon || game.value.lives === 0 || false);
+const isModalOpen = ref(true);
 const onClose = () => (isModalOpen.value = false);
+
+const isEndGame = computed(() => game.value.lives === 0 || game.value.isWon);
 </script>
 
 <template>
@@ -57,11 +59,10 @@ const onClose = () => (isModalOpen.value = false);
       />
     </div>
     <Modal
-      v-if="isModalOpen"
-      :is-won="game.isWon || false"
+      :is-won="game.isWon"
       :is-lost="game.lives === 0"
       :player="playerToGuess"
-      :is-open="isModalOpen"
+      :is-open="isModalOpen && (isEndGame || false)"
       :on-close="onClose"
     />
     <Base>
