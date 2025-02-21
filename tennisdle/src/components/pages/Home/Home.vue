@@ -12,8 +12,10 @@ const generatePagesData = (mode: string, category: string) => ({
 const pages = [
   generatePagesData("daily", "atp"),
   generatePagesData("unlimited", "atp"),
+  generatePagesData("all", "atp"),
   generatePagesData("daily", "wta"),
   generatePagesData("unlimited", "wta"),
+  generatePagesData("all", "wta"),
 ];
 </script>
 
@@ -68,7 +70,7 @@ const pages = [
       flex-wrap: wrap;
       overflow-x: hidden;
       width: 100%;
-      max-width: 56rem;
+      max-width: 85rem;
       .page-card {
         .overlay {
           &.unlimited-atp {
