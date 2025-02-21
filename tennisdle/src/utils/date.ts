@@ -42,5 +42,5 @@ export function isDatesEqual(date1: Date, date2: Date): boolean {
  * @returns {string} The date as a key
  */
 export function getDateAsKey(date: Date = new Date()): string {
-  return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+  return `${date.getDate() + 1}-${date.getMonth() + 1}-${date.getFullYear()}`;
 }

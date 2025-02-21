@@ -79,7 +79,7 @@ const data = [
 @use "../../../styles/variables.scss" as v;
 .player-card {
   height: auto;
-  padding: 1rem 1.5rem;
+  padding: 1.5rem;
   width: auto;
   background-color: v.$cardBackground;
   border-radius: 0.5rem;
@@ -99,7 +99,7 @@ const data = [
 
   .player-card__content {
     display: flex;
-    gap: 1.5rem 1rem;
+    gap: 1.5rem;
     img {
       height: 24rem;
       width: 16rem;
@@ -116,6 +116,7 @@ const data = [
       p {
         margin: 0;
         margin-right: 0.8rem;
+        text-align: left;
       }
       b {
         color: v.$color600;

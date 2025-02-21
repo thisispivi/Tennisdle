@@ -4,10 +4,13 @@ import { Attempt, AttemptHeader, Modal } from "../../organisms";
 import { Lives, Search } from "../../molecules";
 import { Player } from "../../../typings/Player";
 import { useDispatch, useSelector } from "../../../redux/helpers";
-import { addAttempt, checkGame } from "../../../redux/slices/daily";
-import { getDateAsKey } from "../../../utils/date";
+import { addAttempt, checkGame } from "../../../redux/slices/daily/slice";
 import { computed, ref } from "vue";
 import ConfettiExplosion from "vue-confetti-explosion";
+import {
+  calculateWinningStreak,
+  retrieveDailyGame,
+} from "../../../redux/slices/daily/utils";
 
 const { loader } = defineProps<{
   loader: () => { players: Player[]; playerToGuess: Player; isAtp: boolean };
@@ -15,14 +18,12 @@ const { loader } = defineProps<{
 const { players, playerToGuess, isAtp } = loader();
 const playerKeys = players.map((p) => p.player);
 
-const store = useSelector((state) => state.dailyAtp);
+const store = useSelector((state) => state.daily);
 const dispatch = useDispatch();
 
 dispatch(checkGame({ isAtp }));
 
-const game = computed(
-  () => store.value[isAtp ? "atpGames" : "wtaGames"][getDateAsKey()]
-);
+const game = computed(() => retrieveDailyGame(store.value, isAtp));
 
 const attempts = computed(() =>
   game.value.attempts
@@ -46,6 +47,9 @@ const isModalOpen = ref(true);
 const onClose = () => (isModalOpen.value = false);
 
 const isEndGame = computed(() => game.value.lives === 0 || game.value.isWon);
+const winningStreak = computed(() =>
+  calculateWinningStreak(store.value, isAtp)
+);
 </script>
 
 <template>
@@ -67,7 +71,16 @@ const isEndGame = computed(() => game.value.lives === 0 || game.value.isWon);
     />
     <Base>
       <div class="guess__content">
-        <Lives :lives-remaining="game.lives" />
+        <div class="guess__info">
+          <div class="guess__streak">
+            <img
+              :src="`/imgs/${winningStreak === 0 ? 'streak-none.png' : 'streak.gif'}`"
+              alt="streak"
+            />
+            <p>{{ winningStreak }}</p>
+          </div>
+          <Lives :lives-remaining="game.lives" />
+        </div>
         <Search
           :all-keys="playerKeys"
           :select-player="attemptPlayer"
@@ -116,8 +129,38 @@ const isEndGame = computed(() => game.value.lives === 0 || game.value.isWon);
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    .lives {
+    .guess__info {
       margin-top: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      .guess__streak {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        position: relative;
+        $size: 3rem;
+        width: $size;
+        height: $size;
+        img {
+          position: absolute;
+          height: $size;
+          width: $size;
+          top: -0.75rem;
+          left: -0.25rem;
+        }
+        p {
+          position: absolute;
+          font-size: 1.5rem;
+          color: black;
+          font-weight: 700;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          justify-content: center;
+          text-align: center;
+        }
+      }
     }
     .search {
       margin-top: 1rem;

@@ -42,7 +42,7 @@ watch(
   </transition>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use "../../../styles/variables.scss" as v;
 
 .modal-animation-enter-active,
@@ -92,8 +92,8 @@ watch(
     padding: 1rem;
     border-top: 1.5rem solid v.$diffPillBackground;
     border-bottom: 1.5rem solid v.$diffPillBackground;
-    border-left: 0.5rem solid v.$diffPillBackground;
-    border-right: 0.5rem solid v.$diffPillBackground;
+    border-left: 1rem solid v.$diffPillBackground;
+    border-right: 1rem solid v.$diffPillBackground;
     background-color: v.$diffPillBackground;
     border-radius: 0.75rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -119,6 +119,29 @@ watch(
     &__text {
       font-size: 1rem;
       margin-bottom: 1.75rem;
+    }
+
+    &__container {
+      .player-card__content {
+        img {
+          max-width: unset;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .modal {
+    .modal-inner {
+      &__container {
+        .player-card__content {
+          img {
+            max-width: unset;
+            width: 100%;
+          }
+        }
+      }
     }
   }
 }

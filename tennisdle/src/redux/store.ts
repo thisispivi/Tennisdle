@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import { dailySlice } from "./slices/daily";
+import { dailySlice } from "./slices/daily/slice";
 
 const persistConfig = {
   key: "root",
@@ -12,7 +12,7 @@ const persistedReducer = persistReducer(persistConfig, dailySlice.reducer);
 
 export const store = configureStore({
   reducer: {
-    dailyAtp: persistedReducer,
+    daily: persistedReducer,
   },
 });
 

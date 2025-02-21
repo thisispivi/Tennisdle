@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { DailyGame } from "../../typings/DailyGame";
-import { getDateAsKey } from "../../utils/date";
-import { NUM_LIVES } from "../../utils/params";
+import { DailyGame } from "../../../typings/DailyGame";
+import { getDateAsKey } from "../../../utils/date";
+import { NUM_LIVES } from "../../../utils/params";
 
 interface CheckGamePayload {
   isAtp: boolean;
