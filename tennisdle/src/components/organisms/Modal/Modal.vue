@@ -91,7 +91,7 @@ watch(
     overflow-y: auto;
     padding: 1rem;
     border-top: 1.5rem solid v.$diffPillBackground;
-    border-bottom: 1.5rem solid v.$diffPillBackground;
+    border-bottom: 1rem solid v.$diffPillBackground;
     border-left: 1rem solid v.$diffPillBackground;
     border-right: 1rem solid v.$diffPillBackground;
     background-color: v.$diffPillBackground;
@@ -111,7 +111,7 @@ watch(
 
     &__title {
       font-size: 1.5rem;
-      margin-top: 0;
+      margin-top: -0.6rem;
       margin-bottom: 0.7rem;
       color: v.$color800;
     }

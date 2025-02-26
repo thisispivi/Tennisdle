@@ -30,13 +30,19 @@ export const calculateWinningStreak = (
   const games = daily[isAtp ? "atpGames" : "wtaGames"];
   const date = new Date();
 
+  const currentGame = games[getDateAsKey(date)];
+  const isCurrentGameWon = currentGame?.isWon;
+  const isCurrentGameLost = currentGame?.lives === 0;
+
   const calculateStreak = (date: Date, streak: number): number => {
+    date.setDate(date.getDate() - 1);
     const dateKey = getDateAsKey(date);
     const game = games[dateKey];
     if (!game || !game.isWon) return streak;
-    date.setDate(date.getDate() - 1);
     return calculateStreak(date, streak + 1);
   };
 
-  return calculateStreak(date, 0);
+  return isCurrentGameLost
+    ? 0
+    : calculateStreak(date, isCurrentGameWon ? 1 : 0);
 };

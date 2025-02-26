@@ -85,5 +85,8 @@
       "title": "Peccato!",
       "description": "Non hai indovinato il giocatore odierno correttamente. Riprova domani!"
     }
+  },
+  "streak": {
+    "tooltip": "Striscia di vittorie"
   }
 }

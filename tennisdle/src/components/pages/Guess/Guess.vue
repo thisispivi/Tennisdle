@@ -2,6 +2,7 @@
 import { Base } from "../../templates";
 import { Attempt, AttemptHeader, Modal } from "../../organisms";
 import { Lives, Search } from "../../molecules";
+import { Streak } from "../../atoms";
 import { Player } from "../../../typings/Player";
 import { useDispatch, useSelector } from "../../../redux/helpers";
 import { addAttempt, checkGame } from "../../../redux/slices/daily/slice";
@@ -72,13 +73,7 @@ const winningStreak = computed(() =>
     <Base>
       <div class="guess__content">
         <div class="guess__info">
-          <div class="guess__streak">
-            <img
-              :src="`/imgs/${winningStreak === 0 ? 'streak-none.png' : 'streak.gif'}`"
-              alt="streak"
-            />
-            <p>{{ winningStreak }}</p>
-          </div>
+          <Streak :winning-streak="winningStreak" />
           <Lives :lives-remaining="game.lives" />
         </div>
         <Search
@@ -134,33 +129,6 @@ const winningStreak = computed(() =>
       display: flex;
       align-items: center;
       gap: 1rem;
-      .guess__streak {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        position: relative;
-        $size: 3rem;
-        width: $size;
-        height: $size;
-        img {
-          position: absolute;
-          height: $size;
-          width: $size;
-          top: -0.75rem;
-          left: -0.25rem;
-        }
-        p {
-          position: absolute;
-          font-size: 1.5rem;
-          color: black;
-          font-weight: 700;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          justify-content: center;
-          text-align: center;
-        }
-      }
     }
     .search {
       margin-top: 1rem;
