@@ -49,7 +49,7 @@ const toHome = () => {
     flex-shrink: 0;
     cursor: pointer;
     .logo-text {
-      height: 1.8rem;
+      width: 100%;
     }
     .logo {
       width: 2.5rem;
