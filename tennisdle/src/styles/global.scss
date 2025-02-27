@@ -56,3 +56,9 @@ body {
   display: flex;
   overflow: hidden;
 }
+
+@media screen and (max-width: 295px) {
+  html {
+    font-size: 12px;
+  }
+}

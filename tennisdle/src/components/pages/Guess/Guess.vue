@@ -17,7 +17,6 @@ const { loader } = defineProps<{
   loader: () => { players: Player[]; playerToGuess: Player; isAtp: boolean };
 }>();
 const { players, playerToGuess, isAtp } = loader();
-const playerKeys = players.map((p) => p.player);
 
 const store = useSelector((state) => state.daily);
 const dispatch = useDispatch();
@@ -77,7 +76,7 @@ const winningStreak = computed(() =>
           <Lives :lives-remaining="game.lives" />
         </div>
         <Search
-          :all-keys="playerKeys"
+          :all-players="players"
           :select-player="attemptPlayer"
           :already-attempted="game.attempts"
         />
