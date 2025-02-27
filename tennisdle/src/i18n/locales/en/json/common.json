@@ -88,5 +88,8 @@
   },
   "streak": {
     "tooltip": "Current win streak"
+  },
+  "search": {
+    "placeholder": "Search player by name"
   }
 }

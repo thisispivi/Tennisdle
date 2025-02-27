@@ -35,8 +35,8 @@ const selectPlayerWClose = (player: string) => {
     <input
       v-model="search"
       type="text"
-      placeholder="Search"
-      aria-label="Search players"
+      :placeholder="$t('search.placeholder')"
+      :aria-label="$t('search.placeholder')"
       @input="onSearch"
     />
     <div
@@ -81,20 +81,21 @@ const selectPlayerWClose = (player: string) => {
     position: absolute;
     z-index: 15;
     font-size: 1.1rem;
-    background-color: v.$cardBackground;
+    background-color: v.$searchBarBackground;
     color: v.$fontColor;
   }
   .results-wrapper {
     position: absolute;
     width: calc(100% - 2rem);
-    background-color: v.$cardBackground;
+    background-color: v.$searchBarResultBackground;
     border-radius: 1.5rem;
     top: 0rem;
     z-index: 10;
     &.results-wrapper--active {
       border-bottom-right-radius: 1rem;
       border-bottom-left-radius: 1rem;
-      border-bottom: 0.75rem solid v.$cardBackground;
+      border-bottom: 0.75rem solid v.$searchBarResultBackground;
+      box-shadow: 0 0.6rem 0.9rem rgba(0, 0, 0, 0.7);
     }
     .box-fill {
       height: 3rem;
@@ -124,6 +125,7 @@ const selectPlayerWClose = (player: string) => {
         }
         p {
           font-size: 1.1rem;
+          font-weight: 400;
         }
         &:last-child {
           border-bottom: none;

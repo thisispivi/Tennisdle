@@ -88,5 +88,8 @@
   },
   "streak": {
     "tooltip": "Striscia di vittorie"
+  },
+  "search": {
+    "placeholder": "Cerca giocatore per nome"
   }
 }
