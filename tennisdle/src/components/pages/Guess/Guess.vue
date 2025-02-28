@@ -80,7 +80,7 @@ const winningStreak = computed(() =>
           :select-player="attemptPlayer"
           :already-attempted="game.attempts"
         />
-        <AttemptHeader />
+        <AttemptHeader :is-atp="isAtp" />
         <div class="attempt__content__items">
           <Attempt
             v-for="a in attempts"

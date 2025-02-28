@@ -2,6 +2,8 @@
 import { Wrap } from "../../molecules";
 import { PlayerKeyIcon } from "../../atoms";
 import { categories } from "../../../typings/Player";
+
+const { isAtp } = defineProps<{ isAtp: boolean }>();
 </script>
 
 <template>
@@ -14,7 +16,7 @@ import { categories } from "../../../typings/Player";
         v-tooltip="$t(`player.tooltip.${key}`)"
         :class="`attempt-header__item ${key}`"
       >
-        <PlayerKeyIcon :player-key="key" />
+        <PlayerKeyIcon :player-key="key" :is-atp="isAtp" />
       </div>
     </Wrap>
   </div>

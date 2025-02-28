@@ -50,6 +50,7 @@ const toHome = () => {
     cursor: pointer;
     .logo-text {
       width: 100%;
+      user-select: none;
     }
     .logo {
       width: 2.5rem;

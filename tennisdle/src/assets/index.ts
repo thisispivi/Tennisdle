@@ -19,6 +19,7 @@ import TriangleIcon from "./icons/Triangle.svg";
 import TurnedProIcon from "./icons/TurnedPro.svg";
 import USOpenIcon from "./icons/USOpen.svg";
 import WimbledonIcon from "./icons/Wimbledon.svg";
+import WTAFinalsIcon from "./icons/WTAFinals.svg";
 export {
   ATPFinalsIcon,
   AustralianOpenIcon,
@@ -37,6 +38,7 @@ export {
   TurnedProIcon,
   USOpenIcon,
   WimbledonIcon,
+  WTAFinalsIcon,
 };
 
 import { calculateAge } from "../utils/date";

@@ -13,9 +13,13 @@ import {
   TurnedProIcon,
   USOpenIcon,
   WimbledonIcon,
+  WTAFinalsIcon,
 } from "../../../assets";
 
-const { playerKey } = defineProps<{ playerKey: keyof Player }>();
+const { playerKey, isAtp } = defineProps<{
+  playerKey: keyof Player;
+  isAtp: boolean;
+}>();
 </script>
 
 <template>
@@ -36,7 +40,11 @@ const { playerKey } = defineProps<{ playerKey: keyof Player }>();
     class="player-key-icon us-open-icon"
   />
   <ATPFinalsIcon
-    v-else-if="playerKey === 'noTourFinalsTitles'"
+    v-else-if="playerKey === 'noTourFinalsTitles' && isAtp"
+    class="player-key-icon"
+  />
+  <WTAFinalsIcon
+    v-else-if="playerKey === 'noTourFinalsTitles' && !isAtp"
     class="player-key-icon"
   />
   <OlympicsIcon
