@@ -1,23 +1,12 @@
-import { Players, Player } from "../../../typings/Player";
-import { atpPlayers } from "../../../assets";
+import { Players } from "../../../typings/Player";
+import { wtaPlayers } from "../../../assets";
 
-type GuessUnlimitedWtaProps = {
-  players: Players;
-  playerToGuess: Player;
-};
+type GuessUnlimitedWtaProps = { players: Players; isAtp: boolean };
 
 /**
  * Loader for GuessUnlimitedWta component
  * @returns {GuessUnlimitedWtaProps} - Players and player to guess
  */
 export default function GuessUnlimitedWtaLoader(): GuessUnlimitedWtaProps {
-  const numPlayers = atpPlayers.length;
-
-  const getRandomPlayer = () => {
-    const randomIndex = Math.floor(Math.random() * numPlayers);
-    console.log(atpPlayers[randomIndex]);
-    return atpPlayers[randomIndex];
-  };
-
-  return { players: atpPlayers, playerToGuess: getRandomPlayer() };
+  return { players: wtaPlayers, isAtp: false };
 }

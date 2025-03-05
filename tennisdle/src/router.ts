@@ -6,6 +6,7 @@ import {
   Guess,
   GuessDailyAtpLoader,
   GuessDailyWtaLoader,
+  GuessUnlimited,
   GuessUnlimitedAtpLoader,
   GuessUnlimitedWtaLoader,
   Home,
@@ -39,13 +40,13 @@ const router = createRouter({
         {
           path: "atp",
           name: "unlimited-atp",
-          component: Guess,
+          component: GuessUnlimited,
           props: { loader: GuessUnlimitedAtpLoader },
         },
         {
           path: "wta",
           name: "unlimited-wta",
-          component: Guess,
+          component: GuessUnlimited,
           props: { loader: GuessUnlimitedWtaLoader },
         },
       ],

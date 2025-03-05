@@ -77,13 +77,26 @@
     "false": "No"
   },
   "modal": {
-    "won": {
-      "title": "Congratulations!",
-      "description": "You guessed today's player correctly!"
+    "daily": {
+      "won": {
+        "title": "Congratulations!",
+        "description": "You guessed today's player correctly!"
+      },
+      "lost": {
+        "title": "Better luck next time!",
+        "description": "You didn't guess today's player correctly. Try again tomorrow!"
+      }
     },
-    "lost": {
-      "title": "Better luck next time!",
-      "description": "You didn't guess today's player correctly. Try again tomorrow!"
+    "unlimited": {
+      "won": {
+        "title": "Congratulations!",
+        "description": "You guessed the player correctly!"
+      },
+      "lost": {
+        "title": "Better luck next time!",
+        "description": "You lost the game. Try again!"
+      },
+      "continue": "Continue"
     }
   },
   "streak": {

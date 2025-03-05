@@ -4,11 +4,14 @@ import { CloseIcon } from "../../../assets";
 import { PlayerCard } from "../../../components/molecules";
 import { Player } from "../../../typings/Player";
 
-const { isOpen, isWon, player, onClose } = defineProps<{
+const { isOpen, isWon, isLost, player, onClose, gameMode } = defineProps<{
+  gameMode: "daily" | "unlimited";
   isWon: boolean;
+  isLost: boolean;
   isOpen: boolean;
   player: Player;
   onClose: () => void;
+  onContinue?: () => void;
 }>();
 
 const i18nKey = ref(isWon ? "won" : "lost");
@@ -28,14 +31,21 @@ watch(
         <div v-show="isOpen" class="modal-inner">
           <CloseIcon class="modal-inner__close" @click="onClose" />
           <h2 class="modal-inner__title">
-            {{ $t(`modal.${i18nKey}.title`) }}
+            {{ $t(`modal.${gameMode}.${i18nKey}.title`) }}
           </h2>
           <p class="modal-inner__text">
-            {{ $t(`modal.${i18nKey}.description`) }}
+            {{ $t(`modal.${gameMode}.${i18nKey}.description`) }}
           </p>
           <div class="modal-inner__container">
             <PlayerCard :player="player" />
           </div>
+          <button
+            v-if="(isWon || isLost) && onContinue && gameMode === 'unlimited'"
+            class="button"
+            @click="onContinue"
+          >
+            <span>{{ $t(`modal.${gameMode}.continue`) }}</span>
+          </button>
         </div>
       </transition>
     </div>
@@ -44,10 +54,11 @@ watch(
 
 <style lang="scss">
 @use "../../../styles/variables.scss" as v;
+@use "../../../styles/mixins.scss" as m;
 
 .modal-animation-enter-active,
 .modal-animation-leave-active {
-  transition: opacity 0.3s cubic-bezier(0.52, 0.02, 0.19, 1.02);
+  @include m.transition(opacity, 0.3s, cubic-bezier(0.52, 0.02, 0.19, 1.02));
 }
 
 .modal-animation-enter-from,
@@ -56,11 +67,11 @@ watch(
 }
 
 .modal-animation-inner-enter-active {
-  transition: all 0.3s cubic-bezier(0.52, 0.02, 0.19, 1.02) 0.15s;
+  @include m.transition(all, 0.3s, cubic-bezier(0.52, 0.02, 0.19, 1.02), 0.15s);
 }
 
 .modal-animation-inner-leave-active {
-  transition: all 0.3s cubic-bezier(0.52, 0.02, 0.19, 1.02);
+  @include m.transition(all, 0.3s, cubic-bezier(0.52, 0.02, 0.19, 1.02));
 }
 
 .modal-animation-inner-enter-from {
@@ -126,6 +137,44 @@ watch(
         img {
           max-width: unset;
         }
+      }
+    }
+
+    button {
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      background-color: #ccc;
+      background-image: linear-gradient(to top, v.$color800, v.$color700);
+      color: v.$background;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      position: relative;
+      @include m.transition(all, 0.2s);
+
+      &:after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0.5rem;
+        background-image: linear-gradient(to top, v.$color900, v.$color800);
+        @include m.transition(all, 0.2s);
+        z-index: 2;
+        opacity: 0;
+      }
+
+      &:hover:after {
+        opacity: 1;
+      }
+
+      span {
+        position: relative;
+        z-index: 3;
       }
     }
   }

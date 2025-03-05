@@ -31,9 +31,7 @@ export const dailySlice = createSlice({
       const { isAtp } = action.payload;
       const gameKey = isAtp ? "atpGames" : "wtaGames";
       const game = state[gameKey][getDateAsKey()];
-      if (!game) {
-        state[gameKey][getDateAsKey()] = initializeGame();
-      }
+      if (!game) state[gameKey][getDateAsKey()] = initializeGame();
     },
     addAttempt: (state, action: PayloadAction<AddAttemptPayload>) => {
       const { isAtp, attempt, toGuess } = action.payload;
@@ -41,11 +39,8 @@ export const dailySlice = createSlice({
       const game = state[gameKey][getDateAsKey()];
       if (!game || game.isWon || game.lives === 0) return;
       game.attempts.unshift(attempt);
-      if (attempt === toGuess) {
-        game.isWon = true;
-      } else {
-        game.lives--;
-      }
+      if (attempt === toGuess) game.isWon = true;
+      else game.lives--;
     },
   },
 });

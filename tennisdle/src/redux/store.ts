@@ -2,17 +2,20 @@ import { configureStore } from "@reduxjs/toolkit";
 import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import { dailySlice } from "./slices/daily/slice";
+import { unlimitedSlice } from "./slices/unlimited/slice";
 
 const persistConfig = {
   key: "root",
   storage,
 };
 
-const persistedReducer = persistReducer(persistConfig, dailySlice.reducer);
+const persistedDaily = persistReducer(persistConfig, dailySlice.reducer);
+const persistedUnlimted = persistReducer(persistConfig, unlimitedSlice.reducer);
 
 export const store = configureStore({
   reducer: {
-    daily: persistedReducer,
+    daily: persistedDaily,
+    unlimited: persistedUnlimted,
   },
 });
 

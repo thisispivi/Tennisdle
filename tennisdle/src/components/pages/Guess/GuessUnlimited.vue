@@ -1,32 +1,52 @@
 <script setup lang="ts">
 import { Base } from "../../templates";
-import { Attempt, AttemptHeader, Modal } from "../../organisms";
+import { Attempt, AttemptHeader } from "../../organisms";
 import { Lives, Search } from "../../molecules";
 import { Streak } from "../../atoms";
 import { Player } from "../../../typings/Player";
 import { useDispatch, useSelector } from "../../../redux/helpers";
-import { addAttempt, checkGame } from "../../../redux/slices/daily/slice";
-import { computed, ref } from "vue";
-import ConfettiExplosion from "vue-confetti-explosion";
 import {
-  calculateWinningStreak,
-  retrieveDailyGame,
-} from "../../../redux/slices/daily/utils";
+  addAttempt,
+  checkGame,
+  continueGame as continueGameReducer,
+  setNextPlayer,
+} from "../../../redux/slices/unlimited/slice";
+import { computed, ref, watch } from "vue";
+import { retrieveUnlimitedGame } from "../../../redux/slices/unlimited/utils";
 import { RootState } from "../../../redux/store";
+import { Modal } from "../../organisms";
+import ConfettiExplosion from "vue-confetti-explosion";
 
 const { loader } = defineProps<{
-  loader: () => { players: Player[]; playerToGuess: Player; isAtp: boolean };
+  loader: () => { players: Player[]; isAtp: boolean };
 }>();
-const { players, playerToGuess, isAtp } = loader();
+const { players, isAtp } = loader();
 
-const store = useSelector((state) => state.daily);
+const store = useSelector((state) => state.unlimited);
 const dispatch = useDispatch();
 
 dispatch(checkGame({ isAtp }));
 
-const game = computed(() =>
-  retrieveDailyGame(store.value as RootState["daily"], isAtp)
+const game = ref(
+  retrieveUnlimitedGame(store.value as RootState["unlimited"], isAtp)
 );
+
+watch(
+  () => store.value,
+  (newValue) => {
+    game.value = retrieveUnlimitedGame(
+      newValue as RootState["unlimited"],
+      isAtp
+    );
+  }
+);
+
+const playerToGuessKey = computed(() => game.value.toGuess);
+const playerToGuess = computed(() => {
+  const player = players.find((p) => p.player === playerToGuessKey.value);
+  if (!player) throw new Error("Player to guess not found");
+  return player;
+});
 
 const attempts = computed(() =>
   game.value.attempts
@@ -37,22 +57,23 @@ const attempts = computed(() =>
     .filter((p) => p !== undefined)
 );
 
-const attemptPlayer = (playerKey: string) => {
-  dispatch(
-    addAttempt({ attempt: playerKey, toGuess: playerToGuess.player, isAtp })
-  );
+const attemptPlayer = (playerKey: string) =>
+  dispatch(addAttempt({ attempt: playerKey, isAtp }));
+
+const isModalOpen = ref(true);
+const onClose = () => (isModalOpen.value = false);
+
+const continueGame = () => {
+  dispatch(continueGameReducer({ isAtp }));
+  setTimeout(() => {
+    dispatch(setNextPlayer({ isAtp }));
+  }, 300);
 };
 
 const pageHeight = window.innerHeight;
 const pageWidth = window.innerWidth;
 
-const isModalOpen = ref(true);
-const onClose = () => (isModalOpen.value = false);
-
-const isEndGame = computed(() => game.value.lives === 0 || game.value.isWon);
-const winningStreak = computed(() =>
-  calculateWinningStreak(store.value as RootState["daily"], isAtp)
-);
+const winningStreak = computed(() => game.value.guessed.length);
 </script>
 
 <template>
@@ -69,9 +90,10 @@ const winningStreak = computed(() =>
       :is-won="game.isWon"
       :is-lost="game.lives === 0"
       :player="playerToGuess"
-      :is-open="isModalOpen && (isEndGame || false)"
+      :is-open="isModalOpen && (game.lives === 0 || game.isWon)"
       :on-close="onClose"
-      :game-mode="'daily'"
+      :on-continue="continueGame"
+      :game-mode="'unlimited'"
     />
     <Base>
       <div class="guess__content">

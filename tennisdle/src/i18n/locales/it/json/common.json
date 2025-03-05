@@ -77,13 +77,26 @@
     "false": "No"
   },
   "modal": {
-    "won": {
-      "title": "Congratulazioni!",
-      "description": "Hai indovinato il giocatore odierno correttamente!"
+    "daily": {
+      "won": {
+        "title": "Congratulazioni!",
+        "description": "Hai indovinato il giocatore odierno correttamente!"
+      },
+      "lost": {
+        "title": "Peccato!",
+        "description": "Non hai indovinato il giocatore odierno correttamente. Riprova domani!"
+      }
     },
-    "lost": {
-      "title": "Peccato!",
-      "description": "Non hai indovinato il giocatore odierno correttamente. Riprova domani!"
+    "unlimited": {
+      "won": {
+        "title": "Congratulazioni!",
+        "description": "Hai indovinato il giocatore correttamente!"
+      },
+      "lost": {
+        "title": "Peccato!",
+        "description": "Hai perso la partita. Riprova!"
+      },
+      "continue": "Continua"
     }
   },
   "streak": {
