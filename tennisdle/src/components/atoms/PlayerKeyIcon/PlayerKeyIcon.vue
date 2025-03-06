@@ -3,10 +3,12 @@ import { Player } from "../../../typings/Player";
 import {
   ATPFinalsIcon,
   AustralianOpenIcon,
+  BackhandIcon,
   BirthdayCakeIcon,
   CountryIcon,
   CupIcon,
   FrenchOpenIcon,
+  HandIcon,
   HeightIcon,
   OlympicsIcon,
   RankingIcon,
@@ -66,8 +68,11 @@ const { playerKey, isAtp } = defineProps<{
     class="player-key-icon"
   />
   <CountryIcon v-else-if="playerKey === 'country'" class="player-key-icon" />
-  <p v-else-if="playerKey === 'isRightHanded'">RH</p>
-  <p v-else-if="playerKey === 'isTwoHandedBackhand'">2HB</p>
+  <HandIcon
+    v-else-if="playerKey === 'isRightHanded'"
+    class="player-key-icon hand-icon"
+  />
+  <BackhandIcon v-else-if="playerKey === 'isTwoHandedBackhand'" />
 </template>
 
 <style scoped lang="scss">

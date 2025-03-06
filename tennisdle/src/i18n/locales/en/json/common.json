@@ -50,8 +50,12 @@
       "noOlympicTitles": "No. of Olympic Titles",
       "rightHanded": "Right",
       "leftHanded": "Left",
+      "rightHandedShort": "R",
+      "leftHandedShort": "L",
       "twoHandedBackhand": "Two-handed",
-      "oneHandedBackhand": "One-handed"
+      "oneHandedBackhand": "One-handed",
+      "oneHandedBackhandShort": "1H",
+      "twoHandedBackhandShort": "2H"
     },
     "tooltip": {
       "name": "Player's name",
@@ -60,8 +64,8 @@
       "country": "Player's country",
       "yearTurnedPro": "The year the player turned pro",
       "yearRetired": "The year the player retired",
-      "isRightHanded": "Whether the player is right handed",
-      "isTwoHandedBackhand": "Whether the player has a two handed backhand",
+      "isRightHanded": "The player's dominant hand (R = Right, L = Left)",
+      "isTwoHandedBackhand": "The player's backhand style (1H = One-handed, 2H = Two-handed)",
       "careerTitles": "The number of career titles the player has won",
       "highestRanking": "The highest ranking the player has achieved",
       "noAusOpenTitles": "The number of Australian Open titles the player has won",

@@ -53,7 +53,7 @@ const pages = [
         text-align: center;
       }
       .welcome {
-        color: v.$color700;
+        color: v.$color800;
         margin-bottom: 1rem;
       }
       .description {

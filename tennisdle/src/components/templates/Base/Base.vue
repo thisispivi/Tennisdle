@@ -25,6 +25,7 @@ const containerRef = ref<HTMLElement | null>(null);
   overflow-x: hidden;
   height: 100%;
   background: v.$background;
+  background: linear-gradient(0deg, #202020 0%, v.$background 100%);
   position: relative;
   .container {
     display: flex;

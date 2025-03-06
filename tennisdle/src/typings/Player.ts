@@ -28,8 +28,6 @@ export const categories: (keyof Player)[] = [
   // "yearRetired",
   // "careerTitles",
   // "highestRanking",
-  // "isRightHanded",
-  // "isTwoHandedBackhand",
   "noAusOpenTitles",
   "noFrenchOpenTitles",
   "noWimbledonTitles",

@@ -71,7 +71,7 @@ const navigateTo = () => {
 
     h2 {
       margin: 0;
-      color: v.$color700;
+      color: v.$color800;
       margin-bottom: 0.7rem;
       font-size: 1.5rem;
     }

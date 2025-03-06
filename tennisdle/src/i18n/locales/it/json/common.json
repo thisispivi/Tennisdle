@@ -50,8 +50,12 @@
       "noOlympicTitles": "N. di titoli olimpici",
       "rightHanded": "Destrorso",
       "leftHanded": "Mancino",
+      "rightHandedShort": "Dx",
+      "leftHandedShort": "Sx",
       "twoHandedBackhand": "Due mani",
-      "oneHandedBackhand": "Una mano"
+      "oneHandedBackhand": "Una mano",
+      "oneHandedBackhandShort": "1M",
+      "twoHandedBackhandShort": "2M"
     },
     "tooltip": {
       "name": "Nome del giocatore",
@@ -60,8 +64,8 @@
       "country": "Nazione del giocatore",
       "yearTurnedPro": "Anno in cui il giocatore è diventato professionista",
       "yearRetired": "Anno in cui il giocatore si è ritirato",
-      "isRightHanded": "Indica se il giocatore è destrorso",
-      "isTwoHandedBackhand": "Indica se il giocatore ha il rovescio a due mani",
+      "isRightHanded": "La mano dominante del giocatore (Dx = Destrorso, Sx = Mancino)",
+      "isTwoHandedBackhand": "Lo stile del rovescio del giocatore (1M = Una mano, 2M = Due mani)",
       "careerTitles": "Numero di titoli vinti in carriera",
       "highestRanking": "Migliore posizione in classifica raggiunta",
       "noAusOpenTitles": "Numero di titoli agli Australian Open",

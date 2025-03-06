@@ -59,8 +59,13 @@ const higherOrLower = computed(() => {
 <template>
   <div :class="`diff-pill diff-pill--${status} ${playerKey}`">
     <b v-if="playerKey === 'height'">{{ Number(compareValue).toFixed(2) }}m</b>
-    <b v-else-if="typeof compareValue === 'boolean'">
-      {{ compareValue ? $t("boolean.true") : $t("boolean.false") }}
+    <b v-else-if="playerKey === 'isRightHanded'">
+      {{ $t(`player.label.${compareValue ? "right" : "left"}HandedShort`) }}
+    </b>
+    <b v-else-if="playerKey === 'isTwoHandedBackhand'">
+      {{
+        $t(`player.label.${compareValue ? "one" : "two"}HandedBackhandShort`)
+      }}
     </b>
     <CountryFlag
       v-else-if="typeof compareValue === 'string' && playerKey === 'country'"
