@@ -96,7 +96,8 @@
         "title": "Better luck next time!",
         "description": "You lost the game. Try again!"
       },
-      "continue": "Continue"
+      "continue": "Continue",
+      "newGame": "New Game"
     }
   },
   "streak": {

@@ -2,10 +2,11 @@
 import { countries } from "../../../utils/country";
 import { Player } from "../../../typings/Player";
 import { CountryFlag } from "../../atoms";
+import { computed } from "vue";
 
 const { player } = defineProps<{ player: Player }>();
 
-const data = [
+const data = computed(() => [
   { key: "age", value: player.birthDate },
   { key: "height", value: player.height ? `${player.height}m` : "-" },
   { key: "yearTurnedPro", value: player.yearTurnedPro || "-" },
@@ -26,7 +27,7 @@ const data = [
   { key: "noUSOpenTitles", value: player.noUSOpenTitles || 0 },
   { key: "noTourFinalsTitles", value: player.noTourFinalsTitles || 0 },
   { key: "noOlympicTitles", value: player.noOlympicTitles || 0 },
-];
+]);
 </script>
 
 <template>
@@ -119,7 +120,7 @@ const data = [
         text-align: left;
       }
       b {
-        color: v.$color600;
+        color: v.$color700;
       }
     }
   }

@@ -44,7 +44,9 @@ watch(
             class="button"
             @click="onContinue"
           >
-            <span>{{ $t(`modal.${gameMode}.continue`) }}</span>
+            <span>{{
+              $t(`modal.${gameMode}.${isWon ? "continue" : "newGame"}`)
+            }}</span>
           </button>
         </div>
       </transition>
@@ -146,7 +148,7 @@ watch(
       border: none;
       border-radius: 0.5rem;
       background-color: #ccc;
-      background-image: linear-gradient(to top, v.$color800, v.$color700);
+      background-image: linear-gradient(to top, v.$color900, v.$color800);
       color: v.$background;
       font-size: 1.1rem;
       font-weight: bold;
@@ -154,22 +156,8 @@ watch(
       position: relative;
       @include m.transition(all, 0.2s);
 
-      &:after {
-        position: absolute;
-        content: "";
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 0.5rem;
-        background-image: linear-gradient(to top, v.$color900, v.$color800);
-        @include m.transition(all, 0.2s);
-        z-index: 2;
-        opacity: 0;
-      }
-
-      &:hover:after {
-        opacity: 1;
+      &:hover {
+        filter: brightness(0.7);
       }
 
       span {

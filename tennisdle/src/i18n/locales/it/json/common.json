@@ -96,7 +96,8 @@
         "title": "Peccato!",
         "description": "Hai perso la partita. Riprova!"
       },
-      "continue": "Continua"
+      "continue": "Continua",
+      "newGame": "Nuova partita"
     }
   },
   "streak": {
