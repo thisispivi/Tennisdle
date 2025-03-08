@@ -32,7 +32,7 @@ Tennisdle is a web app where players must guess the daily ATP or WTA tennis play
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/thisispivi/Tennisdle.git
    ```
 2. Navigate to the `tennisdle` folder:
    ```bash
