@@ -54,6 +54,15 @@ const higherOrLower = computed(() => {
       ? GuessDistance.HIGHER
       : GuessDistance.LOWER;
 });
+
+const hasNotTriangularIcon = computed(() => {
+  return (
+    status.value === GuessStatus.EQUAL ||
+    playerKey === "country" ||
+    playerKey === "isRightHanded" ||
+    playerKey === "isTwoHandedBackhand"
+  );
+});
 </script>
 
 <template>
@@ -75,7 +84,7 @@ const higherOrLower = computed(() => {
       {{ compareValue }}
     </b>
     <TriangleIcon
-      v-if="typeof compareValue !== 'boolean' && playerKey !== 'country'"
+      v-if="!hasNotTriangularIcon"
       :class="`triangle-icon triangle-icon--${higherOrLower}`"
     />
   </div>

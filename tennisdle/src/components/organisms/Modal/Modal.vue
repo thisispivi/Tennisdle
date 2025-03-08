@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps, ref, watch } from "vue";
+import { ref, watch } from "vue";
 import { CloseIcon } from "../../../assets";
 import { PlayerCard } from "../../../components/molecules";
 import { Player } from "../../../typings/Player";
