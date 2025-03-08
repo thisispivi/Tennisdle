@@ -1,4 +1,4 @@
-# Tennisdle DB Generator • ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+# Tennisdle DB Generator • ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
 
 The Tennisdle DB Generator is a Python script that scrapes player data from Wikipedia and generates JSON files for ATP and WTA tour players, which can be used for the Tennisdle game. This data includes player information like career titles, rankings, and images. The script also generates a JSON file with a daily schedule of players for the Tennisdle game.
 
