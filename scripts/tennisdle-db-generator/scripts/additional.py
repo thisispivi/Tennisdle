@@ -17,7 +17,11 @@ def add_additional_info_atp(df_atp: pd.DataFrame) -> pd.DataFrame:
     additional_info: dict[str, dict[str, str | int]] = {
         "Boris Becker": {"country": "Germany"},
         "John Newcombe": {"country": "Australia"},
-        "Kei Nishikori": {"country": "Japan"},
+        "Kei Nishikori": {
+            "country": "Japan",
+            "isRightHanded": True,
+            "isTwoHandedBackhand": True,
+        },
         "Janko Tipsarević": {"country": "Serbia"},
         "Goran Ivanišević": {"country": "Croatia"},
         "Sergi Bruguera": {
