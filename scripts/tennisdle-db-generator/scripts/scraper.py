@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
+import time
 from datetime import date as Date
 from typing import List, Dict, Any
 from .utils import clean, remove_useless_text
@@ -284,12 +285,27 @@ def scrape_players(config: List[str], category: str, logging: Any) -> pd.DataFra
         )
 
     df = pd.DataFrame()
-    for player in config:
-        msg = f"Scraping {player}"
+    for i, player in enumerate(config):
+        msg = f"Scraping {player} ({i+1}/{len(config)})"
         if category == "atp":
             logging.atp(msg)
         else:
             logging.wta(msg)
-        page = scraper(player)
-        df = pd.concat([df, page], ignore_index=True)
+
+        try:
+            page = scraper(player)
+            df = pd.concat([df, page], ignore_index=True)
+
+            if i < len(config) - 1:
+                delay_seconds = 2
+                time.sleep(delay_seconds)
+
+        except Exception as e:
+            error_msg = f"Error scraping {player}: {str(e)}"
+            if category == "atp":
+                logging.atp(error_msg)
+            else:
+                logging.wta(error_msg)
+            continue
+
     return df

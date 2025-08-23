@@ -47,7 +47,7 @@ def load_config(category: str) -> list:
     """
     with open(f"players/{category}.json", encoding="utf-8") as f:
         config = json.load(f)
-    return list(set(config))
+    return sorted(list(set(config)))
 
 
 def save_json(data: Any, filename: str) -> None:

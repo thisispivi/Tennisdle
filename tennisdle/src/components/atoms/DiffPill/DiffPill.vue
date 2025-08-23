@@ -73,7 +73,7 @@ const hasNotTriangularIcon = computed(() => {
     </b>
     <b v-else-if="playerKey === 'isTwoHandedBackhand'">
       {{
-        $t(`player.label.${compareValue ? "one" : "two"}HandedBackhandShort`)
+        $t(`player.label.${compareValue ? "two" : "one"}HandedBackhandShort`)
       }}
     </b>
     <CountryFlag
