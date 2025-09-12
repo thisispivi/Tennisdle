@@ -75,7 +75,10 @@ def scrape_players(config: List[str], category: str, logging: Any) -> pd.DataFra
                 str: The HTML content of the Wikipedia page.
             """
             url = BASE_WIKIPEDIA_URL + tennis_player.replace(" ", "_")
-            response = requests.get(url)
+            headers = {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 TennisdleBot/1.0"
+            }
+            response = requests.get(url, headers=headers)
             return response.text
 
         def parse_infobox(page: str) -> BeautifulSoup:

@@ -179,12 +179,12 @@
     "yearRetired": null,
     "isRightHanded": true,
     "isTwoHandedBackhand": true,
-    "careerTitles": 20,
+    "careerTitles": 21,
     "highestRanking": 1,
     "noAusOpenTitles": 2,
     "noFrenchOpenTitles": 0,
     "noWimbledonTitles": 0,
-    "noUSOpenTitles": 1,
+    "noUSOpenTitles": 2,
     "noTourFinalsTitles": 0,
     "noOlympicTitles": 0,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Aryna_Sabalenka_%282024_DC_Open%29_06.jpg/250px-Aryna_Sabalenka_%282024_DC_Open%29_06.jpg"
@@ -290,7 +290,7 @@
     "birthDate": 750729600000,
     "height": 1.78,
     "yearTurnedPro": 2011,
-    "yearRetired": null,
+    "yearRetired": 2025,
     "isRightHanded": true,
     "isTwoHandedBackhand": true,
     "careerTitles": 11,
@@ -879,7 +879,7 @@
     "birthDate": 701136000000,
     "height": 1.86,
     "yearTurnedPro": 2009,
-    "yearRetired": null,
+    "yearRetired": 2024,
     "isRightHanded": true,
     "isTwoHandedBackhand": true,
     "careerTitles": 17,
@@ -1175,7 +1175,7 @@
     "noUSOpenTitles": 4,
     "noTourFinalsTitles": 0,
     "noOlympicTitles": 0,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Martina_Navratilova_%287490733436%29.jpg/250px-Martina_Navratilova_%287490733436%29.jpg"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Martina_Navratilova_Eastbourne_2011.jpg/250px-Martina_Navratilova_Eastbourne_2011.jpg"
   },
   {
     "player": "Mary Pierce",
@@ -1316,7 +1316,7 @@
     "birthDate": 636854400000,
     "height": 1.82,
     "yearTurnedPro": 2006,
-    "yearRetired": null,
+    "yearRetired": 2025,
     "isRightHanded": false,
     "isTwoHandedBackhand": true,
     "careerTitles": 31,
@@ -1441,7 +1441,7 @@
     "noUSOpenTitles": 0,
     "noTourFinalsTitles": 0,
     "noOlympicTitles": 0,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Sofia_Kenin_%282025_DC_Open%29_02_%28cropped%29.jpg/250px-Sofia_Kenin_%282025_DC_Open%29_02_%28cropped%29.jpg"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Sofia_Kenin_%282025_DC_Open%29_05_%28edited_and_cropped%29.jpg/250px-Sofia_Kenin_%282025_DC_Open%29_05_%28edited_and_cropped%29.jpg"
   },
   {
     "player": "Steffi Graf",
