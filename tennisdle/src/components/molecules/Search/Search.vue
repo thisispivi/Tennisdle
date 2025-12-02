@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Fuse from "fuse.js";
 import { Players } from "../../../typings/Player";
-import { computed, ref, defineProps } from "vue";
+import { computed, ref } from "vue";
 
 const { allPlayers, selectPlayer, alreadyAttempted } = defineProps<{
   allPlayers: Players;

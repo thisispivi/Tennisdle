@@ -1,4 +1,3 @@
-import json
 import pandas as pd
 from scripts.filter import filter_players
 from scripts.scraper import scrape_players
