@@ -1,57 +1,53 @@
 <script setup lang="ts">
-import { ref, watch } from "vue";
+import { computed } from "vue";
 import { CloseIcon } from "../../../assets";
 import { PlayerCard } from "../../../components/molecules";
 import { Player } from "../../../typings/Player";
 
-const { isOpen, isWon, isLost, player, onClose, onContinue, gameMode } =
-  withDefaults(
-    defineProps<{
-      gameMode: "daily" | "unlimited";
-      isWon: boolean;
-      isLost: boolean;
-      isOpen: boolean;
-      player: Player;
-      onClose: () => void;
-      onContinue?: () => void;
-    }>(),
-    {
-      onContinue: undefined,
-    }
-  );
-
-const i18nKey = ref(isWon ? "won" : "lost");
-
-watch(
-  () => isWon,
-  (newVal) => {
-    i18nKey.value = newVal ? "won" : "lost";
-  }
+const props = withDefaults(
+  defineProps<{
+    gameMode: "daily" | "unlimited";
+    isWon: boolean;
+    isLost: boolean;
+    isOpen: boolean;
+    player: Player;
+    onClose: () => void;
+    onContinue?: () => void;
+  }>(),
+  { onContinue: undefined }
 );
+
+const i18nKey = computed(() => (props.isWon ? "won" : "lost"));
 </script>
 
 <template>
   <transition name="modal-animation">
-    <div v-show="isOpen" class="modal">
+    <div v-show="props.isOpen" class="modal">
       <transition name="modal-animation-inner">
-        <div v-show="isOpen" class="modal-inner">
-          <CloseIcon class="modal-inner__close" @click="onClose" />
+        <div v-show="props.isOpen" class="modal-inner">
+          <CloseIcon class="modal-inner__close" @click="props.onClose" />
           <h2 class="modal-inner__title">
-            {{ $t(`modal.${gameMode}.${i18nKey}.title`) }}
+            {{ $t(`modal.${props.gameMode}.${i18nKey}.title`) }}
           </h2>
           <p class="modal-inner__text">
-            {{ $t(`modal.${gameMode}.${i18nKey}.description`) }}
+            {{ $t(`modal.${props.gameMode}.${i18nKey}.description`) }}
           </p>
           <div class="modal-inner__container">
-            <PlayerCard :player="player" />
+            <PlayerCard :player="props.player" />
           </div>
           <button
-            v-if="(isWon || isLost) && onContinue && gameMode === 'unlimited'"
+            v-if="
+              (props.isWon || props.isLost) &&
+              props.onContinue &&
+              props.gameMode === 'unlimited'
+            "
             class="button"
-            @click="onContinue"
+            @click="props.onContinue"
           >
             <span>{{
-              $t(`modal.${gameMode}.${isWon ? "continue" : "newGame"}`)
+              $t(
+                `modal.${props.gameMode}.${props.isWon ? "continue" : "newGame"}`
+              )
             }}</span>
           </button>
         </div>
