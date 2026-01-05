@@ -4,14 +4,23 @@ import pluginVue from "eslint-plugin-vue";
 import eslintConfigPrettier from "eslint-config-prettier";
 
 export default tseslint.config(
+  {
+    ignores: ["eslint.config.mjs"],
+  },
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
   ...pluginVue.configs["flat/recommended"],
   {
+    files: ["src/**/*.{ts,tsx,vue}"],
     plugins: {
       "typescript-eslint": tseslint.plugin,
     },
     languageOptions: {
+      globals: {
+        window: "readonly",
+        localStorage: "readonly",
+        setTimeout: "readonly",
+      },
       parserOptions: {
         parser: tseslint.parser,
         project: "./tsconfig.app.json",

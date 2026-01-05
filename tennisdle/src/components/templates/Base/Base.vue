@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
 import { Navbar } from "../../organisms";
-
-const containerRef = ref<HTMLElement | null>(null);
 </script>
 
 <template>

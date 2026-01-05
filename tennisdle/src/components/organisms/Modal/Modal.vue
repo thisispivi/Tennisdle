@@ -4,15 +4,21 @@ import { CloseIcon } from "../../../assets";
 import { PlayerCard } from "../../../components/molecules";
 import { Player } from "../../../typings/Player";
 
-const { isOpen, isWon, isLost, player, onClose, gameMode } = defineProps<{
-  gameMode: "daily" | "unlimited";
-  isWon: boolean;
-  isLost: boolean;
-  isOpen: boolean;
-  player: Player;
-  onClose: () => void;
-  onContinue?: () => void;
-}>();
+const { isOpen, isWon, isLost, player, onClose, onContinue, gameMode } =
+  withDefaults(
+    defineProps<{
+      gameMode: "daily" | "unlimited";
+      isWon: boolean;
+      isLost: boolean;
+      isOpen: boolean;
+      player: Player;
+      onClose: () => void;
+      onContinue?: () => void;
+    }>(),
+    {
+      onContinue: undefined,
+    }
+  );
 
 const i18nKey = ref(isWon ? "won" : "lost");
 
