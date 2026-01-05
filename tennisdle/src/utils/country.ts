@@ -38,6 +38,7 @@ export const countries = {
   Tunisia: "TN",
   Ukraine: "UA",
   UnitedStates: "US",
+  Kazakhstan: "KZ",
 };
 
 const continents: Record<string, string[]> = {
@@ -71,7 +72,7 @@ const continents: Record<string, string[]> = {
   ],
   NorthAmerica: ["CA", "MX", "US"],
   SouthAmerica: ["AR", "BR", "CL", "EC"],
-  Asia: ["CN", "JP"],
+  Asia: ["CN", "JP", "KZ"],
   Oceania: ["AU", "NZ"],
   Africa: ["TN", "ZA"],
 };

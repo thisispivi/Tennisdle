@@ -13,7 +13,10 @@
   border-radius: 2rem;
 }
 
+$scrollbarThumbMinLength: 5rem;
 ::-webkit-scrollbar-thumb {
   background-color: v.$color600;
   border-radius: 0.625rem;
+  min-height: $scrollbarThumbMinLength;
+  min-width: $scrollbarThumbMinLength;
 }

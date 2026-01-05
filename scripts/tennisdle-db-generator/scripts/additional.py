@@ -40,7 +40,7 @@ def add_additional_info_atp(df_atp: pd.DataFrame) -> pd.DataFrame:
             "image": "https://alchetron.com/cdn/brian-gottfried-4f52828a-6040-438b-ad8a-d5f62a23408-resize-750.jpeg",
         },
         "Harold Solomon": {
-            "image": "https://www.asscotennis.it/wp-content/uploads/2010/09/Solomon.jpg"
+            "image": "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcSUfm-PeCXLv4UU5tJub2vx8zYJSdiUMmse_02Du_31-jnDtFRTlNJlm-lBKsA3Q-6T0gAUBbKZWu5VwX8"
         },
         "Željko Franulović": {"country": "Croatia"},
         "Adriano Panatta": {
