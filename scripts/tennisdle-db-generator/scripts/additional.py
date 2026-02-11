@@ -101,6 +101,8 @@ def add_additional_info_wta(df_wta: pd.DataFrame) -> pd.DataFrame:
             "image": "https://www.tennisfantastic.com/wp-content/uploads/2023/11/Virginia-Wade-2.webp",
             "country": "GreatBritain",
         },
+        "Jasmine Paolini": {"country": "Italy"},
+        "Martina Navratilova": {"country": "UnitedStates"},
     }
 
     for player, info in additional_info.items():

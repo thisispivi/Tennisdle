@@ -28,7 +28,7 @@
     "isRightHanded": true,
     "isTwoHandedBackhand": true,
     "careerTitles": 4,
-    "highestRanking": 4,
+    "highestRanking": 3,
     "noAusOpenTitles": 0,
     "noFrenchOpenTitles": 0,
     "noWimbledonTitles": 0,
@@ -198,7 +198,7 @@
     "yearRetired": null,
     "isRightHanded": true,
     "isTwoHandedBackhand": true,
-    "careerTitles": 21,
+    "careerTitles": 22,
     "highestRanking": 1,
     "noAusOpenTitles": 2,
     "noFrenchOpenTitles": 0,
@@ -263,7 +263,7 @@
     "noUSOpenTitles": 0,
     "noTourFinalsTitles": 0,
     "noOlympicTitles": 1,
-    "image": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/b\/b3\/Belinda_Bencic_%282023_US_Open%29_09.jpg\/250px-Belinda_Bencic_%282023_US_Open%29_09.jpg"
+    "image": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/9\/99\/Belinda_Bencic_%282023_DC_Open%29_01a_%28cropped%29.jpg\/250px-Belinda_Bencic_%282023_DC_Open%29_01a_%28cropped%29.jpg"
   },
   {
     "player": "Bianca Andreescu",
@@ -301,7 +301,7 @@
     "noUSOpenTitles": 4,
     "noTourFinalsTitles": 0,
     "noOlympicTitles": 0,
-    "image": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/3\/35\/BJK_headshot_2011_5x7_300dpi.jpg\/250px-BJK_headshot_2011_5x7_300dpi.jpg"
+    "image": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/b\/bd\/Billie_Jean_King_at_the_2026_Sundance_Film_Festival_02_%28crop_2%29.jpg\/250px-Billie_Jean_King_at_the_2026_Sundance_Film_Festival_02_%28crop_2%29.jpg"
   },
   {
     "player": "Caroline Garcia",
@@ -495,16 +495,16 @@
   },
   {
     "player": "Elena Rybakina",
-    "country": "Kazakhstan",
+    "country": "Russia",
     "birthDate": 929577600000,
     "height": 1.84,
     "yearTurnedPro": 2014,
     "yearRetired": null,
     "isRightHanded": true,
     "isTwoHandedBackhand": true,
-    "careerTitles": 11,
+    "careerTitles": 12,
     "highestRanking": 3,
-    "noAusOpenTitles": 0,
+    "noAusOpenTitles": 1,
     "noFrenchOpenTitles": 0,
     "noWimbledonTitles": 1,
     "noUSOpenTitles": 0,
@@ -521,7 +521,7 @@
     "yearRetired": null,
     "isRightHanded": true,
     "isTwoHandedBackhand": true,
-    "careerTitles": 18,
+    "careerTitles": 19,
     "highestRanking": 3,
     "noAusOpenTitles": 0,
     "noFrenchOpenTitles": 0,
@@ -548,7 +548,7 @@
     "noUSOpenTitles": 1,
     "noTourFinalsTitles": 0,
     "noOlympicTitles": 0,
-    "image": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/c\/cb\/Emma_Raducanu_%282025_DC_Open%29_02_%28cropped%29.jpg\/250px-Emma_Raducanu_%282025_DC_Open%29_02_%28cropped%29.jpg"
+    "image": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/7\/7a\/Transylvania_Open_2026_-_Emma_Raducanu_vs_Greet_Minnen_6-0%2C_6-4_-_01.02.2026_%2855076013277%29_%28cropped%29.jpg\/250px-Transylvania_Open_2026_-_Emma_Raducanu_vs_Greet_Minnen_6-0%2C_6-4_-_01.02.2026_%2855076013277%29_%28cropped%29.jpg"
   },
   {
     "player": "Eugenie Bouchard",
@@ -852,7 +852,7 @@
     "noUSOpenTitles": 0,
     "noTourFinalsTitles": 0,
     "noOlympicTitles": 0,
-    "image": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/a\/ac\/Pegula_RG19_%2823%29_%2848199119221%29.jpg\/250px-Pegula_RG19_%2823%29_%2848199119221%29.jpg"
+    "image": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/4\/4b\/Jessica_Pegula_%282025_DC_Open%29_05_%28cropped%29.jpg\/250px-Jessica_Pegula_%282025_DC_Open%29_05_%28cropped%29.jpg"
   },
   {
     "player": "Julie Heldman",
@@ -1327,7 +1327,7 @@
     "noUSOpenTitles": 0,
     "noTourFinalsTitles": 0,
     "noOlympicTitles": 0,
-    "image": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/c\/c8\/Paula_Badosa%27s_backhand_at_Mutua_Madrid_Open_%28cropped%29.jpg\/250px-Paula_Badosa%27s_backhand_at_Mutua_Madrid_Open_%28cropped%29.jpg"
+    "image": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/1\/1d\/Badosa_RG21_%2814%29_%2851376409698%29_%28cropped%29.jpg\/250px-Badosa_RG21_%2814%29_%2851376409698%29_%28cropped%29.jpg"
   },
   {
     "player": "Petra Kvitov\u00e1",
@@ -1422,7 +1422,7 @@
     "noUSOpenTitles": 0,
     "noTourFinalsTitles": 0,
     "noOlympicTitles": 0,
-    "image": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/0\/07\/Main_draw_ceremony_TransylvaniaOpen_2025_%2854320850419%29_%28re-cropped%29.jpg\/250px-Main_draw_ceremony_TransylvaniaOpen_2025_%2854320850419%29_%28re-cropped%29.jpg"
+    "image": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/e\/ed\/Main_draw_ceremony_Transylvania_Open_2026_%2855078287708%29_%28cropped%29.jpg\/250px-Main_draw_ceremony_Transylvania_Open_2026_%2855078287708%29_%28cropped%29.jpg"
   },
   {
     "player": "Sloane Stephens",
@@ -1555,7 +1555,7 @@
     "noUSOpenTitles": 2,
     "noTourFinalsTitles": 0,
     "noOlympicTitles": 1,
-    "image": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/2\/2f\/Williams_V._RG21_%2811%29_%2851376275968%29_%28cropped%29.jpg\/250px-Williams_V._RG21_%2811%29_%2851376275968%29_%28cropped%29.jpg"
+    "image": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/d\/d2\/Venus_Williams_%282025_DC_Open%29_032_%28cropped%29.jpg\/250px-Venus_Williams_%282025_DC_Open%29_032_%28cropped%29.jpg"
   },
   {
     "player": "Vera Zvonareva",
@@ -1563,7 +1563,7 @@
     "birthDate": 463363200000,
     "height": 1.72,
     "yearTurnedPro": 2000,
-    "yearRetired": 2024,
+    "yearRetired": null,
     "isRightHanded": true,
     "isTwoHandedBackhand": true,
     "careerTitles": 12,
@@ -1612,7 +1612,7 @@
     "noUSOpenTitles": 0,
     "noTourFinalsTitles": 0,
     "noOlympicTitles": 0,
-    "image": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/5\/5d\/Virginia_Ruzici_1981_%28cropped%29.jpg\/200px-Virginia_Ruzici_1981_%28cropped%29.jpg"
+    "image": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/5\/5d\/Virginia_Ruzici_1981_%28cropped%29.jpg\/204px-Virginia_Ruzici_1981_%28cropped%29.jpg"
   },
   {
     "player": "Virginia Wade",
