@@ -1,18 +1,19 @@
 <script setup lang="ts">
-import { Base } from "../../templates";
-import { Attempt, AttemptHeader, Modal } from "../../organisms";
-import { Lives, Search } from "../../molecules";
-import { Streak } from "../../atoms";
-import { Player } from "../../../typings/Player";
-import { useDispatch, useSelector } from "../../../redux/helpers";
-import { addAttempt, checkGame } from "../../../redux/slices/daily/slice";
 import { computed, ref } from "vue";
 import ConfettiExplosion from "vue-confetti-explosion";
+
+import { useDispatch, useSelector } from "../../../redux/helpers";
+import { addAttempt, checkGame } from "../../../redux/slices/daily/slice";
 import {
   calculateWinningStreak,
   retrieveDailyGame,
 } from "../../../redux/slices/daily/utils";
 import { RootState } from "../../../redux/store";
+import { Player } from "../../../typings/Player";
+import { Streak } from "../../atoms";
+import { Lives, Search } from "../../molecules";
+import { Attempt, AttemptHeader, Modal } from "../../organisms";
+import { Base } from "../../templates";
 
 const { loader } = defineProps<{
   loader: () => { players: Player[]; playerToGuess: Player; isAtp: boolean };

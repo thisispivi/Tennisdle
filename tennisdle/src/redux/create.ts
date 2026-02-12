@@ -1,5 +1,6 @@
-import { App, reactive } from "vue";
 import { EnhancedStore } from "@reduxjs/toolkit";
+import { App, reactive } from "vue";
+
 import { RootState } from "./store";
 
 export const storeKey = Symbol("Redux-Store");

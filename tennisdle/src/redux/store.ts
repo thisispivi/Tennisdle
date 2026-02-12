@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+
 import { dailySlice } from "./slices/daily/slice";
 import { unlimitedSlice } from "./slices/unlimited/slice";
 

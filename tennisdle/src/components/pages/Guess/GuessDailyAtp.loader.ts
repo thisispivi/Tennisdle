@@ -1,5 +1,5 @@
-import { Players, Player } from "../../../typings/Player";
 import { atpPlayers, schedule } from "../../../assets";
+import { Player,Players } from "../../../typings/Player";
 import { isDatesEqual } from "../../../utils/date";
 
 type GuessDailyAtpProps = {

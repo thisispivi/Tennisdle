@@ -1,5 +1,5 @@
-import { UnlimitedGame } from "../../../typings/UnlimitedGame";
 import { RootState } from "../../../redux/store";
+import { UnlimitedGame } from "../../../typings/UnlimitedGame";
 
 export const retrieveUnlimitedGame = (
   state: RootState["unlimited"],

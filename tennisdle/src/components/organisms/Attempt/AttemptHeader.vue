@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { Wrap } from "../../molecules";
-import { PlayerKeyIcon } from "../../atoms";
-import { categories } from "../../../typings/Player";
 import { ManPlayerIcon, WomanPlayerIcon } from "../../../assets";
+import { categories } from "../../../typings/Player";
+import { PlayerKeyIcon } from "../../atoms";
+import { Wrap } from "../../molecules";
 
 const { isAtp } = defineProps<{ isAtp: boolean }>();
 </script>

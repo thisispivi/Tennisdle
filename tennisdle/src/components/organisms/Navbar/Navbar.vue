@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { SelectLanguage } from "../../molecules";
-import { Logo, LogoText } from "../../../assets";
 import { useRoute, useRouter } from "vue-router";
+
+import { Logo, LogoText } from "../../../assets";
+import { SelectLanguage } from "../../molecules";
 
 const routeName = useRoute().name?.toString() || "";
 const pageName = routeName === "home" ? "" : routeName;

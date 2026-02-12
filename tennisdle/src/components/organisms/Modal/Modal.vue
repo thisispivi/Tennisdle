@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
+
 import { CloseIcon } from "../../../assets";
 import { PlayerCard } from "../../../components/molecules";
 import { Player } from "../../../typings/Player";

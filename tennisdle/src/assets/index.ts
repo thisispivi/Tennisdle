@@ -1,6 +1,6 @@
-import UnitedKingdomIcon from "./flags/UK-rounded.svg";
 import ItalyIcon from "./flags/IT-rounded.svg";
-export { UnitedKingdomIcon, ItalyIcon };
+import UnitedKingdomIcon from "./flags/UK-rounded.svg";
+export { ItalyIcon,UnitedKingdomIcon };
 
 import ATPFinalsIcon from "./icons/ATPFinals.svg";
 import AustralianOpenIcon from "./icons/AustralianOpen.svg";
@@ -49,9 +49,8 @@ export {
   WTAFinalsIcon,
 };
 
-import { calculateAge } from "../utils/date";
 import { Players } from "../typings/Player";
-
+import { calculateAge } from "../utils/date";
 import allAtpPlayersData from "./db/atp_players.json";
 const allAtpPlayers: Players = allAtpPlayersData.map((player) => ({
   ...player,
@@ -76,7 +75,7 @@ const wtaPlayers: Players = wtaPlayersData.map((player) => ({
   birthDate: calculateAge(player.birthDate),
 }));
 
-export { allAtpPlayers, atpPlayers, allWtaPlayers, wtaPlayers };
+export { allAtpPlayers, allWtaPlayers, atpPlayers, wtaPlayers };
 
 import { Schedule } from "../typings/Schedule";
 import scheduleData from "./db/player_schedule.json";

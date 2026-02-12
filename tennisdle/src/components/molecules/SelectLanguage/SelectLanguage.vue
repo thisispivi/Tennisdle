@@ -33,6 +33,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+
 import { ChevronIcon, ItalyIcon, UnitedKingdomIcon } from "../../../assets";
 import i18n from "../../../i18n";
 const show = ref(false);

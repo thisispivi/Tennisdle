@@ -1,6 +1,7 @@
-import { inject, computed } from "vue";
-import { store, RootState } from "./store";
+import { computed,inject } from "vue";
+
 import { storeKey } from "./create";
+import { RootState,store } from "./store";
 
 export const useDispatch = () => store.dispatch;
 

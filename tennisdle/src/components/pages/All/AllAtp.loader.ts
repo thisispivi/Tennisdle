@@ -1,5 +1,5 @@
-import { Players } from "../../../typings/Player";
 import { atpPlayers } from "../../../assets";
+import { Players } from "../../../typings/Player";
 
 type AllAtpProps = { players: Players };
 

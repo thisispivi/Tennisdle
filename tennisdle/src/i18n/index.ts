@@ -1,4 +1,5 @@
 import { createI18n } from "vue-i18n";
+
 import * as en from "./locales/en/index";
 import * as it from "./locales/it/index";
 

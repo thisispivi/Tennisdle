@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Player } from "../../../typings/Player";
 import {
   ATPFinalsIcon,
   AustralianOpenIcon,
@@ -17,6 +16,7 @@ import {
   WimbledonIcon,
   WTAFinalsIcon,
 } from "../../../assets";
+import { Player } from "../../../typings/Player";
 
 const { playerKey, isAtp } = defineProps<{
   playerKey: keyof Player;

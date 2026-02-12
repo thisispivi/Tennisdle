@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { Base } from "../../templates";
+import { Players } from "../../../typings/Player";
 import { Wrap } from "../../molecules";
 import { PlayerCard } from "../../molecules";
-import { Players } from "../../../typings/Player";
+import { Base } from "../../templates";
 
 const { players } = defineProps<{ players: Players }>();
 </script>

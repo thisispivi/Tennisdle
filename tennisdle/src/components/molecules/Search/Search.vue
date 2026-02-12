@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import Fuse from "fuse.js";
-import { Players } from "../../../typings/Player";
-import { computed, nextTick, ref, watch } from "vue";
 import type { ComponentPublicInstance } from "vue";
+import { computed, nextTick, ref, watch } from "vue";
+
+import { Players } from "../../../typings/Player";
 
 const { allPlayers, selectPlayer, alreadyAttempted } = defineProps<{
   allPlayers: Players;

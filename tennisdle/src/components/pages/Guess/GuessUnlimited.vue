@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import { Base } from "../../templates";
-import { Attempt, AttemptHeader } from "../../organisms";
-import { Lives, Search } from "../../molecules";
-import { Streak } from "../../atoms";
-import { Player } from "../../../typings/Player";
+import { computed, ref, watch } from "vue";
+import ConfettiExplosion from "vue-confetti-explosion";
+
 import { useDispatch, useSelector } from "../../../redux/helpers";
 import {
   addAttempt,
@@ -11,11 +9,14 @@ import {
   continueGame as continueGameReducer,
   setNextPlayer,
 } from "../../../redux/slices/unlimited/slice";
-import { computed, ref, watch } from "vue";
 import { retrieveUnlimitedGame } from "../../../redux/slices/unlimited/utils";
 import { RootState } from "../../../redux/store";
+import { Player } from "../../../typings/Player";
+import { Streak } from "../../atoms";
+import { Lives, Search } from "../../molecules";
+import { Attempt, AttemptHeader } from "../../organisms";
 import { Modal } from "../../organisms";
-import ConfettiExplosion from "vue-confetti-explosion";
+import { Base } from "../../templates";
 
 const { loader } = defineProps<{
   loader: () => { players: Player[]; isAtp: boolean };

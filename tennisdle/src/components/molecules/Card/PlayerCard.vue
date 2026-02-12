@@ -1,8 +1,9 @@
 <script lang="ts" setup>
-import { countries } from "../../../utils/country";
-import { Player } from "../../../typings/Player";
-import { CountryFlag } from "../../atoms";
 import { computed } from "vue";
+
+import { Player } from "../../../typings/Player";
+import { countries } from "../../../utils/country";
+import { CountryFlag } from "../../atoms";
 
 const { player } = defineProps<{ player: Player }>();
 

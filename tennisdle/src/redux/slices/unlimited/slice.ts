@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { UnlimitedGame } from "../../../typings/UnlimitedGame";
+
 import { atpPlayers, wtaPlayers } from "../../../assets";
+import { UnlimitedGame } from "../../../typings/UnlimitedGame";
 
 const getRandomPlayer = (isAtp: boolean, game?: UnlimitedGame) => {
   const players = isAtp ? atpPlayers : wtaPlayers;

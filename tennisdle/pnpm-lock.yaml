@@ -54,6 +54,12 @@ importers:
       eslint-config-prettier:
         specifier: ^10.1.8
         version: 10.1.8(eslint@9.39.2)
+      eslint-plugin-no-unsanitized:
+        specifier: ^4.1.4
+        version: 4.1.4(eslint@9.39.2)
+      eslint-plugin-simple-import-sort:
+        specifier: ^12.1.1
+        version: 12.1.1(eslint@9.39.2)
       eslint-plugin-vue:
         specifier: ^10.7.0
         version: 10.7.0(@typescript-eslint/parser@8.55.0(eslint@9.39.2)(typescript@5.9.3))(eslint@9.39.2)(vue-eslint-parser@10.2.0(eslint@9.39.2))
@@ -1094,6 +1100,16 @@ packages:
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
+
+  eslint-plugin-no-unsanitized@4.1.4:
+    resolution: {integrity: sha512-cjAoZoq3J+5KJuycYYOWrc0/OpZ7pl2Z3ypfFq4GtaAgheg+L7YGxUo2YS3avIvo/dYU5/zR2hXu3v81M9NxhQ==}
+    peerDependencies:
+      eslint: ^8 || ^9
+
+  eslint-plugin-simple-import-sort@12.1.1:
+    resolution: {integrity: sha512-6nuzu4xwQtE3332Uz0to+TxDQYRLTKRESSc2hefVT48Zc8JthmN23Gx9lnYhu0FtkRSL1oxny3kJ2aveVhmOVA==}
+    peerDependencies:
+      eslint: '>=5.0.0'
 
   eslint-plugin-vue@10.7.0:
     resolution: {integrity: sha512-r2XFCK4qlo1sxEoAMIoTTX0PZAdla0JJDt1fmYiworZUX67WeEGqm+JbyAg3M+pGiJ5U6Mp5WQbontXWtIW7TA==}
@@ -2836,6 +2852,14 @@ snapshots:
   escape-string-regexp@4.0.0: {}
 
   eslint-config-prettier@10.1.8(eslint@9.39.2):
+    dependencies:
+      eslint: 9.39.2
+
+  eslint-plugin-no-unsanitized@4.1.4(eslint@9.39.2):
+    dependencies:
+      eslint: 9.39.2
+
+  eslint-plugin-simple-import-sort@12.1.1(eslint@9.39.2):
     dependencies:
       eslint: 9.39.2
 
