@@ -3,7 +3,20 @@
     "home": {
       "title": "Home",
       "welcome": "Benvenuto a Tennisdle, il gioco di trivia sul tennis!",
-      "description": "Seleziona una modalità di gioco per iniziare a giocare."
+      "description": "Seleziona una modalità di gioco per iniziare a giocare.",
+      "badge": "Sfida giornaliera ispirata al tennis",
+      "mode": "Modalità",
+      "classic": "Classico",
+      "challenges": "Sfide",
+      "browse": "Esplora",
+      "classicDescription": "Modalità principali per mettere alla prova ogni giorno la tua conoscenza del tennis.",
+      "challengesDescription": "Modalità creative con immagini, venue, classifiche e griglie logiche.",
+      "browseDescription": "Esplora i database completi dei giocatori ATP e WTA.",
+      "quickStats": {
+        "modes": "Modalità",
+        "daily": "Reset giornaliero",
+        "challenge": "Rigiocabilità"
+      }
     },
     "all-atp": {
       "title": "Tutti i giocatori ATP",
@@ -28,6 +41,30 @@
     "unlimited-wta": {
       "title": "Indovina le giocatrici WTA illimitate",
       "description": "Indovina la giocatrice WTA in base alle informazioni fornite"
+    },
+    "image-atp": {
+      "title": "Indovina dall'immagine (ATP)",
+      "description": "Identifica il giocatore ATP dalla foto sfocata"
+    },
+    "image-wta": {
+      "title": "Indovina dall'immagine (WTA)",
+      "description": "Identifica la giocatrice WTA dalla foto sfocata"
+    },
+    "venue": {
+      "title": "Indovina il Luogo",
+      "description": "Identifica il torneo di tennis dalla foto del luogo"
+    },
+    "top10": {
+      "title": "Top 10",
+      "description": "Riesci a nominare tutti i 10 giocatori nella classifica?"
+    },
+    "grid": {
+      "title": "Griglia Tennis",
+      "description": "Riempi la griglia 3x3 con giocatori che corrispondono a entrambe le categorie"
+    },
+    "settings": {
+      "title": "Impostazioni",
+      "description": "Personalizza la tua esperienza di gioco"
     }
   },
   "player": {
@@ -108,6 +145,142 @@
     "tooltip": "Striscia di vittorie"
   },
   "search": {
-    "placeholder": "Cerca giocatore per nome"
+    "placeholder": "Cerca giocatore per nome",
+    "venuePlaceholder": "Cerca torneo per nome",
+    "noResults": "Nessun giocatore trovato"
+  },
+  "surrender": {
+    "button": "Arrenditi",
+    "confirm": {
+      "title": "Arrendersi?",
+      "description": "Sei sicuro di volerti arrendere? La risposta verrà rivelata.",
+      "yes": "Sì, mi arrendo",
+      "no": "Continua a giocare"
+    }
+  },
+  "share": {
+    "button": "Condividi",
+    "copied": "Copiato!"
+  },
+  "stats": {
+    "title": "Statistiche",
+    "gamesPlayed": "Giocate",
+    "winRate": "Vittorie %",
+    "currentStreak": "Striscia attuale",
+    "maxStreak": "Striscia massima",
+    "guessDistribution": "Distribuzione tentativi",
+    "noStats": "Nessuna statistica ancora. Gioca qualche partita prima!",
+    "tabs": {
+      "dailyAtp": "Giornaliero ATP",
+      "dailyWta": "Giornaliero WTA",
+      "unlimitedAtp": "Illimitato ATP",
+      "unlimitedWta": "Illimitato WTA"
+    }
+  },
+  "howToPlay": {
+    "title": "Come giocare",
+    "step1": "Cerca un giocatore di tennis per nome.",
+    "step2": "Ogni tentativo rivela tessere colorate:",
+    "step2Green": "Verde = corrispondenza esatta",
+    "step2Yellow": "Giallo = vicino (entro la soglia o stesso continente)",
+    "step2Gray": "Grigio = sbagliato",
+    "step3": "Le frecce indicano se il valore corretto è più alto o più basso.",
+    "step4": "Hai 6 vite per trovare il giocatore corretto.",
+    "close": "Capito!"
+  },
+  "settings": {
+    "title": "Impostazioni",
+    "language": "Lingua",
+    "english": "Inglese",
+    "italian": "Italiano"
+  },
+  "common": {
+    "close": "Chiudi"
+  },
+  "venue": {
+    "title": "Indovina il Luogo",
+    "hint": "Suggerimento",
+    "searchPlaceholder": "Cerca nome del torneo...",
+    "correct": "Corretto!",
+    "wrong": "Sbagliato! Riprova.",
+    "revealed": "La risposta era:"
+  },
+  "top10": {
+    "title": "Top 10",
+    "selectCategory": "Seleziona una categoria",
+    "guessAll": "Nomina tutti i 10 giocatori!",
+    "found": "trovati",
+    "backToCategories": "Torna alle Categorie",
+    "playAgain": "Gioca Ancora",
+    "categories": {
+      "mostGrandSlamsAtp": "Più titoli Grand Slam (ATP)",
+      "mostGrandSlamsWta": "Più titoli Grand Slam (WTA)",
+      "mostCareerTitlesAtp": "Più titoli in carriera (ATP)",
+      "mostCareerTitlesWta": "Più titoli in carriera (WTA)",
+      "mostWeeksNo1Atp": "Più settimane da N. 1 (ATP)",
+      "mostWeeksNo1Wta": "Più settimane da N. 1 (WTA)",
+      "mostAustralianOpenTitlesAtp": "Più titoli Australian Open (ATP)",
+      "mostFrenchOpenAtp": "Più titoli Roland Garros (ATP)",
+      "mostWimbledonAtp": "Più titoli Wimbledon (ATP)",
+      "mostUSOpenAtp": "Più titoli US Open (ATP)",
+      "mostTourFinalsTitlesAtp": "Più titoli Finals (ATP)",
+      "mostAustralianOpenTitlesWta": "Più titoli Australian Open (WTA)",
+      "mostWimbledonWta": "Più titoli Wimbledon (WTA)",
+      "mostFrenchOpenWta": "Più titoli Roland Garros (WTA)",
+      "mostUSOpenWta": "Più titoli US Open (WTA)",
+      "mostMastersTitlesAtp": "Più titoli Masters 1000 (ATP)",
+      "mostYearEndNo1Atp": "Più volte N. 1 a fine anno (ATP)",
+      "mostYearEndNo1Wta": "Più volte N. 1 a fine anno (WTA)",
+      "mostWtaFinalsTitles": "Più titoli WTA Finals",
+      "longestWinStreakAtp": "Striscia di vittorie più lunga (ATP)",
+      "longestWinStreakWta": "Striscia di vittorie più lunga (WTA)",
+      "mostDoublesGrandSlamsAtp": "Più Grand Slam in doppio (ATP)",
+      "mostDoublesGrandSlamsWta": "Più Grand Slam in doppio (WTA)",
+      "mostAcesAtp": "Più ace in carriera (ATP)",
+      "mostMatchWinsAtp": "Più vittorie in carriera (ATP)",
+      "mostMatchWinsWta": "Più vittorie in carriera (WTA)",
+      "mostOlympicMedals": "Più medaglie olimpiche (Tennis)"
+    }
+  },
+  "grid": {
+    "title": "Griglia Tennis",
+    "score": "Punteggio",
+    "newGame": "Nuova Partita",
+    "selectPlayer": "Seleziona un giocatore",
+    "categories": {
+      "wonAustralianOpen": "Ha vinto Australian Open",
+      "wonFrenchOpen": "Ha vinto Roland Garros",
+      "wonWimbledon": "Ha vinto Wimbledon",
+      "wonUSOpen": "Ha vinto US Open",
+      "leftHanded": "Mancino",
+      "rightHanded": "Destrorso",
+      "european": "Europeo",
+      "american": "Americano",
+      "top5Ranking": "Top 5 in classifica",
+      "number1": "Numero 1 del mondo",
+      "tenPlusTitles": "10+ titoli in carriera",
+      "oneHandedBackhand": "Rovescio a una mano",
+      "wonOlympicGold": "Oro olimpico",
+      "wonTourFinals": "Ha vinto le Finals",
+      "spanish": "Spagnolo",
+      "swiss": "Svizzero",
+      "serbian": "Serbo",
+      "australian": "Australiano",
+      "german": "Tedesco",
+      "french": "Francese",
+      "british": "Britannico",
+      "russian": "Russo",
+      "argentinian": "Argentino",
+      "italian": "Italiano",
+      "czech": "Ceco",
+      "croatian": "Croato",
+      "swedish": "Svedese",
+      "thirtyPlusTitles": "30+ titoli in carriera",
+      "fiftyPlusTitles": "50+ titoli in carriera",
+      "activePlayer": "Giocatore attivo",
+      "retiredPlayer": "Giocatore ritirato",
+      "turnedProBefore2000": "Professionista prima del 2000",
+      "turnedProAfter2010": "Professionista dopo il 2010"
+    }
   }
 }

@@ -73,8 +73,17 @@ export const unlimitedSlice = createSlice({
       const game = state[gameKey];
       game.toGuess = getRandomPlayer(isAtp, game);
     },
+    surrender: (state, action) => {
+      const { isAtp } = action.payload;
+      const gameKey = isAtp ? "atpGame" : "wtaGame";
+      const game = state[gameKey];
+      if (!game || game.lives === 0 || game.isWon) return;
+      game.lives = 0;
+      game.guessed = [];
+      game.maxStreak = Math.max(game.maxStreak, game.guessed.length);
+    },
   },
 });
 
-export const { checkGame, addAttempt, continueGame, setNextPlayer } =
+export const { checkGame, addAttempt, continueGame, setNextPlayer, surrender } =
   unlimitedSlice.actions;

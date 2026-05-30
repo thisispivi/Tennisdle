@@ -7,12 +7,14 @@ import { Player } from "../../../typings/Player";
 import { areCountriesInSameContinent, countries } from "../../../utils/country";
 import { CountryFlag } from "..";
 
-const { value, compareValue, diffThreshold, playerKey } = defineProps<{
-  playerKey: keyof Player;
-  value: number | boolean | string | null;
-  compareValue: number | boolean | string | null;
-  diffThreshold: number;
-}>();
+const { value, compareValue, diffThreshold, playerKey, animationDelay } =
+  defineProps<{
+    playerKey: keyof Player;
+    value: number | boolean | string | null;
+    compareValue: number | boolean | string | null;
+    diffThreshold: number;
+    animationDelay?: number;
+  }>();
 
 const status = computed(() => {
   const checkNumber = (value: number, compareValue: number) => {
@@ -67,7 +69,10 @@ const hasNotTriangularIcon = computed(() => {
 </script>
 
 <template>
-  <div :class="`diff-pill diff-pill--${status} ${playerKey}`">
+  <div
+    :class="`diff-pill diff-pill--${status} ${playerKey}`"
+    :style="{ '--delay': `${(animationDelay ?? 0) * 0.07}s` }"
+  >
     <b v-if="playerKey === 'height'">{{ Number(compareValue).toFixed(2) }}m</b>
     <b v-else-if="playerKey === 'isRightHanded'">
       {{ $t(`player.label.${compareValue ? "right" : "left"}HandedShort`) }}
@@ -93,11 +98,13 @@ const hasNotTriangularIcon = computed(() => {
 
 <style scoped lang="scss">
 @use "../../../styles/variables.scss" as v;
+@use "../../../styles/animations.scss";
+
 .diff-pill {
   display: flex;
   padding: 0.5rem 0.75rem;
   height: 4rem;
-  border-radius: 0.5rem;
+  border-radius: v.$radius-md;
   font-size: 1rem;
   font-weight: bold;
   text-align: center;
@@ -105,20 +112,22 @@ const hasNotTriangularIcon = computed(() => {
   justify-content: space-evenly;
   align-items: center;
   width: 4rem;
+  animation: flipIn 0.4s ease-out both;
+  animation-delay: var(--delay, 0s);
 
   &.country {
     padding: 0.5rem;
   }
 
   &.diff-pill--equal {
-    background-color: #43a865;
+    background-color: v.$success;
     color: v.$diffPillBackground;
     .triangle-icon:deep(path) {
       fill: v.$diffPillBackground;
     }
   }
   &.diff-pill--in-threshold {
-    background-color: #b8b105;
+    background-color: v.$warning;
     color: v.$diffPillBackground;
     .triangle-icon:deep(path) {
       fill: v.$diffPillBackground;

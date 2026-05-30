@@ -3,7 +3,11 @@ const { winningStreak } = defineProps<{ winningStreak: number }>();
 </script>
 
 <template>
-  <div v-tooltip="$t(`streak.tooltip`)" class="streak">
+  <div
+    v-tooltip="$t(`streak.tooltip`)"
+    :title="$t('streak.tooltip')"
+    class="streak"
+  >
     <img
       :src="`/imgs/${winningStreak === 0 ? 'streak-none.png' : 'streak.gif'}`"
       alt="streak"

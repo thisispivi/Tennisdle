@@ -1,21 +1,97 @@
-$background: #121212;
-$diffPillBackground: #242526;
-$cardBackground: #1e1e1e;
-$searchBarBackground: #2a2a2a;
-$searchBarResultBackground: #303030;
-$searchBarResultHoverBackground: #3a3a3a;
-$fontColor: #f1f1f1;
+// ──────────────────────────────────────────
+// TENNISDLE DESIGN SYSTEM — Color Palette
+// ──────────────────────────────────────────
 
-$color900: #e5f906;
-$color900o: rgba(229, 249, 6, 0.2);
-$color800: #eefb4d;
-$color700: #f4fd80;
-$color600: #f9feb3;
-$color500: #fcfed9;
-$color400: #fdfef0;
-$color300: #fefef7;
-$color200: #fefefc;
+// Surface layers (clean dark slate — no green tint)
+$background: #0b0d12;
+$surface-0: #0b0d12;
+$surface-1: #12151d;
+$surface-2: #191d28;
+$surface-3: #212636;
+
+// Component surfaces
+$diffPillBackground: $surface-1;
+$cardBackground: #151927;
+$searchBarBackground: $surface-2;
+$searchBarResultBackground: #1c2132;
+$searchBarResultHoverBackground: #272d40;
+
+// Typography
+$fontColor: #e8ecf4;
+$fontMuted: rgba(232, 236, 244, 0.6);
+$fontSubtle: rgba(232, 236, 244, 0.42);
+
+// ── Accent: Primary — Tennis-ball yellow-green ──
+$color900: #c8e64e;
+$color900o: rgba(200, 230, 78, 0.18);
+$color900-glow: rgba(200, 230, 78, 0.35);
+
+// ── Accent: Secondary — Court purple ──
+$color800: #b48aea;
+$color800o: rgba(180, 138, 234, 0.16);
+$color800-glow: rgba(180, 138, 234, 0.3);
+
+// Purple tint ramp (light → white)
+$color700: #c9a8f0;
+$color600: #dac3f5;
+$color500: #e6d7f8;
+$color400: #efe8fb;
+$color300: #f5f1fd;
+$color200: #faf8ff;
 $color100: #ffffff;
-$color800o: rgba(255, 255, 255, 0.2);
 
-$headerHeight: 5rem;
+// ── Accent: Tertiary — Warm gold ──
+$gold: #e8b94a;
+$gold-dim: rgba(232, 185, 74, 0.18);
+
+// ── Theme markers ──
+$wimbledonGreen: #0f5f4a;
+$wimbledonPurple: #5a2a7a;
+$tennisBallYellowGreen: $color900;
+
+// ── Status colors ──
+$success: #34d399;
+$success-dim: rgba(52, 211, 153, 0.16);
+$warning: #fbbf24;
+$warning-dim: rgba(251, 191, 36, 0.16);
+$error: #f87171;
+$error-dim: rgba(248, 113, 113, 0.14);
+
+// ──────────────────────────────────────────
+// Border tokens
+// ──────────────────────────────────────────
+$border-subtle: rgba(255, 255, 255, 0.07);
+$border-medium: rgba(255, 255, 255, 0.13);
+$border-strong: rgba(255, 255, 255, 0.2);
+$border-accent: rgba(200, 230, 78, 0.3);
+
+// ──────────────────────────────────────────
+// Radius tokens
+// ──────────────────────────────────────────
+$radius-sm: 0.375rem;
+$radius-md: 0.75rem;
+$radius-lg: 1rem;
+$radius-xl: 1.25rem;
+$radius-full: 999rem;
+
+// ──────────────────────────────────────────
+// Shadow tokens
+// ──────────────────────────────────────────
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+$shadow-md: 0 4px 12px rgba(0, 0, 0, 0.45), 0 2px 4px rgba(0, 0, 0, 0.3);
+$shadow-lg: 0 8px 28px rgba(0, 0, 0, 0.5), 0 4px 8px rgba(0, 0, 0, 0.3);
+$shadow-glow: 0 0 16px rgba(200, 230, 78, 0.15), 0 0 4px rgba(200, 230, 78, 0.1);
+$shadow-glow-purple: 0 0 16px rgba(180, 138, 234, 0.15), 0 0 4px rgba(180, 138, 234, 0.1);
+
+// ──────────────────────────────────────────
+// Transition tokens
+// ──────────────────────────────────────────
+$transition-fast: 0.15s;
+$transition-normal: 0.25s;
+$transition-slow: 0.4s;
+
+// ──────────────────────────────────────────
+// Layout tokens
+// ──────────────────────────────────────────
+$headerHeight: 4.25rem;
+$content-max-width: 72rem;

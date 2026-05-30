@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
+import re
 import time
 from datetime import date as Date
 from typing import List, Dict, Any
@@ -75,10 +76,7 @@ def scrape_players(config: List[str], category: str, logging: Any) -> pd.DataFra
                 str: The HTML content of the Wikipedia page.
             """
             url = BASE_WIKIPEDIA_URL + tennis_player.replace(" ", "_")
-            headers = {
-                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 TennisdleBot/1.0"
-            }
-            response = requests.get(url, headers=headers)
+            response = session.get(url)
             return response.text
 
         def parse_infobox(page: str) -> BeautifulSoup:
@@ -96,6 +94,14 @@ def scrape_players(config: List[str], category: str, logging: Any) -> pd.DataFra
             """
             soup = BeautifulSoup(page, "html.parser")
             infobox = soup.find("table", {"class": "infobox"})
+            if not infobox:
+                # Try alternative selectors for Wikipedia's varied class patterns
+                infobox = soup.find("table", {"class": "infobox biography vcard"})
+            if not infobox:
+                infobox = soup.find("table", {"class": "infobox vcard"})
+            if not infobox:
+                # Try regex match for any table with "infobox" in class
+                infobox = soup.find("table", class_=re.compile(r"infobox"))
             if not infobox:
                 raise Exception("No infobox found")
             return infobox
@@ -287,6 +293,11 @@ def scrape_players(config: List[str], category: str, logging: Any) -> pd.DataFra
             index=[0],
         )
 
+    session = requests.Session()
+    session.headers.update({
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 TennisdleBot/1.0"
+    })
+
     df = pd.DataFrame()
     for i, player in enumerate(config):
         msg = f"Scraping {player} ({i+1}/{len(config)})"
@@ -295,20 +306,24 @@ def scrape_players(config: List[str], category: str, logging: Any) -> pd.DataFra
         else:
             logging.wta(msg)
 
-        try:
-            page = scraper(player)
-            df = pd.concat([df, page], ignore_index=True)
+        success = False
+        for attempt in range(3):
+            try:
+                page = scraper(player)
+                df = pd.concat([df, page], ignore_index=True)
+                success = True
+                break
+            except Exception as e:
+                if attempt < 2:
+                    time.sleep(3 * (attempt + 1))
+                else:
+                    error_msg = f"Error scraping {player}: {str(e)}"
+                    if category == "atp":
+                        logging.atp(error_msg)
+                    else:
+                        logging.wta(error_msg)
 
-            if i < len(config) - 1:
-                delay_seconds = 2
-                time.sleep(delay_seconds)
-
-        except Exception as e:
-            error_msg = f"Error scraping {player}: {str(e)}"
-            if category == "atp":
-                logging.atp(error_msg)
-            else:
-                logging.wta(error_msg)
-            continue
+        if i < len(config) - 1:
+            time.sleep(2 if success else 3)
 
     return df

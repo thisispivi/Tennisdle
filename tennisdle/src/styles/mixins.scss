@@ -1,8 +1,99 @@
+@use "./variables.scss" as v;
+
+// ── Transition helper ──
 @mixin transition(
   $property: all,
-  $duration: 0.3s,
-  $timing-function: ease-in-out,
+  $duration: 0.25s,
+  $timing-function: cubic-bezier(0.4, 0, 0.2, 1),
   $delay: 0s
 ) {
   transition: $property $duration $timing-function $delay;
+}
+
+// ── Glass morphism card ──
+@mixin glass-card($blur: 14px, $opacity: 0.55) {
+  background: linear-gradient(
+    168deg,
+    rgba(20, 24, 38, $opacity),
+    rgba(14, 17, 28, $opacity + 0.12)
+  );
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border: 1px solid v.$border-medium;
+}
+
+// ── Stagger entrance for lists ──
+@mixin stagger-entrance($delay-step: 0.05s, $animation: fadeInUp, $duration: 0.35s) {
+  animation: #{$animation} $duration cubic-bezier(0.4, 0, 0.2, 1) both;
+  @for $i from 1 through 20 {
+    &:nth-child(#{$i}) {
+      animation-delay: calc(#{$delay-step} * #{$i});
+    }
+  }
+}
+
+// ── Focus ring ──
+@mixin focus-ring($color: v.$color800) {
+  &:focus-visible {
+    outline: 2px solid $color;
+    outline-offset: 2px;
+  }
+}
+
+// ── Gradient text ──
+@mixin gradient-text($from: v.$color900, $to: v.$color700) {
+  background: linear-gradient(135deg, $from, $to);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// ── Hover glow ──
+@mixin hover-glow($color: v.$color900, $intensity: 0.18) {
+  &:hover {
+    box-shadow: 0 0 20px rgba($color, $intensity), 0 0 6px rgba($color, $intensity * 0.6);
+  }
+}
+
+// ── Interactive card ──
+@mixin interactive-card {
+  @include glass-card;
+  border-radius: v.$radius-lg;
+  @include transition;
+
+  &:hover {
+    border-color: v.$border-strong;
+    transform: translateY(-2px);
+    box-shadow: v.$shadow-md;
+  }
+}
+
+// ── Section container ──
+@mixin section-container {
+  width: 100%;
+  max-width: v.$content-max-width;
+  margin-inline: auto;
+}
+
+// ── Accent border-left ──
+@mixin accent-border($color: v.$color900, $width: 3px) {
+  padding-left: 0.65rem;
+  border-left: $width solid rgba($color, 0.65);
+}
+
+// ── Smooth scrollbar hiding (for overlays) ──
+@mixin scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(200, 230, 78, 0.3) transparent;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(200, 230, 78, 0.3);
+    border-radius: v.$radius-full;
+  }
 }

@@ -3,7 +3,20 @@
     "home": {
       "title": "Home",
       "welcome": "Welcome to Tennisdle, the tennis trivia game!",
-      "description": "Select a game mode to start playing."
+      "description": "Select a game mode to start playing.",
+      "badge": "Tennis-inspired daily challenge",
+      "mode": "Mode",
+      "classic": "Classic",
+      "challenges": "Challenges",
+      "browse": "Browse",
+      "classicDescription": "Core guessing modes to test your tennis knowledge every day.",
+      "challengesDescription": "Creative game modes with images, venues, rankings, and logic grids.",
+      "browseDescription": "Explore the complete ATP and WTA player databases.",
+      "quickStats": {
+        "modes": "Modes",
+        "daily": "Daily reset",
+        "challenge": "Replayability"
+      }
     },
     "all-atp": {
       "title": "All ATP Players",
@@ -28,6 +41,30 @@
     "unlimited-wta": {
       "title": "Guess unlimited WTA players",
       "description": "Guess the WTA player based on the given information"
+    },
+    "image-atp": {
+      "title": "Guess by Image (ATP)",
+      "description": "Identify the ATP player from their blurred photo"
+    },
+    "image-wta": {
+      "title": "Guess by Image (WTA)",
+      "description": "Identify the WTA player from their blurred photo"
+    },
+    "venue": {
+      "title": "Guess the Venue",
+      "description": "Identify the tennis tournament from its venue photo"
+    },
+    "top10": {
+      "title": "Top 10",
+      "description": "Can you name all 10 players in the ranking?"
+    },
+    "grid": {
+      "title": "Tennis Grid",
+      "description": "Fill the 3x3 grid with players matching both categories"
+    },
+    "settings": {
+      "title": "Settings",
+      "description": "Customize your game experience"
     }
   },
   "player": {
@@ -39,7 +76,7 @@
       "yearTurnedPro": "Year Turned Pro",
       "yearRetired": "Year Retired",
       "isRightHanded": "Dominant Hand",
-      "isTwoHandedBackhand": "Backend Style",
+      "isTwoHandedBackhand": "Backhand Style",
       "careerTitles": "Career Titles",
       "highestRanking": "Highest Ranking",
       "noAusOpenTitles": "No. of Australian Open Titles",
@@ -108,6 +145,142 @@
     "tooltip": "Current win streak"
   },
   "search": {
-    "placeholder": "Search player by name"
+    "placeholder": "Search player by name",
+    "venuePlaceholder": "Search tournament by name",
+    "noResults": "No players found"
+  },
+  "surrender": {
+    "button": "Give up",
+    "confirm": {
+      "title": "Surrender?",
+      "description": "Are you sure you want to give up? The answer will be revealed.",
+      "yes": "Yes, give up",
+      "no": "Keep playing"
+    }
+  },
+  "share": {
+    "button": "Share",
+    "copied": "Copied!"
+  },
+  "stats": {
+    "title": "Statistics",
+    "gamesPlayed": "Played",
+    "winRate": "Win %",
+    "currentStreak": "Current Streak",
+    "maxStreak": "Max Streak",
+    "guessDistribution": "Guess Distribution",
+    "noStats": "No statistics yet. Play some games first!",
+    "tabs": {
+      "dailyAtp": "Daily ATP",
+      "dailyWta": "Daily WTA",
+      "unlimitedAtp": "Unlimited ATP",
+      "unlimitedWta": "Unlimited WTA"
+    }
+  },
+  "howToPlay": {
+    "title": "How to Play",
+    "step1": "Search for a tennis player by name.",
+    "step2": "Each guess reveals colored tiles:",
+    "step2Green": "Green = exact match",
+    "step2Yellow": "Yellow = close (within threshold or same continent)",
+    "step2Gray": "Gray = wrong",
+    "step3": "Arrows indicate whether the correct value is higher or lower.",
+    "step4": "You have 6 lives to find the correct player.",
+    "close": "Got it!"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "english": "English",
+    "italian": "Italian"
+  },
+  "common": {
+    "close": "Close"
+  },
+  "venue": {
+    "title": "Guess the Venue",
+    "hint": "Hint",
+    "searchPlaceholder": "Search tournament name...",
+    "correct": "Correct!",
+    "wrong": "Wrong! Try again.",
+    "revealed": "The answer was:"
+  },
+  "top10": {
+    "title": "Top 10",
+    "selectCategory": "Select a category",
+    "guessAll": "Name all 10 players!",
+    "found": "found",
+    "backToCategories": "Back to Categories",
+    "playAgain": "Play Again",
+    "categories": {
+      "mostGrandSlamsAtp": "Most Grand Slam Titles (ATP)",
+      "mostGrandSlamsWta": "Most Grand Slam Titles (WTA)",
+      "mostCareerTitlesAtp": "Most Career Titles (ATP)",
+      "mostCareerTitlesWta": "Most Career Titles (WTA)",
+      "mostWeeksNo1Atp": "Most Weeks at No. 1 (ATP)",
+      "mostWeeksNo1Wta": "Most Weeks at No. 1 (WTA)",
+      "mostAustralianOpenTitlesAtp": "Most Australian Open Titles (ATP)",
+      "mostFrenchOpenAtp": "Most French Open Titles (ATP)",
+      "mostWimbledonAtp": "Most Wimbledon Titles (ATP)",
+      "mostUSOpenAtp": "Most US Open Titles (ATP)",
+      "mostTourFinalsTitlesAtp": "Most Tour Finals Titles (ATP)",
+      "mostAustralianOpenTitlesWta": "Most Australian Open Titles (WTA)",
+      "mostWimbledonWta": "Most Wimbledon Titles (WTA)",
+      "mostFrenchOpenWta": "Most French Open Titles (WTA)",
+      "mostUSOpenWta": "Most US Open Titles (WTA)",
+      "mostMastersTitlesAtp": "Most Masters 1000 Titles (ATP)",
+      "mostYearEndNo1Atp": "Most Year-End No. 1 Finishes (ATP)",
+      "mostYearEndNo1Wta": "Most Year-End No. 1 Finishes (WTA)",
+      "mostWtaFinalsTitles": "Most WTA Finals Titles",
+      "longestWinStreakAtp": "Longest Winning Streak (ATP)",
+      "longestWinStreakWta": "Longest Winning Streak (WTA)",
+      "mostDoublesGrandSlamsAtp": "Most Doubles Grand Slams (ATP)",
+      "mostDoublesGrandSlamsWta": "Most Doubles Grand Slams (WTA)",
+      "mostAcesAtp": "Most Career Aces (ATP)",
+      "mostMatchWinsAtp": "Most Career Match Wins (ATP)",
+      "mostMatchWinsWta": "Most Career Match Wins (WTA)",
+      "mostOlympicMedals": "Most Olympic Medals (Tennis)"
+    }
+  },
+  "grid": {
+    "title": "Tennis Grid",
+    "score": "Score",
+    "newGame": "New Game",
+    "selectPlayer": "Select a player",
+    "categories": {
+      "wonAustralianOpen": "Won Australian Open",
+      "wonFrenchOpen": "Won French Open",
+      "wonWimbledon": "Won Wimbledon",
+      "wonUSOpen": "Won US Open",
+      "leftHanded": "Left-handed",
+      "rightHanded": "Right-handed",
+      "european": "European",
+      "american": "American",
+      "top5Ranking": "Top 5 Ranking",
+      "number1": "World No. 1",
+      "tenPlusTitles": "10+ Career Titles",
+      "oneHandedBackhand": "One-handed Backhand",
+      "wonOlympicGold": "Olympic Gold",
+      "wonTourFinals": "Won Tour Finals",
+      "spanish": "Spanish",
+      "swiss": "Swiss",
+      "serbian": "Serbian",
+      "australian": "Australian",
+      "german": "German",
+      "french": "French",
+      "british": "British",
+      "russian": "Russian",
+      "argentinian": "Argentinian",
+      "italian": "Italian",
+      "czech": "Czech",
+      "croatian": "Croatian",
+      "swedish": "Swedish",
+      "thirtyPlusTitles": "30+ Career Titles",
+      "fiftyPlusTitles": "50+ Career Titles",
+      "activePlayer": "Active Player",
+      "retiredPlayer": "Retired Player",
+      "turnedProBefore2000": "Turned Pro Before 2000",
+      "turnedProAfter2010": "Turned Pro After 2010"
+    }
   }
 }

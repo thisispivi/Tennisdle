@@ -1,5 +1,10 @@
 import Attempt from "./Attempt/Attempt.vue";
 import AttemptHeader from "./Attempt/AttemptHeader.vue";
+import ConfirmDialog from "./ConfirmDialog/ConfirmDialog.vue";
+import GridCell from "./GridCell/GridCell.vue";
+import HowToPlayModal from "./HowToPlayModal/HowToPlayModal.vue";
 import Modal from "./Modal/Modal.vue";
 import Navbar from "./Navbar/Navbar.vue";
-export { Attempt, AttemptHeader, Modal, Navbar };
+import SettingsModal from "./SettingsModal/SettingsModal.vue";
+import StatsModal from "./StatsModal/StatsModal.vue";
+export { Attempt, AttemptHeader, ConfirmDialog, GridCell, HowToPlayModal, Modal, Navbar, SettingsModal, StatsModal };

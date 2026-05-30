@@ -23,10 +23,16 @@ const i18nKey = computed(() => (props.isWon ? "won" : "lost"));
 
 <template>
   <transition name="modal-animation">
-    <div v-show="props.isOpen" class="modal">
+    <div v-show="props.isOpen" class="modal" @click.self="props.onClose">
       <transition name="modal-animation-inner">
         <div v-show="props.isOpen" class="modal-inner">
-          <CloseIcon class="modal-inner__close" @click="props.onClose" />
+          <button
+            class="modal-inner__close"
+            aria-label="Close"
+            @click="props.onClose"
+          >
+            <CloseIcon />
+          </button>
           <h2 class="modal-inner__title">
             {{ $t(`modal.${props.gameMode}.${i18nKey}.title`) }}
           </h2>
@@ -36,21 +42,24 @@ const i18nKey = computed(() => (props.isWon ? "won" : "lost"));
           <div class="modal-inner__container">
             <PlayerCard :player="props.player" />
           </div>
-          <button
-            v-if="
-              (props.isWon || props.isLost) &&
-              props.onContinue &&
-              props.gameMode === 'unlimited'
-            "
-            class="button"
-            @click="props.onContinue"
-          >
-            <span>{{
-              $t(
-                `modal.${props.gameMode}.${props.isWon ? "continue" : "newGame"}`
-              )
-            }}</span>
-          </button>
+          <div class="modal-inner__actions">
+            <slot name="actions" />
+            <button
+              v-if="
+                (props.isWon || props.isLost) &&
+                props.onContinue &&
+                props.gameMode === 'unlimited'
+              "
+              class="button button--primary"
+              @click="props.onContinue"
+            >
+              <span>{{
+                $t(
+                  `modal.${props.gameMode}.${props.isWon ? "continue" : "newGame"}`
+                )
+              }}</span>
+            </button>
+          </div>
         </div>
       </transition>
     </div>
@@ -63,7 +72,7 @@ const i18nKey = computed(() => (props.isWon ? "won" : "lost"));
 
 .modal-animation-enter-active,
 .modal-animation-leave-active {
-  @include m.transition(opacity, 0.3s, cubic-bezier(0.52, 0.02, 0.19, 1.02));
+  @include m.transition(opacity, 0.25s, cubic-bezier(0.4, 0, 0.2, 1));
 }
 
 .modal-animation-enter-from,
@@ -72,20 +81,21 @@ const i18nKey = computed(() => (props.isWon ? "won" : "lost"));
 }
 
 .modal-animation-inner-enter-active {
-  @include m.transition(all, 0.3s, cubic-bezier(0.52, 0.02, 0.19, 1.02), 0.15s);
+  @include m.transition(all, 0.3s, cubic-bezier(0.4, 0, 0.2, 1), 0.1s);
 }
 
 .modal-animation-inner-leave-active {
-  @include m.transition(all, 0.3s, cubic-bezier(0.52, 0.02, 0.19, 1.02));
+  @include m.transition(all, 0.2s, cubic-bezier(0.4, 0, 0.2, 1));
 }
 
 .modal-animation-inner-enter-from {
   opacity: 0;
-  transform: scale(0.8);
+  transform: scale(0.9) translateY(8px);
 }
 
 .modal-animation-inner-leave-to {
-  transform: scale(0.8);
+  opacity: 0;
+  transform: scale(0.95);
 }
 
 .modal {
@@ -97,7 +107,8 @@ const i18nKey = computed(() => (props.isWon ? "won" : "lost"));
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
   z-index: 1000;
 
   .modal-inner {
@@ -105,36 +116,50 @@ const i18nKey = computed(() => (props.isWon ? "won" : "lost"));
     max-width: 90%;
     max-height: 90%;
     overflow-y: auto;
-    padding: 1rem;
-    border-top: 1.5rem solid v.$diffPillBackground;
-    border-bottom: 1rem solid v.$diffPillBackground;
-    border-left: 1rem solid v.$diffPillBackground;
-    border-right: 1rem solid v.$diffPillBackground;
-    background-color: v.$diffPillBackground;
-    border-radius: 0.75rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    @include m.glass-card(18px, 0.65);
+    border-radius: v.$radius-lg;
+    box-shadow: v.$shadow-lg;
     text-align: center;
-    animation: zoomIn 0.3s forwards;
 
     &__close {
       position: absolute;
-      top: 0rem;
-      right: 0.5rem;
-      width: 1.5rem;
-      height: 1.5rem;
+      top: 0.75rem;
+      right: 0.75rem;
+      width: 2rem;
+      height: 2rem;
       cursor: pointer;
+      border: none;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: v.$radius-full;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.4rem;
+      @include m.transition(all, v.$transition-fast);
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: rotate(90deg);
+      }
     }
 
     &__title {
-      font-size: 1.5rem;
-      margin-top: -0.6rem;
-      margin-bottom: 0.7rem;
-      color: v.$color800;
+      font-size: 1.35rem;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: v.$fontColor;
     }
 
     &__text {
-      font-size: 1rem;
-      margin-bottom: 1.75rem;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      color: v.$fontMuted;
     }
 
     &__container {
@@ -145,27 +170,38 @@ const i18nKey = computed(() => (props.isWon ? "won" : "lost"));
       }
     }
 
-    button {
+    &__actions {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
       margin-top: 1.5rem;
-      padding: 0.75rem 1.5rem;
+    }
+
+    .button {
+      padding: 0.7rem 1.5rem;
       border: none;
-      border-radius: 0.5rem;
-      background-color: #ccc;
-      background-image: linear-gradient(to top, v.$color900, v.$color800);
-      color: v.$background;
-      font-size: 1.1rem;
-      font-weight: bold;
+      border-radius: v.$radius-md;
+      font-size: 1rem;
+      font-weight: 600;
       cursor: pointer;
       position: relative;
-      @include m.transition(all, 0.2s);
+      @include m.transition(all, v.$transition-fast);
+      @include m.focus-ring;
 
-      &:hover {
-        filter: brightness(0.7);
-      }
+      &--primary {
+        background: linear-gradient(135deg, v.$color900, v.$color800);
+        color: v.$background;
 
-      span {
-        position: relative;
-        z-index: 3;
+        &:hover {
+          filter: brightness(0.9);
+          transform: translateY(-1px);
+          box-shadow: v.$shadow-md;
+        }
+
+        &:active {
+          transform: translateY(0);
+        }
       }
     }
   }

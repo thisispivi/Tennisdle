@@ -1,11 +1,12 @@
 <script setup lang="ts">
-const { isClicked } = defineProps<{
+const { isClicked, isBreaking } = defineProps<{
   isClicked: boolean;
+  isBreaking?: boolean;
 }>();
 </script>
 
 <template>
-  <label class="container">
+  <label :class="['container', { 'container--breaking': isBreaking }]">
     <input :checked="isClicked" type="checkbox" disabled />
     <div class="checkmark">
       <svg viewBox="0 0 256 256">
@@ -22,11 +23,17 @@ const { isClicked } = defineProps<{
 </template>
 
 <style scoped lang="scss">
+@use "../../../styles/animations.scss";
+
 .container {
   display: block;
   position: relative;
   user-select: none;
   transition: 100ms;
+
+  &--breaking .checkmark {
+    animation: heartBreak 0.5s ease-out forwards !important;
+  }
 
   input {
     position: absolute;
@@ -40,6 +47,7 @@ const { isClicked } = defineProps<{
     }
     &:checked ~ .checkmark {
       animation: like_effect 400ms ease;
+      filter: drop-shadow(0 0 0.4rem rgba(255, 83, 83, 0.4));
     }
   }
 
@@ -57,11 +65,9 @@ const { isClicked } = defineProps<{
   0% {
     transform: scale(0);
   }
-
   50% {
     transform: scale(1.2);
   }
-
   100% {
     transform: scale(1);
   }
@@ -71,11 +77,9 @@ const { isClicked } = defineProps<{
   0% {
     transform: scale(0);
   }
-
   50% {
     transform: scale(1.2);
   }
-
   100% {
     transform: scale(1);
   }

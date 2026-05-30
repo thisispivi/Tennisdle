@@ -1,2 +1,5 @@
 tennisdle/vite.config.d.ts
 tennisdle/vite.config.js
+.claude/settings.local.json
+tennisdle/src/assets/db/grid_puzzles.json
+.claude/launch.json

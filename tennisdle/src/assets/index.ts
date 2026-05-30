@@ -24,6 +24,21 @@ import USOpenIcon from "./icons/USOpen.svg";
 import WimbledonIcon from "./icons/Wimbledon.svg";
 import WomanPlayerIcon from "./icons/WomanPlayer.svg";
 import WTAFinalsIcon from "./icons/WTAFinals.svg";
+import ClockIcon from "./icons/Clock.svg";
+import GridIconIcon from "./icons/GridIcon.svg";
+import HelpIcon from "./icons/Help.svg";
+import ImageModeIcon from "./icons/ImageMode.svg";
+import InfinityIcon from "./icons/Infinity.svg";
+import NavbarGuideIcon from "./icons/NavbarGuide.svg";
+import NavbarSettingsIcon from "./icons/NavbarSettings.svg";
+import NavbarStatsIcon from "./icons/NavbarStats.svg";
+import SearchIcon from "./icons/Search.svg";
+import SettingsIcon from "./icons/Settings.svg";
+import ShareIcon from "./icons/Share.svg";
+import StatsIcon from "./icons/Stats.svg";
+import SurrenderIcon from "./icons/Surrender.svg";
+import Top10Icon from "./icons/Top10.svg";
+import VenueIcon from "./icons/Venue.svg";
 export {
   ATPFinalsIcon,
   AustralianOpenIcon,
@@ -47,6 +62,21 @@ export {
   WimbledonIcon,
   WomanPlayerIcon,
   WTAFinalsIcon,
+  ClockIcon,
+  GridIconIcon,
+  HelpIcon,
+  ImageModeIcon,
+  InfinityIcon,
+  NavbarGuideIcon,
+  NavbarSettingsIcon,
+  NavbarStatsIcon,
+  SearchIcon,
+  SettingsIcon,
+  ShareIcon,
+  StatsIcon,
+  SurrenderIcon,
+  Top10Icon,
+  VenueIcon,
 };
 
 import { Players } from "../typings/Player";

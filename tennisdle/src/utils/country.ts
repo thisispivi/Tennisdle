@@ -77,11 +77,6 @@ const continents: Record<string, string[]> = {
   Africa: ["TN", "ZA"],
 };
 
-/**
- * Returns the continent of a given country.
- * @param {string} country - The country to get the continent of.
- * @returns {string | undefined} The continent of the given country.
- */
 export function getContinent(country: string): string | undefined {
   return Object.keys(continents).find((continent) =>
     continents[continent as keyof typeof continents].includes(
@@ -90,12 +85,6 @@ export function getContinent(country: string): string | undefined {
   );
 }
 
-/**
- * Returns whether two countries are in the same continent.
- * @param {string} country1 - The first country to compare.
- * @param {string} country2 - The second country to compare.
- * @returns {boolean} Whether the two countries are in the same continent.
- */
 export function areCountriesInSameContinent(
   country1: string,
   country2: string

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#1e3a1e"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e5f906"/>
+      <stop offset="100%" stop-color="#b8d406"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect x="340" y="180" width="50" height="100" rx="4" fill="url(#gold)" opacity="0.7"/>
+  <rect x="400" y="200" width="50" height="80" rx="4" fill="url(#gold)" opacity="0.5"/>
+  <rect x="280" y="220" width="50" height="60" rx="4" fill="url(#gold)" opacity="0.35"/>
+  <text x="365" y="170" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#e5f906" opacity="0.9">1</text>
+  <text x="425" y="190" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#e5f906" opacity="0.7">2</text>
+  <text x="305" y="210" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#e5f906" opacity="0.5">3</text>
+  <text x="400" y="360" text-anchor="middle" font-family="system-ui, sans-serif" font-size="28" font-weight="700" fill="#e5f906" opacity="0.8">TOP 10</text>
+  <text x="400" y="395" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="white" opacity="0.5">Name all 10 players</text>
+</svg>

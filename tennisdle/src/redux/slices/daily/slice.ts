@@ -43,7 +43,14 @@ export const dailySlice = createSlice({
       if (attempt === toGuess) game.isWon = true;
       else game.lives--;
     },
+    surrender: (state, action: PayloadAction<CheckGamePayload>) => {
+      const { isAtp } = action.payload;
+      const gameKey = isAtp ? "atpGames" : "wtaGames";
+      const game = state[gameKey][getDateAsKey()];
+      if (!game || game.isWon || game.lives === 0) return;
+      game.lives = 0;
+    },
   },
 });
 
-export const { checkGame, addAttempt } = dailySlice.actions;
+export const { checkGame, addAttempt, surrender } = dailySlice.actions;

@@ -22,12 +22,8 @@ export type Players = Player[];
 
 export const categories: (keyof Player)[] = [
   "height",
-  // "yearTurnedPro",
   "birthDate",
   "country",
-  // "yearRetired",
-  // "careerTitles",
-  // "highestRanking",
   "noAusOpenTitles",
   "noFrenchOpenTitles",
   "noWimbledonTitles",

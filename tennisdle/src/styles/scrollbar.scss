@@ -2,21 +2,33 @@
 @use "./mixins.scss" as m;
 
 ::-webkit-scrollbar {
-  background-color: v.$background;
-  width: 0.5rem;
-  border-radius: 2rem;
-  -webkit-background-clip: text;
-  @include m.transition(all, 0.2s, ease-in-out);
+  background: transparent;
+  width: 6px;
+  height: 6px;
+  border-radius: v.$radius-full;
 }
 
 ::-webkit-scrollbar-track {
-  border-radius: 2rem;
+  background: rgba(18, 21, 29, 0.4);
+  border-radius: v.$radius-full;
 }
 
-$scrollbarThumbMinLength: 5rem;
 ::-webkit-scrollbar-thumb {
-  background-color: v.$color600;
-  border-radius: 0.625rem;
-  min-height: $scrollbarThumbMinLength;
-  min-width: $scrollbarThumbMinLength;
+  background: linear-gradient(
+    180deg,
+    rgba(200, 230, 78, 0.6) 0%,
+    rgba(180, 138, 234, 0.5) 100%
+  );
+  border-radius: v.$radius-full;
+  border: 1px solid rgba(11, 13, 18, 0.5);
+  min-height: 2.5rem;
+  min-width: 2.5rem;
+
+  &:hover {
+    background: linear-gradient(
+      180deg,
+      rgba(200, 230, 78, 0.8) 0%,
+      rgba(180, 138, 234, 0.7) 100%
+    );
+  }
 }

@@ -8,7 +8,11 @@ const { livesRemaining } = defineProps<{
 </script>
 
 <template>
-  <div class="lives">
+  <div
+    class="lives"
+    :title="`${livesRemaining}/${NUM_LIVES} lives remaining`"
+    :aria-label="`${livesRemaining} of ${NUM_LIVES} lives remaining`"
+  >
     <div v-for="i in NUM_LIVES" :key="i">
       <Heart :is-clicked="i <= livesRemaining" />
     </div>
@@ -20,5 +24,6 @@ const { livesRemaining } = defineProps<{
   display: flex;
   justify-content: center;
   gap: 0.5rem;
+  cursor: default;
 }
 </style>

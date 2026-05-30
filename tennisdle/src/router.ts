@@ -1,4 +1,4 @@
-import { createRouter,createWebHashHistory } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 
 import {
   All,
@@ -12,6 +12,15 @@ import {
   GuessUnlimitedWtaLoader,
   Home,
 } from "./components/pages";
+import GuessImageAtpLoader from "./components/pages/GuessImage/GuessImageAtp.loader";
+import GuessImageWtaLoader from "./components/pages/GuessImage/GuessImageWta.loader";
+
+const GuessImage = () =>
+  import("./components/pages/GuessImage/GuessImage.vue");
+const GuessVenue = () =>
+  import("./components/pages/GuessVenue/GuessVenue.vue");
+const Top10 = () => import("./components/pages/Top10/Top10.vue");
+const Grid = () => import("./components/pages/Grid/Grid.vue");
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -68,6 +77,38 @@ const router = createRouter({
           props: { loader: GuessDailyWtaLoader },
         },
       ],
+    },
+    {
+      path: "/image",
+      children: [
+        {
+          path: "atp",
+          name: "image-atp",
+          component: GuessImage,
+          props: { loader: GuessImageAtpLoader },
+        },
+        {
+          path: "wta",
+          name: "image-wta",
+          component: GuessImage,
+          props: { loader: GuessImageWtaLoader },
+        },
+      ],
+    },
+    {
+      path: "/venue",
+      name: "venue",
+      component: GuessVenue,
+    },
+    {
+      path: "/top10",
+      name: "top10",
+      component: Top10,
+    },
+    {
+      path: "/grid",
+      name: "grid",
+      component: Grid,
     },
   ],
 });

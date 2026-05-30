@@ -79,19 +79,29 @@ const data = computed(() => [
 
 <style lang="scss" scoped>
 @use "../../../styles/variables.scss" as v;
+@use "../../../styles/mixins.scss" as m;
 .player-card {
   height: auto;
-  padding: 1.5rem;
-  width: auto;
-  background-color: v.$cardBackground;
-  border-radius: 0.5rem;
-  box-shadow: 0 0.35rem 0.5rem 0.1rem rgba(0, 0, 0, 0.1);
+  width: min(100%, 41rem);
+  padding: 1.2rem;
+  border-radius: v.$radius-lg;
+  border: 1px solid v.$border-medium;
+  background: v.$surface-1;
+  box-shadow: v.$shadow-sm;
+  @include m.transition(all, v.$transition-normal);
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: v.$shadow-md;
+    border-color: v.$border-strong;
+  }
 
   h3 {
-    margin-top: 0rem;
-    color: v.$color800;
+    margin: 0 0 0.9rem;
+    color: v.$fontColor;
     display: flex;
-    height: 1.5rem;
+    align-items: center;
+    min-height: 1.5rem;
     img {
       height: 1.5rem;
       width: auto;
@@ -101,27 +111,38 @@ const data = computed(() => [
 
   .player-card__content {
     display: flex;
-    gap: 1.5rem;
+    gap: 1.1rem;
     img {
-      height: 24rem;
-      width: 16rem;
+      height: 23rem;
+      width: 15.5rem;
       object-fit: cover;
       object-position: 50% 0;
-      border-radius: 0.25rem;
+      border-radius: v.$radius-md;
+      border: 1px solid v.$border-subtle;
+      box-shadow: v.$shadow-sm;
+    }
+    .player-card__content__items {
+      flex: 1;
+      min-width: 0;
     }
     .player-card__content__item {
       display: flex;
       justify-content: space-between;
-      font-size: 1rem;
-      border-bottom: 1px solid #e0e0e023;
-      padding-block: 0.2rem;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      border-bottom: 1px solid v.$border-subtle;
+      padding-block: 0.35rem;
       p {
         margin: 0;
-        margin-right: 0.8rem;
+        margin-right: 0.4rem;
         text-align: left;
+        opacity: 0.86;
+        font-size: 0.9rem;
       }
       b {
         color: v.$color700;
+        text-align: right;
       }
     }
   }
@@ -129,14 +150,15 @@ const data = computed(() => [
 
 @media (max-width: 640px) {
   .player-card {
-    height: auto;
+    width: 100%;
     .player-card__content {
       display: flex;
       flex-direction: column;
       img {
-        width: 80dvw;
+        width: 100%;
         max-width: 18.75rem;
-        height: 20rem;
+        height: 19rem;
+        align-self: center;
       }
     }
   }

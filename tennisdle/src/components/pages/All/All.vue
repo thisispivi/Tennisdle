@@ -22,31 +22,21 @@ const { players } = defineProps<{ players: Players }>();
 </template>
 
 <style lang="scss">
-@use "../../../styles/variables.scss" as v;
 .all {
-  height: 100%;
   width: 100%;
-  .all__header {
-    height: 5rem;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-inline: 2rem;
-    h1 {
-      color: v.$color800;
-    }
-  }
+  min-height: 100%;
+
   .wrap {
-    padding-inline: 1.5rem;
-    height: calc(100% - 2rem);
+    width: 100%;
+    padding: 0.5rem 1rem 1.5rem;
+    gap: 1.35rem;
   }
 }
 
 @media (max-width: 410px) {
   .all {
     .wrap {
-      padding-inline: 0;
+      padding-inline: 0.25rem;
     }
   }
 }

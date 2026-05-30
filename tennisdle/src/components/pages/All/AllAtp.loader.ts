@@ -3,10 +3,6 @@ import { Players } from "../../../typings/Player";
 
 type AllAtpProps = { players: Players };
 
-/**
- * Loader for AllAtp component
- * @returns {AllAtpProps} - All ATP players
- */
 export default function AllAtpLoader(): AllAtpProps {
   return {
     players: atpPlayers.sort(

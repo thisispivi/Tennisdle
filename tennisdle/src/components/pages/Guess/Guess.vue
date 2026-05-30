@@ -3,14 +3,18 @@ import { computed, ref } from "vue";
 import ConfettiExplosion from "vue-confetti-explosion";
 
 import { useDispatch, useSelector } from "../../../redux/helpers";
-import { addAttempt, checkGame } from "../../../redux/slices/daily/slice";
+import {
+  addAttempt,
+  checkGame,
+  surrender as surrenderAction,
+} from "../../../redux/slices/daily/slice";
 import {
   calculateWinningStreak,
   retrieveDailyGame,
 } from "../../../redux/slices/daily/utils";
 import { RootState } from "../../../redux/store";
 import { Player } from "../../../typings/Player";
-import { Streak } from "../../atoms";
+import { ShareButton, Streak, SurrenderButton } from "../../atoms";
 import { Lives, Search } from "../../molecules";
 import { Attempt, AttemptHeader, Modal } from "../../organisms";
 import { Base } from "../../templates";
@@ -44,6 +48,10 @@ const attemptPlayer = (playerKey: string) => {
   );
 };
 
+const onSurrender = () => {
+  dispatch(surrenderAction({ isAtp }));
+};
+
 const pageHeight = window.innerHeight;
 const pageWidth = window.innerWidth;
 
@@ -51,6 +59,7 @@ const isModalOpen = ref(true);
 const onClose = () => (isModalOpen.value = false);
 
 const isEndGame = computed(() => game.value.lives === 0 || game.value.isWon);
+const isGameActive = computed(() => !game.value.isWon && game.value.lives > 0);
 const winningStreak = computed(() =>
   calculateWinningStreak(store.value as RootState["daily"], isAtp)
 );
@@ -73,20 +82,40 @@ const winningStreak = computed(() =>
       :is-open="isModalOpen && (isEndGame || false)"
       :on-close="onClose"
       :game-mode="'daily'"
-    />
+    >
+      <template #actions>
+        <ShareButton
+          v-if="isEndGame"
+          game-mode="daily"
+          :is-atp="isAtp"
+          :attempts="attempts"
+          :player-to-guess="playerToGuess"
+          :lives-remaining="game.lives"
+          :is-won="game.isWon"
+        />
+      </template>
+    </Modal>
     <Base>
       <div class="guess__content">
         <div class="guess__info">
           <Streak :winning-streak="winningStreak" />
           <Lives :lives-remaining="game.lives" />
+          <SurrenderButton v-if="isGameActive" @surrender="onSurrender" />
         </div>
         <Search
+          v-if="isGameActive"
           :all-players="players"
           :select-player="attemptPlayer"
           :already-attempted="game.attempts"
         />
         <AttemptHeader :is-atp="isAtp" />
         <div class="attempt__content__items">
+          <div
+            v-if="attempts.length === 0 && isGameActive"
+            class="attempt__empty-state"
+          >
+            <p>{{ $t("search.placeholder") }} above to start guessing!</p>
+          </div>
           <Attempt
             v-for="attempt in attempts"
             :key="attempt.player"
@@ -101,6 +130,7 @@ const winningStreak = computed(() =>
 
 <style lang="scss" scoped>
 @use "../../../styles/variables.scss" as v;
+
 .guess {
   height: 100%;
   width: 100%;
@@ -111,50 +141,49 @@ const winningStreak = computed(() =>
     transform: translate(-50%, -50%);
     z-index: 100;
   }
-  .guess__header {
-    height: 5rem;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-inline: 2rem;
-    h1 {
-      color: v.$color800;
-    }
-  }
   .guess__content {
-    height: calc(100% - 2rem);
+    height: calc(100% - 1rem);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    width: 100%;
+    max-width: 74rem;
+    padding: 1.4rem 0.8rem 0.8rem;
     .guess__info {
-      margin-top: 2rem;
+      margin-top: 0.5rem;
       display: flex;
       align-items: center;
       gap: 1rem;
+      padding: 0.65rem 0.85rem;
+      border-radius: v.$radius-full;
+      border: 1px solid v.$border-subtle;
+      background: v.$surface-1;
     }
     .search {
-      margin-top: 1rem;
-      margin-bottom: 2rem;
-    }
-    button {
-      margin-top: 2rem;
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 0.5rem;
-      background-color: v.$color800;
-      color: v.$color100;
-      font-size: 1.5rem;
-      cursor: pointer;
-      &:hover {
-        background-color: v.$color800;
-      }
+      margin-top: 1.1rem;
+      margin-bottom: 1.1rem;
     }
     .attempt__content__items {
+      width: 100%;
       overflow-y: auto;
+      padding: 0.5rem;
+      border-radius: v.$radius-lg;
+      border: 1px solid v.$border-subtle;
+      background: v.$surface-1;
       .single-attempt {
         padding: 0.75rem;
+      }
+      .attempt__empty-state {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1rem;
+        p {
+          color: v.$fontSubtle;
+          font-size: 0.88rem;
+          text-align: center;
+        }
       }
     }
   }
