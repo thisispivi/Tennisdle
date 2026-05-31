@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Fuse from "fuse.js";
 import { computed, ref } from "vue";
+import ConfettiExplosion from "vue-confetti-explosion";
 
 import {
   allAtpPlayers,
@@ -14,7 +15,7 @@ import { useDispatch, useSelector } from "../../../redux/helpers";
 import { checkGame, guessCell } from "../../../redux/slices/grid/slice";
 import { RootState } from "../../../redux/store";
 import { GridCategory, GridPuzzle } from "../../../typings/Grid";
-import { getDailyIndex,getDateAsKey } from "../../../utils/date";
+import { getDailyIndex, getDateAsKey } from "../../../utils/date";
 import { GridCell } from "../../organisms";
 import { Base } from "../../templates";
 
@@ -52,6 +53,12 @@ const game = computed(() => {
 });
 
 const isComplete = computed(() => game.value?.isComplete ?? false);
+const isPerfect = computed(
+  () => isComplete.value && (game.value?.score ?? 0) === 9
+);
+
+const pageHeight = window.innerHeight;
+const pageWidth = window.innerWidth;
 
 const getCategoryLabel = (categoryId: string): string => {
   const cat = typedCategories.find((c) => c.id === categoryId);
@@ -190,21 +197,42 @@ const onCellSearchKeydown = (e: KeyboardEvent) => {
 
 <template>
   <div class="grid-page">
+    <div v-if="isPerfect" class="centered-explosion">
+      <ConfettiExplosion
+        :duration="3000"
+        :stage-height="pageHeight"
+        :stage-width="pageWidth"
+        :particle-count="200"
+      />
+    </div>
     <Base>
       <div class="grid-page__content">
         <div class="grid-page__header">
           <h1 class="grid-page__title">{{ $t("page.grid.title") }}</h1>
           <div class="grid-page__counters">
-            <span class="grid-page__counter">
-              ✅ {{ game?.score ?? 0 }}/9
+            <span class="grid-page__counter grid-page__counter--score">
+              {{ game?.score ?? 0 }}/9
             </span>
             <span
               v-if="!isComplete"
               class="grid-page__counter grid-page__counter--guesses"
             >
-              🎯 {{ 9 - (game?.guessesUsed ?? 0) }} remaining
+              {{ 9 - (game?.guessesUsed ?? 0) }} remaining
             </span>
           </div>
+        </div>
+
+        <div
+          v-if="isComplete"
+          class="grid-page__result-banner"
+          :class="
+            isPerfect
+              ? 'grid-page__result-banner--perfect'
+              : 'grid-page__result-banner--done'
+          "
+        >
+          <span v-if="isPerfect">Perfect score! 9/9</span>
+          <span v-else>Game over — {{ game?.score ?? 0 }}/9 correct</span>
         </div>
 
         <div class="grid-page__board">
@@ -335,6 +363,14 @@ const onCellSearchKeydown = (e: KeyboardEvent) => {
   width: 100%;
   min-height: 100%;
 
+  .centered-explosion {
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+  }
+
   &__content {
     display: flex;
     flex-direction: column;
@@ -385,10 +421,38 @@ const onCellSearchKeydown = (e: KeyboardEvent) => {
     border: 1px solid v.$border-subtle;
     color: v.$fontMuted;
 
+    &--score {
+      color: v.$success;
+      border-color: rgba(52, 211, 153, 0.25);
+      background: rgba(52, 211, 153, 0.07);
+    }
+
     &--guesses {
       color: v.$color900;
       border-color: rgba(200, 230, 78, 0.2);
       background: rgba(200, 230, 78, 0.06);
+    }
+  }
+
+  &__result-banner {
+    padding: 0.7rem 1.5rem;
+    border-radius: v.$radius-md;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
+    animation: scaleIn 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+
+    &--perfect {
+      background: v.$success-dim;
+      border: 1px solid rgba(52, 211, 153, 0.35);
+      color: v.$success;
+    }
+
+    &--done {
+      background: v.$surface-2;
+      border: 1px solid v.$border-medium;
+      color: v.$fontColor;
     }
   }
 

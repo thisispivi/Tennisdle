@@ -71,7 +71,7 @@ const props = defineProps<{
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(10px);
-  z-index: 2000;
+  z-index: 9;
 
   &__inner {
     @include m.glass-card(22px, 0.72);

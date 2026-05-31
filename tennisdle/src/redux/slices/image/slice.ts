@@ -12,6 +12,7 @@ interface ImageGame {
   attempts: string[];
   blurLevel: number;
   isWon: boolean;
+  isSurrendered: boolean;
 }
 
 interface CheckGamePayload {
@@ -26,6 +27,7 @@ const initializeGame = (playerName: string): ImageGame => ({
   attempts: [],
   blurLevel: BLUR_LEVELS[0],
   isWon: false,
+  isSurrendered: false,
 });
 
 export const imageSlice = createSlice({
@@ -69,6 +71,7 @@ export const imageSlice = createSlice({
       if (!game || game.isWon || game.lives === 0) return;
       game.lives = 0;
       game.blurLevel = 0;
+      game.isSurrendered = true;
     },
   },
 });

@@ -7,76 +7,76 @@ import AustralianOpenIcon from "./icons/AustralianOpen.svg";
 import BackhandIcon from "./icons/Backhand.svg";
 import BirthdayCakeIcon from "./icons/BirthdayCake.svg";
 import ChevronIcon from "./icons/Chevron.svg";
+import ClockIcon from "./icons/Clock.svg";
 import CloseIcon from "./icons/Close.svg";
 import CountryIcon from "./icons/Country.svg";
 import CupIcon from "./icons/Cup.svg";
 import FrenchOpenIcon from "./icons/FrenchOpen.svg";
+import GridIconIcon from "./icons/GridIcon.svg";
 import HandIcon from "./icons/Hand.svg";
 import HeightIcon from "./icons/Height.svg";
-import Logo from "./icons/Logo.svg";
-import LogoText from "./icons/LogoText.svg";
-import ManPlayerIcon from "./icons/ManPlayer.svg";
-import OlympicsIcon from "./icons/Olympics.svg";
-import RankingIcon from "./icons/Ranking.svg";
-import TriangleIcon from "./icons/Triangle.svg";
-import TurnedProIcon from "./icons/TurnedPro.svg";
-import USOpenIcon from "./icons/USOpen.svg";
-import WimbledonIcon from "./icons/Wimbledon.svg";
-import WomanPlayerIcon from "./icons/WomanPlayer.svg";
-import WTAFinalsIcon from "./icons/WTAFinals.svg";
-import ClockIcon from "./icons/Clock.svg";
-import GridIconIcon from "./icons/GridIcon.svg";
 import HelpIcon from "./icons/Help.svg";
 import ImageModeIcon from "./icons/ImageMode.svg";
 import InfinityIcon from "./icons/Infinity.svg";
+import Logo from "./icons/Logo.svg";
+import LogoText from "./icons/LogoText.svg";
+import ManPlayerIcon from "./icons/ManPlayer.svg";
 import NavbarGuideIcon from "./icons/NavbarGuide.svg";
 import NavbarSettingsIcon from "./icons/NavbarSettings.svg";
 import NavbarStatsIcon from "./icons/NavbarStats.svg";
+import OlympicsIcon from "./icons/Olympics.svg";
+import RankingIcon from "./icons/Ranking.svg";
 import SearchIcon from "./icons/Search.svg";
 import SettingsIcon from "./icons/Settings.svg";
 import ShareIcon from "./icons/Share.svg";
 import StatsIcon from "./icons/Stats.svg";
 import SurrenderIcon from "./icons/Surrender.svg";
 import Top10Icon from "./icons/Top10.svg";
+import TriangleIcon from "./icons/Triangle.svg";
+import TurnedProIcon from "./icons/TurnedPro.svg";
+import USOpenIcon from "./icons/USOpen.svg";
 import VenueIcon from "./icons/Venue.svg";
+import WimbledonIcon from "./icons/Wimbledon.svg";
+import WomanPlayerIcon from "./icons/WomanPlayer.svg";
+import WTAFinalsIcon from "./icons/WTAFinals.svg";
 export {
   ATPFinalsIcon,
   AustralianOpenIcon,
   BackhandIcon,
   BirthdayCakeIcon,
   ChevronIcon,
+  ClockIcon,
   CloseIcon,
   CountryIcon,
   CupIcon,
   FrenchOpenIcon,
+  GridIconIcon,
   HandIcon,
   HeightIcon,
-  Logo,
-  LogoText,
-  ManPlayerIcon,
-  OlympicsIcon,
-  RankingIcon,
-  TriangleIcon,
-  TurnedProIcon,
-  USOpenIcon,
-  WimbledonIcon,
-  WomanPlayerIcon,
-  WTAFinalsIcon,
-  ClockIcon,
-  GridIconIcon,
   HelpIcon,
   ImageModeIcon,
   InfinityIcon,
+  Logo,
+  LogoText,
+  ManPlayerIcon,
   NavbarGuideIcon,
   NavbarSettingsIcon,
   NavbarStatsIcon,
+  OlympicsIcon,
+  RankingIcon,
   SearchIcon,
   SettingsIcon,
   ShareIcon,
   StatsIcon,
   SurrenderIcon,
   Top10Icon,
+  TriangleIcon,
+  TurnedProIcon,
+  USOpenIcon,
   VenueIcon,
+  WimbledonIcon,
+  WomanPlayerIcon,
+  WTAFinalsIcon,
 };
 
 import { Players } from "../typings/Player";

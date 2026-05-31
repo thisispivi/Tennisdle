@@ -147,64 +147,6 @@ const winningStreak = computed(() => game.value.guessed.length);
   </div>
 </template>
 
-<style lang="scss" scoped>
-@use "../../../styles/variables.scss" as v;
-
-.guess {
-  height: 100%;
-  width: 100%;
-  .centered-explosion {
-    position: fixed;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 100;
-  }
-  .guess__content {
-    height: calc(100% - 1rem);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    max-width: 74rem;
-    padding: 1.4rem 0.8rem 0.8rem;
-    .guess__info {
-      margin-top: 0.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 0.65rem 0.85rem;
-      border-radius: v.$radius-full;
-      border: 1px solid v.$border-subtle;
-      background: v.$surface-1;
-    }
-    .search {
-      margin-top: 1.1rem;
-      margin-bottom: 1.1rem;
-    }
-    .attempt__content__items {
-      width: 100%;
-      overflow-y: auto;
-      padding: 0.5rem;
-      border-radius: v.$radius-lg;
-      border: 1px solid v.$border-subtle;
-      background: v.$surface-1;
-      .single-attempt {
-        padding: 0.75rem;
-      }
-      .attempt__empty-state {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem 1rem;
-        p {
-          color: v.$fontSubtle;
-          font-size: 0.88rem;
-          text-align: center;
-        }
-      }
-    }
-  }
-}
+<style lang="scss">
+@use "../../../styles/_guess-page.scss";
 </style>

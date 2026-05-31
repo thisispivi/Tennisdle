@@ -145,7 +145,6 @@ const i18nKey = computed(() => (props.isWon ? "won" : "lost"));
 
       &:hover {
         background: rgba(255, 255, 255, 0.15);
-        transform: rotate(90deg);
       }
     }
 

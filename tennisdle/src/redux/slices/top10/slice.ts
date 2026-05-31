@@ -11,6 +11,7 @@ interface Top10Game {
   lives: number;
   wrongAttempts: string[];
   isComplete: boolean;
+  isSurrendered: boolean;
 }
 
 const initializeGame = (categoryId: string): Top10Game => ({
@@ -20,6 +21,7 @@ const initializeGame = (categoryId: string): Top10Game => ({
   lives: NUM_LIVES,
   wrongAttempts: [],
   isComplete: false,
+  isSurrendered: false,
 });
 
 export const top10Slice = createSlice({
@@ -61,6 +63,7 @@ export const top10Slice = createSlice({
       const game = state.games[getDateAsKey()];
       if (!game || game.isComplete || game.lives === 0) return;
       game.lives = 0;
+      game.isSurrendered = true;
     },
   },
 });

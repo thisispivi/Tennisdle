@@ -1,7 +1,13 @@
 <script lang="ts" setup>
 import { useRouter } from "vue-router";
 
-const { path, imageUrl, imageAlt, title, index } = defineProps<{
+const {
+  path,
+  imageUrl,
+  imageAlt,
+  title,
+  index = 0,
+} = defineProps<{
   path: string;
   imageUrl: string;
   imageAlt: string;

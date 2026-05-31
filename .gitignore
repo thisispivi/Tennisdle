@@ -3,3 +3,7 @@ tennisdle/vite.config.js
 .claude/settings.local.json
 tennisdle/src/assets/db/grid_puzzles.json
 .claude/launch.json
+.claude/memory/MEMORY.md
+.claude/memory/project_tennisdle.md
+tennisdle/CLAUDE.md
+tennisdle/.claude/launch.json

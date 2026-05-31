@@ -11,6 +11,7 @@ interface VenueGame {
   hintsRevealed: number;
   attempts: string[];
   isWon: boolean;
+  isSurrendered: boolean;
 }
 
 const initializeGame = (venueId: string): VenueGame => ({
@@ -20,6 +21,7 @@ const initializeGame = (venueId: string): VenueGame => ({
   hintsRevealed: 0,
   attempts: [],
   isWon: false,
+  isSurrendered: false,
 });
 
 export const venueSlice = createSlice({
@@ -51,6 +53,7 @@ export const venueSlice = createSlice({
       const game = state.games[getDateAsKey()];
       if (!game || game.isWon || game.lives === 0) return;
       game.lives = 0;
+      game.isSurrendered = true;
     },
   },
 });

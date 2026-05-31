@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import ConfettiExplosion from "vue-confetti-explosion";
 
 import { atpPlayers, wtaPlayers } from "../../../assets";
@@ -12,8 +12,10 @@ import {
 } from "../../../redux/slices/top10/slice";
 import { RootState } from "../../../redux/store";
 import { Top10Category } from "../../../typings/Top10";
-import { getDailyIndex,getDateAsKey } from "../../../utils/date";
+import { countries } from "../../../utils/country";
+import { getDailyIndex, getDateAsKey } from "../../../utils/date";
 import { SurrenderButton } from "../../atoms";
+import CountryFlag from "../../atoms/CountryFlag/CountryFlag.vue";
 import { Lives, Search } from "../../molecules";
 import { Base } from "../../templates";
 
@@ -45,6 +47,10 @@ const isGameActive = computed(
 const isEndGame = computed(
   () => game.value && (game.value.isComplete || game.value.lives === 0)
 );
+const isWon = computed(
+  () => game.value?.isComplete && (game.value?.lives ?? 0) > 0
+);
+const isSurrendered = computed(() => game.value?.isSurrendered ?? false);
 
 const allPlayers = computed(() => {
   return selectedCategory.value.isAtp ? atpPlayers : wtaPlayers;
@@ -59,6 +65,21 @@ const alreadyAttempted = computed(() => {
   return [...game.value.guessedPlayers, ...game.value.wrongAttempts];
 });
 
+// Build a map of player name → ISO country code for flag hints
+const playerFlagMap = computed<Record<string, string | null>>(() => {
+  const map: Record<string, string | null> = {};
+  selectedCategory.value.players.forEach((entry) => {
+    const found = allPlayers.value.find((p) => p.player === entry.player);
+    if (found?.country) {
+      const key = found.country.replace(/\s/g, "") as keyof typeof countries;
+      map[entry.player] = countries[key] ?? null;
+    } else {
+      map[entry.player] = null;
+    }
+  });
+  return map;
+});
+
 const slots = computed(() => {
   return selectedCategory.value.players.map((entry) => {
     const isGuessed = game.value?.guessedPlayers.includes(entry.player);
@@ -69,9 +90,12 @@ const slots = computed(() => {
       value: entry.value,
       isGuessed: !!isGuessed,
       showPlayer: !!isGuessed || !!isRevealed,
+      flagCode: playerFlagMap.value[entry.player] ?? null,
     };
   });
 });
+
+const showFlags = ref(false);
 
 const attemptPlayer = (playerKey: string) => {
   dispatch(
@@ -107,7 +131,38 @@ const pageWidth = window.innerWidth;
           <div class="top10__game-info">
             <Lives :lives-remaining="game?.lives ?? 6" />
             <SurrenderButton v-if="isGameActive" @surrender="onSurrender" />
+            <!-- Flag hint toggle -->
+            <button
+              class="top10__flag-toggle"
+              :class="{ 'top10__flag-toggle--active': showFlags }"
+              :title="showFlags ? 'Hide flag hints' : 'Show flag hints'"
+              @click="showFlags = !showFlags"
+            >
+              <span class="top10__flag-toggle-icon">🏳️</span>
+              <span>Flags</span>
+            </button>
           </div>
+        </div>
+
+        <div
+          v-if="isEndGame"
+          class="top10__result-banner"
+          :class="
+            isWon
+              ? 'top10__result-banner--won'
+              : isSurrendered
+                ? 'top10__result-banner--surrendered'
+                : 'top10__result-banner--lost'
+          "
+        >
+          <span v-if="isWon">Perfect! You named all 10!</span>
+          <span v-else-if="isSurrendered"
+            >Surrendered — {{ game?.guessedPlayers.length ?? 0 }}/10 found</span
+          >
+          <span v-else
+            >Out of lives — {{ game?.guessedPlayers.length ?? 0 }}/10
+            found</span
+          >
         </div>
 
         <Search
@@ -115,6 +170,7 @@ const pageWidth = window.innerWidth;
           :all-players="allPlayers"
           :select-player="attemptPlayer"
           :already-attempted="alreadyAttempted"
+          :close-on-select="true"
         />
 
         <div class="top10__slots">
@@ -128,6 +184,11 @@ const pageWidth = window.innerWidth;
             ]"
             :style="{ '--slot-i': idx }"
           >
+            <!-- Flag hint (left side) -->
+            <div v-if="showFlags && slot.flagCode" class="top10__slot-flag">
+              <CountryFlag :country-code="slot.flagCode" />
+            </div>
+
             <span class="top10__slot-rank">{{ slot.rank }}</span>
             <span v-if="slot.showPlayer" class="top10__slot-player">{{
               slot.player
@@ -213,8 +274,42 @@ const pageWidth = window.innerWidth;
   &__game-info {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.75rem;
     z-index: 3;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__flag-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.45rem 0.75rem;
+    border: 1px solid v.$border-strong;
+    border-radius: v.$radius-md;
+    background-color: transparent;
+    color: v.$fontMuted;
+    font-size: 0.82rem;
+    font-weight: 500;
+    cursor: pointer;
+    @include m.transition(all, v.$transition-fast);
+
+    &-icon {
+      font-size: 0.9rem;
+      line-height: 1;
+    }
+
+    &:hover {
+      border-color: v.$color900;
+      color: v.$color900;
+      background-color: v.$color900o;
+    }
+
+    &--active {
+      border-color: rgba(200, 230, 78, 0.5);
+      background-color: v.$color900o;
+      color: v.$color900;
+    }
   }
 
   &__slots {
@@ -247,6 +342,17 @@ const pageWidth = window.innerWidth;
     &--revealed {
       opacity: 0.55;
     }
+  }
+
+  &__slot-flag {
+    width: 1.55rem;
+    height: 1.1rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   }
 
   &__slot-rank {
@@ -285,6 +391,34 @@ const pageWidth = window.innerWidth;
     border-radius: v.$radius-sm;
   }
 
+  &__result-banner {
+    padding: 0.65rem 1.25rem;
+    border-radius: v.$radius-md;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+    animation: scaleIn 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &--won {
+      background: v.$success-dim;
+      border: 1px solid rgba(52, 211, 153, 0.35);
+      color: v.$success;
+    }
+
+    &--lost {
+      background: v.$error-dim;
+      border: 1px solid rgba(248, 113, 113, 0.3);
+      color: v.$error;
+    }
+
+    &--surrendered {
+      background: v.$warning-dim;
+      border: 1px solid rgba(251, 191, 36, 0.3);
+      color: v.$warning;
+    }
+  }
+
   &__wrong-attempts {
     display: flex;
     flex-wrap: wrap;
@@ -293,12 +427,16 @@ const pageWidth = window.innerWidth;
     max-width: 100%;
     overflow-y: visible;
     max-height: unset;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid v.$border-subtle;
+    width: 100%;
   }
 
   &__wrong {
     padding: 0.3rem 0.65rem;
-    background-color: v.$surface-1;
-    border: 1px solid v.$border-subtle;
+    background-color: v.$error-dim;
+    border: 1px solid rgba(248, 113, 113, 0.2);
     border-radius: v.$radius-sm;
     font-size: 0.8rem;
     color: v.$fontMuted;

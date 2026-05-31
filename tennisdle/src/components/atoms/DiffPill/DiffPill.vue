@@ -7,14 +7,19 @@ import { Player } from "../../../typings/Player";
 import { areCountriesInSameContinent, countries } from "../../../utils/country";
 import { CountryFlag } from "..";
 
-const { value, compareValue, diffThreshold, playerKey, animationDelay } =
-  defineProps<{
-    playerKey: keyof Player;
-    value: number | boolean | string | null;
-    compareValue: number | boolean | string | null;
-    diffThreshold: number;
-    animationDelay?: number;
-  }>();
+const {
+  value,
+  compareValue,
+  diffThreshold,
+  playerKey,
+  animationDelay = 0,
+} = defineProps<{
+  playerKey: keyof Player;
+  value: number | boolean | string | null;
+  compareValue: number | boolean | string | null;
+  diffThreshold: number;
+  animationDelay?: number;
+}>();
 
 const status = computed(() => {
   const checkNumber = (value: number, compareValue: number) => {
