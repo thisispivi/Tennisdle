@@ -2,6 +2,7 @@
 import Fuse from "fuse.js";
 import { computed, ref } from "vue";
 import ConfettiExplosion from "vue-confetti-explosion";
+import { useI18n } from "vue-i18n";
 
 import {
   allAtpPlayers,
@@ -9,21 +10,20 @@ import {
   atpPlayers,
   wtaPlayers,
 } from "../../../assets";
-import categoriesData from "../../../assets/db/grid_categories.json";
-import puzzlesData from "../../../assets/db/grid_puzzles.json";
 import { useDispatch, useSelector } from "../../../redux/helpers";
 import { checkGame, guessCell } from "../../../redux/slices/grid/slice";
 import { RootState } from "../../../redux/store";
-import { GridCategory, GridPuzzle } from "../../../typings/Grid";
-import { getDailyIndex, getDateAsKey } from "../../../utils/date";
+import { getDateAsKey } from "../../../utils/date";
+import {
+  getCurrentGridPuzzle,
+  getLocalizedText,
+} from "../../../utils/weeklyContent";
 import { GridCell } from "../../organisms";
 import { Base } from "../../templates";
 
-const typedPuzzles: GridPuzzle[] = puzzlesData as unknown as GridPuzzle[];
-const typedCategories: GridCategory[] = categoriesData as GridCategory[];
-
 const store = useSelector((state) => state.grid);
 const dispatch = useDispatch();
+const { locale } = useI18n();
 
 const allPlayers = [
   ...allAtpPlayers,
@@ -42,8 +42,7 @@ const fuse = new Fuse(uniquePlayers, {
   threshold: 0.28,
 });
 
-const dailyIndex = getDailyIndex(400);
-const currentPuzzle = typedPuzzles[dailyIndex % typedPuzzles.length];
+const currentPuzzle = getCurrentGridPuzzle();
 
 dispatch(checkGame({ puzzleId: currentPuzzle.id }));
 
@@ -60,24 +59,8 @@ const isPerfect = computed(
 const pageHeight = window.innerHeight;
 const pageWidth = window.innerWidth;
 
-const getCategoryLabel = (categoryId: string): string => {
-  const cat = typedCategories.find((c) => c.id === categoryId);
-  return cat ? cat.labelKey : categoryId;
-};
-
-const rowCategories = computed(() =>
-  currentPuzzle.rows.map((id) => ({
-    id,
-    labelKey: getCategoryLabel(id),
-  }))
-);
-
-const colCategories = computed(() =>
-  currentPuzzle.cols.map((id) => ({
-    id,
-    labelKey: getCategoryLabel(id),
-  }))
-);
+const rowCategories = computed(() => currentPuzzle.rows);
+const colCategories = computed(() => currentPuzzle.cols);
 
 const selectingCell = ref<{ row: number; col: number } | null>(null);
 const cellSearch = ref("");
@@ -116,8 +99,8 @@ const onCellClick = (row: number, col: number) => {
 };
 
 const getSolutionKey = (row: number, col: number): string => {
-  const rowId = currentPuzzle.rows[row];
-  const colId = currentPuzzle.cols[col];
+  const rowId = currentPuzzle.rows[row].id;
+  const colId = currentPuzzle.cols[col].id;
   return `${rowId}_${colId}`;
 };
 
@@ -208,17 +191,23 @@ const onCellSearchKeydown = (e: KeyboardEvent) => {
     <Base>
       <div class="grid-page__content">
         <div class="grid-page__header">
-          <h1 class="grid-page__title">{{ $t("page.grid.title") }}</h1>
-          <div class="grid-page__counters">
-            <span class="grid-page__counter grid-page__counter--score">
-              {{ game?.score ?? 0 }}/9
-            </span>
-            <span
-              v-if="!isComplete"
-              class="grid-page__counter grid-page__counter--guesses"
-            >
-              {{ 9 - (game?.guessesUsed ?? 0) }} remaining
-            </span>
+          <div class="grid-page__title-group">
+            <span class="grid-page__kicker">{{ $t("grid.dailyPuzzle") }}</span>
+            <h1 class="grid-page__title">{{ $t("page.grid.title") }}</h1>
+          </div>
+          <div class="grid-page__scoreboard">
+            <div class="grid-page__score-card">
+              <span class="grid-page__score-value">{{ game?.score ?? 0 }}</span>
+              <span class="grid-page__score-label">{{ $t("grid.score") }}</span>
+            </div>
+            <div class="grid-page__score-card grid-page__score-card--muted">
+              <span class="grid-page__score-value">{{
+                9 - (game?.guessesUsed ?? 0)
+              }}</span>
+              <span class="grid-page__score-label">{{
+                $t("grid.remaining")
+              }}</span>
+            </div>
           </div>
         </div>
 
@@ -235,39 +224,46 @@ const onCellSearchKeydown = (e: KeyboardEvent) => {
           <span v-else>Game over — {{ game?.score ?? 0 }}/9 correct</span>
         </div>
 
-        <div class="grid-page__board">
-          <div class="grid-page__corner"></div>
-          <div
-            v-for="col in colCategories"
-            :key="col.id"
-            class="grid-page__col-header"
-          >
-            <span>{{ $t(col.labelKey) }}</span>
-          </div>
-
-          <template v-for="(rowCat, rowIdx) in rowCategories" :key="rowCat.id">
-            <div class="grid-page__row-header">
-              <span>{{ $t(rowCat.labelKey) }}</span>
+        <div class="grid-page__board-shell">
+          <div class="grid-page__board">
+            <div class="grid-page__corner">
+              <span>{{ $t("grid.matchBoth") }}</span>
             </div>
-            <GridCell
-              v-for="(_, colIdx) in colCategories"
-              :key="`${rowIdx}-${colIdx}`"
-              :cell-state="
-                game?.cells[rowIdx]?.[colIdx] ?? {
-                  playerName: null,
-                  isCorrect: false,
-                  isEmpty: true,
-                }
-              "
-              :player-image="
-                getPlayerImage(game?.cells[rowIdx]?.[colIdx]?.playerName)
-              "
-              :is-selecting="
-                selectingCell?.row === rowIdx && selectingCell?.col === colIdx
-              "
-              @click="onCellClick(rowIdx, colIdx)"
-            />
-          </template>
+            <div
+              v-for="col in colCategories"
+              :key="col.id"
+              class="grid-page__col-header"
+            >
+              <span>{{ getLocalizedText(col.label, locale) }}</span>
+            </div>
+
+            <template
+              v-for="(rowCat, rowIdx) in rowCategories"
+              :key="rowCat.id"
+            >
+              <div class="grid-page__row-header">
+                <span>{{ getLocalizedText(rowCat.label, locale) }}</span>
+              </div>
+              <GridCell
+                v-for="(_, colIdx) in colCategories"
+                :key="`${rowIdx}-${colIdx}`"
+                :cell-state="
+                  game?.cells[rowIdx]?.[colIdx] ?? {
+                    playerName: null,
+                    isCorrect: false,
+                    isEmpty: true,
+                  }
+                "
+                :player-image="
+                  getPlayerImage(game?.cells[rowIdx]?.[colIdx]?.playerName)
+                "
+                :is-selecting="
+                  selectingCell?.row === rowIdx && selectingCell?.col === colIdx
+                "
+                @click="onCellClick(rowIdx, colIdx)"
+              />
+            </template>
+          </div>
         </div>
 
         <div
@@ -279,17 +275,23 @@ const onCellSearchKeydown = (e: KeyboardEvent) => {
             <div class="grid-page__search-header">
               <p class="grid-page__search-label">
                 {{
-                  $t(getCategoryLabel(currentPuzzle.rows[selectingCell.row]))
+                  getLocalizedText(
+                    currentPuzzle.rows[selectingCell.row].label,
+                    locale
+                  )
                 }}
                 &amp;
                 {{
-                  $t(getCategoryLabel(currentPuzzle.cols[selectingCell.col]))
+                  getLocalizedText(
+                    currentPuzzle.cols[selectingCell.col].label,
+                    locale
+                  )
                 }}
               </p>
               <div class="grid-page__search-meta">
-                <span class="grid-page__search-remaining"
-                  >🎯 {{ 9 - (game?.guessesUsed ?? 0) }} left</span
-                >
+                <span class="grid-page__search-remaining">
+                  {{ 9 - (game?.guessesUsed ?? 0) }} {{ $t("grid.left") }}
+                </span>
                 <button
                   class="grid-page__search-close"
                   @click="cancelCellSearch"
@@ -375,26 +377,60 @@ const onCellSearchKeydown = (e: KeyboardEvent) => {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1.5rem 1rem;
-    gap: 1.25rem;
+    padding: 1.5rem;
+    gap: 1.15rem;
     width: 100%;
-    max-width: 60rem;
-    @include m.glass-card(14px, 0.45);
-    border-radius: v.$radius-xl;
+    max-width: 58rem;
+    background:
+      linear-gradient(145deg, rgba(200, 230, 78, 0.07), transparent 32%),
+      linear-gradient(315deg, rgba(180, 138, 234, 0.08), transparent 38%),
+      rgba(18, 21, 29, 0.82);
+    border: 1px solid v.$border-medium;
+    border-radius: v.$radius-lg;
+    box-shadow: v.$shadow-lg;
     animation: fadeInUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) both;
+
+    @media (max-width: 560px) {
+      padding: 1rem 0.7rem;
+      border-radius: v.$radius-md;
+    }
   }
 
   &__header {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    max-width: 45rem;
+
+    @media (max-width: 560px) {
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+  }
+
+  &__title-group {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.25rem;
   }
 
   &__title {
     margin: 0;
     color: v.$fontColor;
     text-align: center;
+    font-size: 1.55rem;
+    line-height: 1.1;
+  }
+
+  &__kicker {
+    color: v.$color900;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
   }
 
   &__score {
@@ -404,34 +440,45 @@ const onCellSearchKeydown = (e: KeyboardEvent) => {
     color: v.$success;
   }
 
-  &__counters {
+  &__scoreboard {
     display: flex;
-    gap: 0.75rem;
+    gap: 0.55rem;
     align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
   }
 
-  &__counter {
-    font-size: 0.85rem;
-    font-weight: 600;
-    padding: 0.25rem 0.7rem;
-    border-radius: v.$radius-full;
-    background: v.$surface-2;
-    border: 1px solid v.$border-subtle;
-    color: v.$fontMuted;
+  &__score-card {
+    min-width: 4.65rem;
+    padding: 0.55rem 0.7rem;
+    border: 1px solid rgba(52, 211, 153, 0.24);
+    border-radius: v.$radius-md;
+    background: rgba(52, 211, 153, 0.08);
+    text-align: center;
 
-    &--score {
-      color: v.$success;
-      border-color: rgba(52, 211, 153, 0.25);
-      background: rgba(52, 211, 153, 0.07);
+    &--muted {
+      border-color: rgba(200, 230, 78, 0.22);
+      background: rgba(200, 230, 78, 0.07);
     }
+  }
 
-    &--guesses {
-      color: v.$color900;
-      border-color: rgba(200, 230, 78, 0.2);
-      background: rgba(200, 230, 78, 0.06);
-    }
+  &__score-value,
+  &__score-label {
+    display: block;
+  }
+
+  &__score-value {
+    color: v.$fontColor;
+    font-size: 1.2rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  &__score-label {
+    margin-top: 0.2rem;
+    color: v.$fontSubtle;
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 
   &__result-banner {
@@ -456,24 +503,57 @@ const onCellSearchKeydown = (e: KeyboardEvent) => {
     }
   }
 
-  &__board {
-    display: grid;
-    grid-template-columns: auto repeat(3, 7.4rem);
-    grid-template-rows: auto repeat(3, 7.4rem);
-    gap: 0.35rem;
+  &__board-shell {
+    width: 100%;
+    overflow-x: auto;
+    padding: 0.25rem 0.15rem 0.4rem;
+    @include m.scrollbar-thin;
+  }
 
-    @media (max-width: 430px) {
-      grid-template-columns: auto repeat(3, 5.2rem);
-      grid-template-rows: auto repeat(3, 5.2rem);
-      gap: 0.2rem;
+  &__board {
+    --grid-cell-size: clamp(5.35rem, 18vw, 7.8rem);
+    --grid-label-size: clamp(5.5rem, 17vw, 8.2rem);
+
+    display: grid;
+    grid-template-columns: var(--grid-label-size) repeat(
+        3,
+        var(--grid-cell-size)
+      );
+    grid-template-rows: 5.1rem repeat(3, var(--grid-cell-size));
+    gap: 0.45rem;
+    width: max-content;
+    margin-inline: auto;
+    padding: 0.55rem;
+    border: 1px solid v.$border-subtle;
+    border-radius: v.$radius-lg;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent),
+      rgba(11, 13, 18, 0.38);
+
+    @media (max-width: 560px) {
+      --grid-cell-size: 5rem;
+      --grid-label-size: 5.1rem;
+      grid-template-rows: 4.8rem repeat(3, var(--grid-cell-size));
+      gap: 0.28rem;
+      padding: 0.35rem;
     }
   }
 
   &__corner {
-    width: 7.4rem;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    padding: 0.45rem;
+    color: v.$fontSubtle;
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    line-height: 1.15;
+    text-align: center;
+    text-transform: uppercase;
 
-    @media (max-width: 430px) {
-      width: 5.2rem;
+    span {
+      max-width: 4.5rem;
     }
   }
 
@@ -483,24 +563,41 @@ const onCellSearchKeydown = (e: KeyboardEvent) => {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0.4rem;
-    font-size: 0.68rem;
-    font-weight: 600;
-    color: v.$fontMuted;
-    line-height: 1.2;
+    padding: 0.55rem;
+    border: 1px solid v.$border-subtle;
+    border-radius: v.$radius-md;
+    background: rgba(25, 29, 40, 0.92);
+    color: v.$fontColor;
+    font-size: 0.72rem;
+    font-weight: 750;
+    line-height: 1.15;
+    box-shadow: v.$shadow-sm;
+
+    span {
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+    }
+
+    @media (max-width: 560px) {
+      padding: 0.35rem;
+      font-size: 0.62rem;
+    }
   }
 
   &__col-header {
-    border-bottom: 2px solid rgba(200, 230, 78, 0.25);
+    border-bottom-color: rgba(200, 230, 78, 0.34);
+    background:
+      linear-gradient(180deg, rgba(200, 230, 78, 0.14), transparent),
+      v.$surface-2;
   }
 
   &__row-header {
-    border-right: 2px solid rgba(200, 230, 78, 0.25);
-    width: 7.4rem;
-
-    @media (max-width: 430px) {
-      width: 5.2rem;
-    }
+    border-right-color: rgba(180, 138, 234, 0.34);
+    background:
+      linear-gradient(90deg, rgba(180, 138, 234, 0.13), transparent),
+      v.$surface-2;
   }
 
   &__search-overlay {
@@ -522,7 +619,9 @@ const onCellSearchKeydown = (e: KeyboardEvent) => {
   &__search-container {
     width: 100%;
     max-width: 24rem;
-    background-color: v.$surface-1;
+    background:
+      linear-gradient(145deg, rgba(200, 230, 78, 0.08), transparent 42%),
+      v.$surface-1;
     border-radius: v.$radius-lg;
     padding: 1.25rem;
     border: 1px solid v.$border-medium;

@@ -1,0 +1,1649 @@
+[
+  {
+    "id": "longest-winning-streak-atp",
+    "date": "2026-06-02",
+    "titleOptions": {
+      "en-US": "Longest winning streak (ATP)",
+      "it-IT": "Serie di vittorie più lunga (ATP)"
+    },
+    "isAtp": true,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Novak Đoković",
+        "value": 43
+      },
+      {
+        "rank": 2,
+        "player": "Roger Federer",
+        "value": 41
+      },
+      {
+        "rank": 3,
+        "player": "Björn Borg",
+        "value": 35
+      },
+      {
+        "rank": 4,
+        "player": "Rafael Nadal",
+        "value": 32
+      },
+      {
+        "rank": 5,
+        "player": "Ivan Lendl",
+        "value": 31
+      },
+      {
+        "rank": 6,
+        "player": "John McEnroe",
+        "value": 42
+      },
+      {
+        "rank": 7,
+        "player": "Jimmy Connors",
+        "value": 29
+      },
+      {
+        "rank": 8,
+        "player": "Pete Sampras",
+        "value": 25
+      },
+      {
+        "rank": 9,
+        "player": "Andre Agassi",
+        "value": 26
+      },
+      {
+        "rank": 10,
+        "player": "Andy Murray",
+        "value": 22
+      }
+    ]
+  },
+  {
+    "id": "longest-winning-streak-wta",
+    "date": "2026-06-02",
+    "titleOptions": {
+      "en-US": "Longest winning streak (WTA)",
+      "it-IT": "Serie di vittorie più lunga (WTA)"
+    },
+    "isAtp": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Martina Navratilova",
+        "value": 74
+      },
+      {
+        "rank": 2,
+        "player": "Steffi Graf",
+        "value": 66
+      },
+      {
+        "rank": 3,
+        "player": "Chris Evert",
+        "value": 55
+      },
+      {
+        "rank": 4,
+        "player": "Margaret Smith Court",
+        "value": 57
+      },
+      {
+        "rank": 5,
+        "player": "Serena Williams",
+        "value": 34
+      },
+      {
+        "rank": 6,
+        "player": "Venus Williams",
+        "value": 35
+      },
+      {
+        "rank": 7,
+        "player": "Monica Seles",
+        "value": 36
+      },
+      {
+        "rank": 8,
+        "player": "Justine Henin",
+        "value": 32
+      },
+      {
+        "rank": 9,
+        "player": "Billie Jean King",
+        "value": 30
+      },
+      {
+        "rank": 10,
+        "player": "Lindsay Davenport",
+        "value": 28
+      }
+    ]
+  },
+  {
+    "id": "most-aces-career-atp",
+    "date": "2026-06-02",
+    "titleOptions": {
+      "en-US": "Most career aces (ATP)",
+      "it-IT": "Più ace in carriera (ATP)"
+    },
+    "isAtp": true,
+    "players": [
+      {
+        "rank": 1,
+        "player": "John Isner",
+        "value": 14470
+      },
+      {
+        "rank": 2,
+        "player": "Ivo Karlović",
+        "value": 13728
+      },
+      {
+        "rank": 3,
+        "player": "Roger Federer",
+        "value": 11478
+      },
+      {
+        "rank": 4,
+        "player": "Novak Đoković",
+        "value": 8300
+      },
+      {
+        "rank": 5,
+        "player": "Pete Sampras",
+        "value": 8858
+      },
+      {
+        "rank": 6,
+        "player": "Rafael Nadal",
+        "value": 5600
+      },
+      {
+        "rank": 7,
+        "player": "Andy Roddick",
+        "value": 9074
+      },
+      {
+        "rank": 8,
+        "player": "Milos Raonic",
+        "value": 6209
+      },
+      {
+        "rank": 9,
+        "player": "Nick Kyrgios",
+        "value": 4000
+      },
+      {
+        "rank": 10,
+        "player": "Alexander Zverev",
+        "value": 4800
+      }
+    ]
+  },
+  {
+    "id": "most-australian-open-titles-atp",
+    "date": "2026-06-02",
+    "titleOptions": {
+      "en-US": "Most Australian Open titles (ATP)",
+      "it-IT": "Più titoli Australian Open (ATP)"
+    },
+    "isAtp": true,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Novak Đoković",
+        "value": 10
+      },
+      {
+        "rank": 2,
+        "player": "Roger Federer",
+        "value": 6
+      },
+      {
+        "rank": 3,
+        "player": "Andre Agassi",
+        "value": 4
+      },
+      {
+        "rank": 3,
+        "player": "Ken Rosewall",
+        "value": 4
+      },
+      {
+        "rank": 5,
+        "player": "Mats Wilander",
+        "value": 3
+      },
+      {
+        "rank": 5,
+        "player": "Rod Laver",
+        "value": 3
+      },
+      {
+        "rank": 7,
+        "player": "Boris Becker",
+        "value": 2
+      },
+      {
+        "rank": 7,
+        "player": "Guillermo Vilas",
+        "value": 2
+      },
+      {
+        "rank": 7,
+        "player": "Ivan Lendl",
+        "value": 2
+      },
+      {
+        "rank": 7,
+        "player": "Jannik Sinner",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "id": "most-australian-open-titles-wta",
+    "date": "2026-06-02",
+    "titleOptions": {
+      "en-US": "Most Australian Open titles (WTA)",
+      "it-IT": "Più titoli Australian Open (WTA)"
+    },
+    "isAtp": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Margaret Smith Court",
+        "value": 11
+      },
+      {
+        "rank": 2,
+        "player": "Serena Williams",
+        "value": 7
+      },
+      {
+        "rank": 3,
+        "player": "Evonne Goolagong",
+        "value": 4
+      },
+      {
+        "rank": 3,
+        "player": "Monica Seles",
+        "value": 4
+      },
+      {
+        "rank": 3,
+        "player": "Steffi Graf",
+        "value": 4
+      },
+      {
+        "rank": 6,
+        "player": "Martina Hingis",
+        "value": 3
+      },
+      {
+        "rank": 6,
+        "player": "Martina Navratilova",
+        "value": 3
+      },
+      {
+        "rank": 8,
+        "player": "Aryna Sabalenka",
+        "value": 2
+      },
+      {
+        "rank": 8,
+        "player": "Chris Evert",
+        "value": 2
+      },
+      {
+        "rank": 8,
+        "player": "Hana Mandlíková",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "id": "most-career-titles-atp",
+    "date": "2026-06-02",
+    "titleOptions": {
+      "en-US": "Most career titles (ATP)",
+      "it-IT": "Più titoli in carriera (ATP)"
+    },
+    "isAtp": true,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Rod Laver",
+        "value": 200
+      },
+      {
+        "rank": 2,
+        "player": "Jimmy Connors",
+        "value": 109
+      },
+      {
+        "rank": 3,
+        "player": "Roger Federer",
+        "value": 103
+      },
+      {
+        "rank": 4,
+        "player": "Novak Đoković",
+        "value": 101
+      },
+      {
+        "rank": 5,
+        "player": "Ivan Lendl",
+        "value": 94
+      },
+      {
+        "rank": 6,
+        "player": "Rafael Nadal",
+        "value": 92
+      },
+      {
+        "rank": 7,
+        "player": "John McEnroe",
+        "value": 77
+      },
+      {
+        "rank": 8,
+        "player": "Björn Borg",
+        "value": 66
+      },
+      {
+        "rank": 9,
+        "player": "Ilie Năstase",
+        "value": 64
+      },
+      {
+        "rank": 9,
+        "player": "Pete Sampras",
+        "value": 64
+      }
+    ]
+  },
+  {
+    "id": "most-career-titles-wta",
+    "date": "2026-06-02",
+    "titleOptions": {
+      "en-US": "Most career titles (WTA)",
+      "it-IT": "Più titoli in carriera (WTA)"
+    },
+    "isAtp": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Margaret Smith Court",
+        "value": 192
+      },
+      {
+        "rank": 2,
+        "player": "Martina Navratilova",
+        "value": 167
+      },
+      {
+        "rank": 3,
+        "player": "Chris Evert",
+        "value": 157
+      },
+      {
+        "rank": 4,
+        "player": "Ann Haydon Jones",
+        "value": 136
+      },
+      {
+        "rank": 5,
+        "player": "Billie Jean King",
+        "value": 129
+      },
+      {
+        "rank": 6,
+        "player": "Steffi Graf",
+        "value": 107
+      },
+      {
+        "rank": 7,
+        "player": "Evonne Goolagong",
+        "value": 86
+      },
+      {
+        "rank": 8,
+        "player": "Serena Williams",
+        "value": 73
+      },
+      {
+        "rank": 9,
+        "player": "Lindsay Davenport",
+        "value": 55
+      },
+      {
+        "rank": 9,
+        "player": "Virginia Wade",
+        "value": 55
+      }
+    ]
+  },
+  {
+    "id": "most-doubles-grand-slams-atp",
+    "date": "2026-06-02",
+    "titleOptions": {
+      "en-US": "Most doubles Grand Slam titles (ATP)",
+      "it-IT": "Più titoli Slam in doppio (ATP)"
+    },
+    "isAtp": true,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Bob Bryan",
+        "value": 16
+      },
+      {
+        "rank": 1,
+        "player": "Mike Bryan",
+        "value": 18
+      },
+      {
+        "rank": 3,
+        "player": "John Newcombe",
+        "value": 17
+      },
+      {
+        "rank": 4,
+        "player": "Todd Woodbridge",
+        "value": 16
+      },
+      {
+        "rank": 5,
+        "player": "Mark Woodforde",
+        "value": 12
+      },
+      {
+        "rank": 6,
+        "player": "Daniel Nestor",
+        "value": 8
+      },
+      {
+        "rank": 7,
+        "player": "John Fitzgerald",
+        "value": 7
+      },
+      {
+        "rank": 8,
+        "player": "Roy Emerson",
+        "value": 16
+      },
+      {
+        "rank": 9,
+        "player": "Leander Paes",
+        "value": 8
+      },
+      {
+        "rank": 10,
+        "player": "Mahesh Bhupathi",
+        "value": 4
+      }
+    ]
+  },
+  {
+    "id": "most-doubles-grand-slams-wta",
+    "date": "2026-06-02",
+    "titleOptions": {
+      "en-US": "Most doubles Grand Slam titles (WTA)",
+      "it-IT": "Più titoli Slam in doppio (WTA)"
+    },
+    "isAtp": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Martina Navratilova",
+        "value": 31
+      },
+      {
+        "rank": 2,
+        "player": "Serena Williams",
+        "value": 14
+      },
+      {
+        "rank": 3,
+        "player": "Venus Williams",
+        "value": 14
+      },
+      {
+        "rank": 4,
+        "player": "Billie Jean King",
+        "value": 10
+      },
+      {
+        "rank": 5,
+        "player": "Margaret Smith Court",
+        "value": 19
+      },
+      {
+        "rank": 6,
+        "player": "Pam Shriver",
+        "value": 21
+      },
+      {
+        "rank": 7,
+        "player": "Lisa Raymond",
+        "value": 6
+      },
+      {
+        "rank": 8,
+        "player": "Gigi Fernández",
+        "value": 17
+      },
+      {
+        "rank": 9,
+        "player": "Virginia Ruzici",
+        "value": 4
+      },
+      {
+        "rank": 10,
+        "player": "Natasha Zvereva",
+        "value": 18
+      }
+    ]
+  },
+  {
+    "id": "most-french-open-titles-atp",
+    "date": "2026-06-02",
+    "titleOptions": {
+      "en-US": "Most French Open titles (ATP)",
+      "it-IT": "Più titoli Roland Garros (ATP)"
+    },
+    "isAtp": true,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Rafael Nadal",
+        "value": 14
+      },
+      {
+        "rank": 2,
+        "player": "Björn Borg",
+        "value": 6
+      },
+      {
+        "rank": 3,
+        "player": "Gustavo Kuerten",
+        "value": 3
+      },
+      {
+        "rank": 3,
+        "player": "Ivan Lendl",
+        "value": 3
+      },
+      {
+        "rank": 3,
+        "player": "Mats Wilander",
+        "value": 3
+      },
+      {
+        "rank": 3,
+        "player": "Novak Đoković",
+        "value": 3
+      },
+      {
+        "rank": 7,
+        "player": "Carlos Alcaraz",
+        "value": 2
+      },
+      {
+        "rank": 7,
+        "player": "Jan Kodeš",
+        "value": 2
+      },
+      {
+        "rank": 7,
+        "player": "Jim Courier",
+        "value": 2
+      },
+      {
+        "rank": 7,
+        "player": "Ken Rosewall",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "id": "most-french-open-titles-wta",
+    "date": "2026-06-02",
+    "titleOptions": {
+      "en-US": "Most French Open titles (WTA)",
+      "it-IT": "Più titoli Roland Garros (WTA)"
+    },
+    "isAtp": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Chris Evert",
+        "value": 7
+      },
+      {
+        "rank": 2,
+        "player": "Steffi Graf",
+        "value": 6
+      },
+      {
+        "rank": 3,
+        "player": "Margaret Smith Court",
+        "value": 5
+      },
+      {
+        "rank": 4,
+        "player": "Iga Świątek",
+        "value": 4
+      },
+      {
+        "rank": 4,
+        "player": "Justine Henin",
+        "value": 4
+      },
+      {
+        "rank": 6,
+        "player": "Monica Seles",
+        "value": 3
+      },
+      {
+        "rank": 6,
+        "player": "Serena Williams",
+        "value": 3
+      },
+      {
+        "rank": 8,
+        "player": "Ann Haydon Jones",
+        "value": 2
+      },
+      {
+        "rank": 8,
+        "player": "Maria Sharapova",
+        "value": 2
+      },
+      {
+        "rank": 8,
+        "player": "Martina Navratilova",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "id": "most-grand-slams-atp",
+    "date": "2026-06-02",
+    "titleOptions": {
+      "en-US": "Most Grand Slam titles (ATP)",
+      "it-IT": "Più titoli Slam (ATP)"
+    },
+    "isAtp": true,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Novak Đoković",
+        "value": 24
+      },
+      {
+        "rank": 2,
+        "player": "Rafael Nadal",
+        "value": 22
+      },
+      {
+        "rank": 3,
+        "player": "Roger Federer",
+        "value": 20
+      },
+      {
+        "rank": 4,
+        "player": "Pete Sampras",
+        "value": 14
+      },
+      {
+        "rank": 5,
+        "player": "Björn Borg",
+        "value": 11
+      },
+      {
+        "rank": 5,
+        "player": "Rod Laver",
+        "value": 11
+      },
+      {
+        "rank": 7,
+        "player": "Andre Agassi",
+        "value": 8
+      },
+      {
+        "rank": 7,
+        "player": "Ivan Lendl",
+        "value": 8
+      },
+      {
+        "rank": 7,
+        "player": "Jimmy Connors",
+        "value": 8
+      },
+      {
+        "rank": 7,
+        "player": "Ken Rosewall",
+        "value": 8
+      }
+    ]
+  },
+  {
+    "id": "most-grand-slams-wta",
+    "date": "2026-06-02",
+    "titleOptions": {
+      "en-US": "Most Grand Slam titles (WTA)",
+      "it-IT": "Più titoli Slam (WTA)"
+    },
+    "isAtp": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Margaret Smith Court",
+        "value": 24
+      },
+      {
+        "rank": 2,
+        "player": "Serena Williams",
+        "value": 23
+      },
+      {
+        "rank": 3,
+        "player": "Steffi Graf",
+        "value": 22
+      },
+      {
+        "rank": 4,
+        "player": "Chris Evert",
+        "value": 18
+      },
+      {
+        "rank": 4,
+        "player": "Martina Navratilova",
+        "value": 18
+      },
+      {
+        "rank": 6,
+        "player": "Billie Jean King",
+        "value": 12
+      },
+      {
+        "rank": 7,
+        "player": "Monica Seles",
+        "value": 9
+      },
+      {
+        "rank": 8,
+        "player": "Evonne Goolagong",
+        "value": 7
+      },
+      {
+        "rank": 8,
+        "player": "Justine Henin",
+        "value": 7
+      },
+      {
+        "rank": 8,
+        "player": "Venus Williams",
+        "value": 7
+      }
+    ]
+  },
+  {
+    "id": "most-masters-titles-atp",
+    "date": "2026-06-02",
+    "titleOptions": {
+      "en-US": "Most Masters titles (ATP)",
+      "it-IT": "Più titoli Masters (ATP)"
+    },
+    "isAtp": true,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Novak Đoković",
+        "value": 40
+      },
+      {
+        "rank": 2,
+        "player": "Rafael Nadal",
+        "value": 36
+      },
+      {
+        "rank": 3,
+        "player": "Roger Federer",
+        "value": 28
+      },
+      {
+        "rank": 4,
+        "player": "Andre Agassi",
+        "value": 17
+      },
+      {
+        "rank": 5,
+        "player": "Pete Sampras",
+        "value": 11
+      },
+      {
+        "rank": 6,
+        "player": "Andy Murray",
+        "value": 14
+      },
+      {
+        "rank": 7,
+        "player": "Alexander Zverev",
+        "value": 7
+      },
+      {
+        "rank": 8,
+        "player": "Carlos Alcaraz",
+        "value": 5
+      },
+      {
+        "rank": 9,
+        "player": "Jannik Sinner",
+        "value": 4
+      },
+      {
+        "rank": 10,
+        "player": "Stefanos Tsitsipas",
+        "value": 3
+      }
+    ]
+  },
+  {
+    "id": "most-match-wins-atp",
+    "date": "2026-06-02",
+    "titleOptions": {
+      "en-US": "Most match wins (ATP)",
+      "it-IT": "Più partite vinte (ATP)"
+    },
+    "isAtp": true,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Jimmy Connors",
+        "value": 1274
+      },
+      {
+        "rank": 2,
+        "player": "Roger Federer",
+        "value": 1251
+      },
+      {
+        "rank": 3,
+        "player": "Novak Đoković",
+        "value": 1118
+      },
+      {
+        "rank": 4,
+        "player": "Rafael Nadal",
+        "value": 1080
+      },
+      {
+        "rank": 5,
+        "player": "Ivan Lendl",
+        "value": 1068
+      },
+      {
+        "rank": 6,
+        "player": "Guillermo Vilas",
+        "value": 929
+      },
+      {
+        "rank": 7,
+        "player": "Andre Agassi",
+        "value": 870
+      },
+      {
+        "rank": 8,
+        "player": "Pete Sampras",
+        "value": 762
+      },
+      {
+        "rank": 9,
+        "player": "Ilie Năstase",
+        "value": 818
+      },
+      {
+        "rank": 10,
+        "player": "John McEnroe",
+        "value": 883
+      }
+    ]
+  },
+  {
+    "id": "most-match-wins-wta",
+    "date": "2026-06-02",
+    "titleOptions": {
+      "en-US": "Most match wins (WTA)",
+      "it-IT": "Più partite vinte (WTA)"
+    },
+    "isAtp": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Martina Navratilova",
+        "value": 1442
+      },
+      {
+        "rank": 2,
+        "player": "Chris Evert",
+        "value": 1309
+      },
+      {
+        "rank": 3,
+        "player": "Steffi Graf",
+        "value": 900
+      },
+      {
+        "rank": 4,
+        "player": "Serena Williams",
+        "value": 855
+      },
+      {
+        "rank": 5,
+        "player": "Arantxa Sánchez Vicario",
+        "value": 759
+      },
+      {
+        "rank": 6,
+        "player": "Venus Williams",
+        "value": 815
+      },
+      {
+        "rank": 7,
+        "player": "Lindsay Davenport",
+        "value": 753
+      },
+      {
+        "rank": 8,
+        "player": "Virginia Wade",
+        "value": 839
+      },
+      {
+        "rank": 9,
+        "player": "Billie Jean King",
+        "value": 695
+      },
+      {
+        "rank": 10,
+        "player": "Martina Hingis",
+        "value": 548
+      }
+    ]
+  },
+  {
+    "id": "most-olympic-medals-tennis",
+    "date": "2026-06-02",
+    "titleOptions": {
+      "en-US": "Most Olympic tennis golds",
+      "it-IT": "Più ori olimpici nel tennis"
+    },
+    "isAtp": null,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Andy Murray",
+        "value": 2
+      },
+      {
+        "rank": 1,
+        "player": "Rafael Nadal",
+        "value": 2
+      },
+      {
+        "rank": 3,
+        "player": "Alexander Zverev",
+        "value": 1
+      },
+      {
+        "rank": 3,
+        "player": "Andre Agassi",
+        "value": 1
+      },
+      {
+        "rank": 3,
+        "player": "Belinda Bencic",
+        "value": 1
+      },
+      {
+        "rank": 3,
+        "player": "Elena Dementieva",
+        "value": 1
+      },
+      {
+        "rank": 3,
+        "player": "Jennifer Capriati",
+        "value": 1
+      },
+      {
+        "rank": 3,
+        "player": "Justine Henin",
+        "value": 1
+      },
+      {
+        "rank": 3,
+        "player": "Lindsay Davenport",
+        "value": 1
+      },
+      {
+        "rank": 3,
+        "player": "Miloslav Mečíř",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "id": "most-tour-finals-titles-atp",
+    "date": "2026-06-02",
+    "titleOptions": {
+      "en-US": "Most Tour Finals titles (ATP)",
+      "it-IT": "Più titoli Finals (ATP)"
+    },
+    "isAtp": true,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Novak Đoković",
+        "value": 7
+      },
+      {
+        "rank": 2,
+        "player": "Roger Federer",
+        "value": 6
+      },
+      {
+        "rank": 3,
+        "player": "Ivan Lendl",
+        "value": 5
+      },
+      {
+        "rank": 3,
+        "player": "Pete Sampras",
+        "value": 5
+      },
+      {
+        "rank": 5,
+        "player": "Ilie Năstase",
+        "value": 4
+      },
+      {
+        "rank": 6,
+        "player": "Boris Becker",
+        "value": 3
+      },
+      {
+        "rank": 6,
+        "player": "John McEnroe",
+        "value": 3
+      },
+      {
+        "rank": 8,
+        "player": "Alexander Zverev",
+        "value": 2
+      },
+      {
+        "rank": 8,
+        "player": "Björn Borg",
+        "value": 2
+      },
+      {
+        "rank": 8,
+        "player": "Jannik Sinner",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "id": "most-us-open-titles-atp",
+    "date": "2026-06-02",
+    "titleOptions": {
+      "en-US": "Most US Open titles (ATP)",
+      "it-IT": "Più titoli US Open (ATP)"
+    },
+    "isAtp": true,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Jimmy Connors",
+        "value": 5
+      },
+      {
+        "rank": 1,
+        "player": "Pete Sampras",
+        "value": 5
+      },
+      {
+        "rank": 1,
+        "player": "Roger Federer",
+        "value": 5
+      },
+      {
+        "rank": 4,
+        "player": "John McEnroe",
+        "value": 4
+      },
+      {
+        "rank": 4,
+        "player": "Novak Đoković",
+        "value": 4
+      },
+      {
+        "rank": 4,
+        "player": "Rafael Nadal",
+        "value": 4
+      },
+      {
+        "rank": 7,
+        "player": "Ivan Lendl",
+        "value": 3
+      },
+      {
+        "rank": 8,
+        "player": "Andre Agassi",
+        "value": 2
+      },
+      {
+        "rank": 8,
+        "player": "Carlos Alcaraz",
+        "value": 2
+      },
+      {
+        "rank": 8,
+        "player": "John Newcombe",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "id": "most-us-open-titles-wta",
+    "date": "2026-06-02",
+    "titleOptions": {
+      "en-US": "Most US Open titles (WTA)",
+      "it-IT": "Più titoli US Open (WTA)"
+    },
+    "isAtp": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Chris Evert",
+        "value": 6
+      },
+      {
+        "rank": 1,
+        "player": "Serena Williams",
+        "value": 6
+      },
+      {
+        "rank": 3,
+        "player": "Margaret Smith Court",
+        "value": 5
+      },
+      {
+        "rank": 3,
+        "player": "Steffi Graf",
+        "value": 5
+      },
+      {
+        "rank": 5,
+        "player": "Billie Jean King",
+        "value": 4
+      },
+      {
+        "rank": 5,
+        "player": "Martina Navratilova",
+        "value": 4
+      },
+      {
+        "rank": 7,
+        "player": "Kim Clijsters",
+        "value": 3
+      },
+      {
+        "rank": 8,
+        "player": "Aryna Sabalenka",
+        "value": 2
+      },
+      {
+        "rank": 8,
+        "player": "Justine Henin",
+        "value": 2
+      },
+      {
+        "rank": 8,
+        "player": "Monica Seles",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "id": "most-weeks-no1-atp",
+    "date": "2026-06-02",
+    "titleOptions": {
+      "en-US": "Most weeks at No. 1 (ATP)",
+      "it-IT": "Più settimane al numero 1 (ATP)"
+    },
+    "isAtp": true,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Novak Đoković",
+        "value": 428
+      },
+      {
+        "rank": 2,
+        "player": "Roger Federer",
+        "value": 310
+      },
+      {
+        "rank": 3,
+        "player": "Pete Sampras",
+        "value": 286
+      },
+      {
+        "rank": 4,
+        "player": "Ivan Lendl",
+        "value": 270
+      },
+      {
+        "rank": 5,
+        "player": "Jimmy Connors",
+        "value": 268
+      },
+      {
+        "rank": 6,
+        "player": "Rafael Nadal",
+        "value": 209
+      },
+      {
+        "rank": 7,
+        "player": "John McEnroe",
+        "value": 170
+      },
+      {
+        "rank": 8,
+        "player": "Björn Borg",
+        "value": 109
+      },
+      {
+        "rank": 9,
+        "player": "Andre Agassi",
+        "value": 101
+      },
+      {
+        "rank": 10,
+        "player": "Jannik Sinner",
+        "value": 82
+      }
+    ]
+  },
+  {
+    "id": "most-weeks-no1-wta",
+    "date": "2026-06-02",
+    "titleOptions": {
+      "en-US": "Most weeks at No. 1 (WTA)",
+      "it-IT": "Più settimane al numero 1 (WTA)"
+    },
+    "isAtp": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Steffi Graf",
+        "value": 377
+      },
+      {
+        "rank": 2,
+        "player": "Martina Navratilova",
+        "value": 332
+      },
+      {
+        "rank": 3,
+        "player": "Serena Williams",
+        "value": 319
+      },
+      {
+        "rank": 4,
+        "player": "Chris Evert",
+        "value": 260
+      },
+      {
+        "rank": 5,
+        "player": "Martina Hingis",
+        "value": 209
+      },
+      {
+        "rank": 6,
+        "player": "Monica Seles",
+        "value": 178
+      },
+      {
+        "rank": 7,
+        "player": "Justine Henin",
+        "value": 117
+      },
+      {
+        "rank": 8,
+        "player": "Lindsay Davenport",
+        "value": 98
+      },
+      {
+        "rank": 9,
+        "player": "Iga Świątek",
+        "value": 125
+      },
+      {
+        "rank": 10,
+        "player": "Aryna Sabalenka",
+        "value": 80
+      }
+    ]
+  },
+  {
+    "id": "most-wimbledon-titles-atp",
+    "date": "2026-06-02",
+    "titleOptions": {
+      "en-US": "Most Wimbledon titles (ATP)",
+      "it-IT": "Più titoli Wimbledon (ATP)"
+    },
+    "isAtp": true,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Roger Federer",
+        "value": 8
+      },
+      {
+        "rank": 2,
+        "player": "Novak Đoković",
+        "value": 7
+      },
+      {
+        "rank": 2,
+        "player": "Pete Sampras",
+        "value": 7
+      },
+      {
+        "rank": 4,
+        "player": "Björn Borg",
+        "value": 5
+      },
+      {
+        "rank": 5,
+        "player": "Rod Laver",
+        "value": 4
+      },
+      {
+        "rank": 6,
+        "player": "Boris Becker",
+        "value": 3
+      },
+      {
+        "rank": 6,
+        "player": "John McEnroe",
+        "value": 3
+      },
+      {
+        "rank": 6,
+        "player": "John Newcombe",
+        "value": 3
+      },
+      {
+        "rank": 9,
+        "player": "Andy Murray",
+        "value": 2
+      },
+      {
+        "rank": 9,
+        "player": "Carlos Alcaraz",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "id": "most-wimbledon-titles-wta",
+    "date": "2026-06-02",
+    "titleOptions": {
+      "en-US": "Most Wimbledon titles (WTA)",
+      "it-IT": "Più titoli Wimbledon (WTA)"
+    },
+    "isAtp": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Martina Navratilova",
+        "value": 9
+      },
+      {
+        "rank": 2,
+        "player": "Serena Williams",
+        "value": 7
+      },
+      {
+        "rank": 2,
+        "player": "Steffi Graf",
+        "value": 7
+      },
+      {
+        "rank": 4,
+        "player": "Billie Jean King",
+        "value": 6
+      },
+      {
+        "rank": 5,
+        "player": "Venus Williams",
+        "value": 5
+      },
+      {
+        "rank": 6,
+        "player": "Chris Evert",
+        "value": 3
+      },
+      {
+        "rank": 6,
+        "player": "Margaret Smith Court",
+        "value": 3
+      },
+      {
+        "rank": 8,
+        "player": "Evonne Goolagong",
+        "value": 2
+      },
+      {
+        "rank": 8,
+        "player": "Petra Kvitová",
+        "value": 2
+      },
+      {
+        "rank": 10,
+        "player": "Amélie Mauresmo",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "id": "most-wta-finals-titles",
+    "date": "2026-06-02",
+    "titleOptions": {
+      "en-US": "Most WTA Finals titles",
+      "it-IT": "Più titoli WTA Finals"
+    },
+    "isAtp": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Martina Navratilova",
+        "value": 8
+      },
+      {
+        "rank": 2,
+        "player": "Serena Williams",
+        "value": 5
+      },
+      {
+        "rank": 2,
+        "player": "Steffi Graf",
+        "value": 5
+      },
+      {
+        "rank": 4,
+        "player": "Chris Evert",
+        "value": 4
+      },
+      {
+        "rank": 5,
+        "player": "Kim Clijsters",
+        "value": 3
+      },
+      {
+        "rank": 5,
+        "player": "Monica Seles",
+        "value": 3
+      },
+      {
+        "rank": 7,
+        "player": "Ann Haydon Jones",
+        "value": 2
+      },
+      {
+        "rank": 7,
+        "player": "Billie Jean King",
+        "value": 2
+      },
+      {
+        "rank": 7,
+        "player": "Justine Henin",
+        "value": 2
+      },
+      {
+        "rank": 7,
+        "player": "Martina Hingis",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "id": "most-year-end-no1-atp",
+    "date": "2026-06-02",
+    "titleOptions": {
+      "en-US": "Most year-end No. 1 finishes (ATP)",
+      "it-IT": "Più stagioni chiuse al numero 1 (ATP)"
+    },
+    "isAtp": true,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Novak Đoković",
+        "value": 8
+      },
+      {
+        "rank": 2,
+        "player": "Pete Sampras",
+        "value": 6
+      },
+      {
+        "rank": 3,
+        "player": "Jimmy Connors",
+        "value": 5
+      },
+      {
+        "rank": 3,
+        "player": "Roger Federer",
+        "value": 5
+      },
+      {
+        "rank": 5,
+        "player": "Rafael Nadal",
+        "value": 5
+      },
+      {
+        "rank": 6,
+        "player": "John McEnroe",
+        "value": 4
+      },
+      {
+        "rank": 7,
+        "player": "Ivan Lendl",
+        "value": 4
+      },
+      {
+        "rank": 8,
+        "player": "Björn Borg",
+        "value": 3
+      },
+      {
+        "rank": 9,
+        "player": "Ilie Năstase",
+        "value": 2
+      },
+      {
+        "rank": 10,
+        "player": "Jannik Sinner",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "id": "most-year-end-no1-wta",
+    "date": "2026-06-02",
+    "titleOptions": {
+      "en-US": "Most year-end No. 1 finishes (WTA)",
+      "it-IT": "Più stagioni chiuse al numero 1 (WTA)"
+    },
+    "isAtp": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Steffi Graf",
+        "value": 8
+      },
+      {
+        "rank": 2,
+        "player": "Serena Williams",
+        "value": 5
+      },
+      {
+        "rank": 2,
+        "player": "Martina Navratilova",
+        "value": 7
+      },
+      {
+        "rank": 4,
+        "player": "Chris Evert",
+        "value": 5
+      },
+      {
+        "rank": 5,
+        "player": "Martina Hingis",
+        "value": 3
+      },
+      {
+        "rank": 6,
+        "player": "Monica Seles",
+        "value": 3
+      },
+      {
+        "rank": 7,
+        "player": "Justine Henin",
+        "value": 3
+      },
+      {
+        "rank": 8,
+        "player": "Lindsay Davenport",
+        "value": 2
+      },
+      {
+        "rank": 9,
+        "player": "Iga Świątek",
+        "value": 2
+      },
+      {
+        "rank": 10,
+        "player": "Aryna Sabalenka",
+        "value": 1
+      }
+    ]
+  }
+]

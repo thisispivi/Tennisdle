@@ -186,6 +186,72 @@
     "step2Gray": "Grigio = sbagliato",
     "step3": "Le frecce indicano se il valore corretto è più alto o più basso.",
     "step4": "Hai 6 vite per trovare il giocatore corretto.",
+    "modes": {
+      "default": {
+        "title": "Tennisdle",
+        "description": "Scegli una modalità dalla home e risolvi la sfida usando gli indizi della pagina.",
+        "step1": "Scegli una modalità tra Classico, Sfide o Esplora.",
+        "step2": "Leggi l'indizio, l'immagine, la lista o la griglia mostrata.",
+        "step3": "Cerca giocatori o tornei e invia i tuoi tentativi.",
+        "step4": "Usa il feedback per restringere la risposta."
+      },
+      "daily": {
+        "title": "Indovina il giocatore giornaliero",
+        "description": "Trova il giocatore ATP o WTA di oggi prima di finire le vite.",
+        "step1": "Cerca un giocatore di tennis per nome.",
+        "step2": "Ogni tentativo rivela tessere colorate:",
+        "step3": "Le frecce indicano se il valore corretto è più alto o più basso.",
+        "step4": "Hai 6 vite e il puzzle cambia ogni giorno."
+      },
+      "unlimited": {
+        "title": "Indovina il giocatore illimitato",
+        "description": "Gioca alla modalità classica quante volte vuoi.",
+        "step1": "Cerca un giocatore ATP o WTA per nome.",
+        "step2": "Ogni tentativo rivela tessere colorate:",
+        "step3": "Usa colori e frecce per confrontare il tentativo con il giocatore da trovare.",
+        "step4": "Dopo ogni partita puoi iniziare subito una nuova sfida."
+      },
+      "image": {
+        "title": "Indovina dall'immagine",
+        "description": "Identifica il giocatore misterioso da una foto sfocata che diventa più chiara dopo gli errori.",
+        "step1": "Osserva la foto sfocata del giocatore.",
+        "step2": "Cerca il giocatore che pensi sia mostrato.",
+        "step3": "Un tentativo sbagliato toglie una vita e riduce la sfocatura.",
+        "step4": "Risolvi prima di perdere le 6 vite."
+      },
+      "venue": {
+        "title": "Indovina il luogo",
+        "description": "Indovina il torneo dalla foto del luogo e dagli indizi progressivi.",
+        "step1": "Studia la foto sfocata del luogo.",
+        "step2": "Gli indizi rivelano superficie, categoria e paese man mano che perdi vite.",
+        "step3": "Cerca il nome del torneo e invia i tentativi.",
+        "step4": "Trova il luogo prima di finire le vite."
+      },
+      "top10": {
+        "title": "Top 10",
+        "description": "Completa tutti e dieci gli slot della categoria tennis giornaliera.",
+        "step1": "Leggi la categoria in alto.",
+        "step2": "Cerca giocatori che appartengono a quella top 10 storica.",
+        "step3": "I giocatori corretti riempiono automaticamente il loro posto.",
+        "step4": "Usa gli indizi con le bandiere quando ti serve un aiuto."
+      },
+      "grid": {
+        "title": "Griglia Tennis",
+        "description": "Completa la griglia 3x3 con giocatori che rispettano sia la riga sia la colonna.",
+        "step1": "Scegli una casella vuota nella griglia.",
+        "step2": "Combina la categoria della riga con quella della colonna.",
+        "step3": "Cerca un giocatore che soddisfi entrambi gli indizi.",
+        "step4": "Ogni giocatore si usa una sola volta e hai 9 tentativi totali."
+      },
+      "all": {
+        "title": "Archivio giocatori",
+        "description": "Esplora il database completo dei giocatori ATP o WTA disponibili in Tennisdle.",
+        "step1": "Scorri la lista dei giocatori.",
+        "step2": "Usa le card per confrontare i dettagli principali della carriera.",
+        "step3": "Osserva nomi, paesi, classifiche e titoli.",
+        "step4": "Usa ciò che impari per aiutarti nelle modalità di gioco."
+      }
+    },
     "close": "Capito!"
   },
   "settings": {
@@ -245,6 +311,10 @@
   "grid": {
     "title": "Griglia Tennis",
     "score": "Punteggio",
+    "remaining": "Rimasti",
+    "left": "rimasti",
+    "dailyPuzzle": "Puzzle giornaliero",
+    "matchBoth": "Combina entrambi",
     "newGame": "Nuova Partita",
     "selectPlayer": "Seleziona un giocatore",
     "categories": {

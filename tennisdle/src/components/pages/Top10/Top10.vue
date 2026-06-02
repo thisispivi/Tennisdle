@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import ConfettiExplosion from "vue-confetti-explosion";
+import { useI18n } from "vue-i18n";
 
 import { atpPlayers, wtaPlayers } from "../../../assets";
-import categories from "../../../assets/db/top10_categories.json";
 import { useDispatch, useSelector } from "../../../redux/helpers";
 import {
   addAttempt,
@@ -11,34 +11,37 @@ import {
   surrender as surrenderAction,
 } from "../../../redux/slices/top10/slice";
 import { RootState } from "../../../redux/store";
-import { Top10Category } from "../../../typings/Top10";
+import { Top10Game } from "../../../typings/Top10";
 import { countries } from "../../../utils/country";
-import { getDailyIndex, getDateAsKey } from "../../../utils/date";
+import { getDateAsKey } from "../../../utils/date";
+import {
+  getCurrentTop10Game,
+  getLocalizedText,
+  getWeeklyTop10Games,
+} from "../../../utils/weeklyContent";
 import { SurrenderButton } from "../../atoms";
 import CountryFlag from "../../atoms/CountryFlag/CountryFlag.vue";
 import { Lives, Search } from "../../molecules";
 import { Base } from "../../templates";
 
-const typedCategories: Top10Category[] = categories as Top10Category[];
+const top10Games: Top10Game[] = getWeeklyTop10Games();
 
 const store = useSelector((state) => state.top10);
 const dispatch = useDispatch();
+const { locale } = useI18n();
 
-const dailyIndex = getDailyIndex(300);
-const dailyCategory = typedCategories[dailyIndex % typedCategories.length];
+const dailyTop10Game = getCurrentTop10Game(top10Games);
 
-dispatch(checkGame({ categoryId: dailyCategory.id }));
+dispatch(checkGame({ top10Id: dailyTop10Game.id }));
 
 const game = computed(() => {
   const s = store.value as RootState["top10"];
   return s.games[getDateAsKey()];
 });
 
-const selectedCategory = computed(() => {
-  if (!game.value) return dailyCategory;
-  return (
-    typedCategories.find((c) => c.id === game.value.categoryId) ?? dailyCategory
-  );
+const selectedTop10Game = computed(() => {
+  if (!game.value) return dailyTop10Game;
+  return top10Games.find((c) => c.id === game.value.top10Id) ?? dailyTop10Game;
 });
 
 const isGameActive = computed(
@@ -53,11 +56,11 @@ const isWon = computed(
 const isSurrendered = computed(() => game.value?.isSurrendered ?? false);
 
 const allPlayers = computed(() => {
-  return selectedCategory.value.isAtp ? atpPlayers : wtaPlayers;
+  return selectedTop10Game.value.isAtp ? atpPlayers : wtaPlayers;
 });
 
 const validPlayerNames = computed(() => {
-  return selectedCategory.value.players.map((p) => p.player);
+  return selectedTop10Game.value.players.map((p) => p.player);
 });
 
 const alreadyAttempted = computed(() => {
@@ -68,7 +71,7 @@ const alreadyAttempted = computed(() => {
 // Build a map of player name → ISO country code for flag hints
 const playerFlagMap = computed<Record<string, string | null>>(() => {
   const map: Record<string, string | null> = {};
-  selectedCategory.value.players.forEach((entry) => {
+  selectedTop10Game.value.players.forEach((entry) => {
     const found = allPlayers.value.find((p) => p.player === entry.player);
     if (found?.country) {
       const key = found.country.replace(/\s/g, "") as keyof typeof countries;
@@ -81,7 +84,7 @@ const playerFlagMap = computed<Record<string, string | null>>(() => {
 });
 
 const slots = computed(() => {
-  return selectedCategory.value.players.map((entry) => {
+  return selectedTop10Game.value.players.map((entry) => {
     const isGuessed = game.value?.guessedPlayers.includes(entry.player);
     const isRevealed = isEndGame.value;
     return {
@@ -127,7 +130,9 @@ const pageWidth = window.innerWidth;
     <Base>
       <div class="top10__game">
         <div class="top10__game-header">
-          <h2 class="top10__game-title">{{ $t(selectedCategory.titleKey) }}</h2>
+          <h2 class="top10__game-title">
+            {{ getLocalizedText(selectedTop10Game.titleOptions, locale) }}
+          </h2>
           <div class="top10__game-info">
             <Lives :lives-remaining="game?.lives ?? 6" />
             <SurrenderButton v-if="isGameActive" @surrender="onSurrender" />

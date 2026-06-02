@@ -32,3 +32,36 @@ export function getDailyIndex(seed: number = 0): number {
   );
   return diffDays + seed;
 }
+
+export function getISODateKey(date: Date = new Date()): string {
+  const year = date.getFullYear();
+  const month = `${date.getMonth() + 1}`.padStart(2, "0");
+  const day = `${date.getDate()}`.padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
+export function getISOWeekParts(date: Date = new Date()): {
+  week: number;
+  year: number;
+} {
+  const utcDate = new Date(
+    Date.UTC(date.getFullYear(), date.getMonth(), date.getDate())
+  );
+  const day = utcDate.getUTCDay() || 7;
+  utcDate.setUTCDate(utcDate.getUTCDate() + 4 - day);
+
+  const yearStart = new Date(Date.UTC(utcDate.getUTCFullYear(), 0, 1));
+  const week = Math.ceil(
+    ((utcDate.getTime() - yearStart.getTime()) / 86400000 + 1) / 7
+  );
+
+  return { week, year: utcDate.getUTCFullYear() };
+}
+
+export function getWeeklyContentFilename(
+  prefix: "top10" | "grid_puzzles",
+  date: Date = new Date()
+): string {
+  const { week, year } = getISOWeekParts(date);
+  return `${prefix}_${`${week}`.padStart(2, "0")}_${year}.json`;
+}

@@ -1,6 +1,6 @@
-import { schedule,wtaPlayers } from "../../../assets";
-import { Player,Players } from "../../../typings/Player";
-import { isDatesEqual } from "../../../utils/date";
+import { wtaPlayers } from "../../../assets";
+import { Player, Players } from "../../../typings/Player";
+import { getDailyIndex } from "../../../utils/date";
 
 type GuessDailyWtaProps = {
   players: Players;
@@ -9,11 +9,7 @@ type GuessDailyWtaProps = {
 };
 
 export default function GuessDailyWtaLoader(): GuessDailyWtaProps {
-  const playerKey = schedule.find((s) =>
-    isDatesEqual(s.date, new Date())
-  )?.wtaPlayer;
-
-  const player = wtaPlayers.find((p) => p.player === playerKey);
+  const player = wtaPlayers[getDailyIndex(53) % wtaPlayers.length];
   if (!player) throw new Error("Player not found");
 
   return { players: wtaPlayers, playerToGuess: player, isAtp: false };

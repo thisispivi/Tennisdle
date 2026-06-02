@@ -1,0 +1,1436 @@
+[
+  {
+    "id": "puzzle-2026-06-01",
+    "date": "2026-06-01",
+    "rows": [
+      {
+        "id": "grand-slam-winner",
+        "label": {
+          "en-US": "Won a Grand Slam",
+          "it-IT": "Ha vinto uno Slam"
+        },
+        "shortLabel": {
+          "en-US": "Grand Slam winner",
+          "it-IT": "Vincitore Slam"
+        }
+      },
+      {
+        "id": "top-3-ranking",
+        "label": {
+          "en-US": "Reached top 3",
+          "it-IT": "È entrato in top 3"
+        },
+        "shortLabel": {
+          "en-US": "Top 3",
+          "it-IT": "Top 3"
+        }
+      },
+      {
+        "id": "retired-player",
+        "label": {
+          "en-US": "Retired player",
+          "it-IT": "Giocatore ritirato"
+        },
+        "shortLabel": {
+          "en-US": "Retired",
+          "it-IT": "Ritirato"
+        }
+      }
+    ],
+    "cols": [
+      {
+        "id": "czech",
+        "label": {
+          "en-US": "Czech player",
+          "it-IT": "Giocatore ceco"
+        },
+        "shortLabel": {
+          "en-US": "Czech",
+          "it-IT": "Ceco"
+        }
+      },
+      {
+        "id": "top-5-ranking",
+        "label": {
+          "en-US": "Reached top 5",
+          "it-IT": "È entrato in top 5"
+        },
+        "shortLabel": {
+          "en-US": "Top 5",
+          "it-IT": "Top 5"
+        }
+      },
+      {
+        "id": "won-us-open",
+        "label": {
+          "en-US": "Won US Open",
+          "it-IT": "Ha vinto US Open"
+        },
+        "shortLabel": {
+          "en-US": "US Open",
+          "it-IT": "US Open"
+        }
+      }
+    ],
+    "solutions": {
+      "grand-slam-winner_czech": [
+        "Ivan Lendl",
+        "Jan Kodeš",
+        "Petr Korda"
+      ],
+      "grand-slam-winner_top-5-ranking": [
+        "Adriano Panatta",
+        "Andre Agassi",
+        "Andrés Gimeno",
+        "Andrés Gómez",
+        "Andy Murray",
+        "Andy Roddick",
+        "Arthur Ashe",
+        "Björn Borg",
+        "Boris Becker",
+        "Carlos Alcaraz",
+        "Carlos Moyá",
+        "Daniil Medvedev",
+        "Dominic Thiem",
+        "Goran Ivanišević",
+        "Guillermo Vilas",
+        "Gustavo Kuerten",
+        "Ilie Năstase",
+        "Ivan Lendl",
+        "Jan Kodeš",
+        "Jannik Sinner",
+        "Jim Courier",
+        "Jimmy Connors",
+        "John McEnroe",
+        "John Newcombe",
+        "Juan Carlos Ferrero",
+        "Juan Martín del Potro",
+        "Ken Rosewall",
+        "Lleyton Hewitt",
+        "Marin Čilić",
+        "Mats Wilander",
+        "Michael Chang",
+        "Michael Stich",
+        "Novak Đoković",
+        "Pat Cash",
+        "Patrick Rafter",
+        "Pete Sampras",
+        "Petr Korda",
+        "Rafael Nadal",
+        "Rod Laver",
+        "Roger Federer",
+        "Sergi Bruguera",
+        "Stan Smith",
+        "Stan Wawrinka",
+        "Stefan Edberg",
+        "Thomas Muster",
+        "Vitas Gerulaitis",
+        "Yevgeny Kafelnikov"
+      ],
+      "grand-slam-winner_won-us-open": [
+        "Andre Agassi",
+        "Andy Murray",
+        "Andy Roddick",
+        "Arthur Ashe",
+        "Boris Becker",
+        "Carlos Alcaraz",
+        "Daniil Medvedev",
+        "Dominic Thiem",
+        "Guillermo Vilas",
+        "Ilie Năstase",
+        "Ivan Lendl",
+        "Jannik Sinner",
+        "Jimmy Connors",
+        "John McEnroe",
+        "John Newcombe",
+        "Juan Martín del Potro",
+        "Ken Rosewall",
+        "Lleyton Hewitt",
+        "Marin Čilić",
+        "Mats Wilander",
+        "Novak Đoković",
+        "Patrick Rafter",
+        "Pete Sampras",
+        "Rafael Nadal",
+        "Rod Laver",
+        "Roger Federer",
+        "Stan Smith",
+        "Stan Wawrinka",
+        "Stefan Edberg"
+      ],
+      "top-3-ranking_czech": [
+        "Ivan Lendl",
+        "Petr Korda"
+      ],
+      "top-3-ranking_top-5-ranking": [
+        "Alexander Zverev",
+        "Andre Agassi",
+        "Andy Murray",
+        "Andy Roddick",
+        "Arthur Ashe",
+        "Björn Borg",
+        "Boris Becker",
+        "Brian Gottfried",
+        "Carlos Alcaraz",
+        "Carlos Moyá",
+        "Casper Ruud",
+        "Clark Graebner",
+        "Daniil Medvedev",
+        "David Ferrer",
+        "Dominic Thiem",
+        "Goran Ivanišević",
+        "Grigor Dimitrov",
+        "Guillermo Vilas",
+        "Gustavo Kuerten",
+        "Ilie Năstase",
+        "Ivan Lendl",
+        "Jannik Sinner",
+        "Jim Courier",
+        "Jimmy Connors",
+        "John McEnroe",
+        "John Newcombe",
+        "Juan Carlos Ferrero",
+        "Juan Martín del Potro",
+        "Ken Rosewall",
+        "Lleyton Hewitt",
+        "Marcelo Ríos",
+        "Marin Čilić",
+        "Mats Wilander",
+        "Michael Chang",
+        "Michael Stich",
+        "Novak Đoković",
+        "Patrick Rafter",
+        "Pete Sampras",
+        "Petr Korda",
+        "Rafael Nadal",
+        "Rod Laver",
+        "Roger Federer",
+        "Sergi Bruguera",
+        "Stan Smith",
+        "Stan Wawrinka",
+        "Stefan Edberg",
+        "Stefanos Tsitsipas",
+        "Thomas Muster",
+        "Tom Okker",
+        "Vitas Gerulaitis",
+        "Yevgeny Kafelnikov",
+        "Àlex Corretja",
+        "Željko Franulović"
+      ],
+      "top-3-ranking_won-us-open": [
+        "Andre Agassi",
+        "Andy Murray",
+        "Andy Roddick",
+        "Arthur Ashe",
+        "Boris Becker",
+        "Carlos Alcaraz",
+        "Daniil Medvedev",
+        "Dominic Thiem",
+        "Guillermo Vilas",
+        "Ilie Năstase",
+        "Ivan Lendl",
+        "Jannik Sinner",
+        "Jimmy Connors",
+        "John McEnroe",
+        "John Newcombe",
+        "Juan Martín del Potro",
+        "Ken Rosewall",
+        "Lleyton Hewitt",
+        "Marin Čilić",
+        "Mats Wilander",
+        "Novak Đoković",
+        "Patrick Rafter",
+        "Pete Sampras",
+        "Rafael Nadal",
+        "Rod Laver",
+        "Roger Federer",
+        "Stan Smith",
+        "Stan Wawrinka",
+        "Stefan Edberg"
+      ],
+      "retired-player_czech": [
+        "Ivan Lendl",
+        "Jan Kodeš",
+        "Petr Korda"
+      ],
+      "retired-player_top-5-ranking": [
+        "Adriano Panatta",
+        "Andre Agassi",
+        "Andrés Gimeno",
+        "Andrés Gómez",
+        "Andy Murray",
+        "Andy Roddick",
+        "Arthur Ashe",
+        "Björn Borg",
+        "Boris Becker",
+        "Brad Gilbert",
+        "Brian Gottfried",
+        "Carlos Moyá",
+        "Clark Graebner",
+        "David Ferrer",
+        "Dominic Thiem",
+        "Eddie Dibbs",
+        "Goran Ivanišević",
+        "Guillermo Vilas",
+        "Gustavo Kuerten",
+        "Harold Solomon",
+        "Ilie Năstase",
+        "Ivan Lendl",
+        "Jan Kodeš",
+        "Jim Courier",
+        "Jimmy Connors",
+        "John McEnroe",
+        "John Newcombe",
+        "Juan Carlos Ferrero",
+        "Juan Martín del Potro",
+        "Ken Rosewall",
+        "Lleyton Hewitt",
+        "Marcelo Ríos",
+        "Mats Wilander",
+        "Michael Chang",
+        "Michael Stich",
+        "Miloslav Mečíř",
+        "Pat Cash",
+        "Patrick Rafter",
+        "Pete Sampras",
+        "Petr Korda",
+        "Rafael Nadal",
+        "Rod Laver",
+        "Roger Federer",
+        "Sergi Bruguera",
+        "Stan Smith",
+        "Stefan Edberg",
+        "Thomas Muster",
+        "Tom Okker",
+        "Vitas Gerulaitis",
+        "Yevgeny Kafelnikov",
+        "Àlex Corretja",
+        "Željko Franulović"
+      ],
+      "retired-player_won-us-open": [
+        "Andre Agassi",
+        "Andy Murray",
+        "Andy Roddick",
+        "Arthur Ashe",
+        "Boris Becker",
+        "Dominic Thiem",
+        "Guillermo Vilas",
+        "Ilie Năstase",
+        "Ivan Lendl",
+        "Jimmy Connors",
+        "John McEnroe",
+        "John Newcombe",
+        "Juan Martín del Potro",
+        "Ken Rosewall",
+        "Lleyton Hewitt",
+        "Mats Wilander",
+        "Patrick Rafter",
+        "Pete Sampras",
+        "Rafael Nadal",
+        "Rod Laver",
+        "Roger Federer",
+        "Stan Smith",
+        "Stefan Edberg"
+      ]
+    }
+  },
+  {
+    "id": "puzzle-2026-06-02",
+    "date": "2026-06-02",
+    "rows": [
+      {
+        "id": "30-plus-titles",
+        "label": {
+          "en-US": "Won 30+ career titles",
+          "it-IT": "Ha vinto 30+ titoli"
+        },
+        "shortLabel": {
+          "en-US": "30+ titles",
+          "it-IT": "30+ titoli"
+        }
+      },
+      {
+        "id": "won-olympic-gold",
+        "label": {
+          "en-US": "Won Olympic gold",
+          "it-IT": "Ha vinto l'oro olimpico"
+        },
+        "shortLabel": {
+          "en-US": "Olympic gold",
+          "it-IT": "Oro olimpico"
+        }
+      },
+      {
+        "id": "height-180-189",
+        "label": {
+          "en-US": "180-189 cm tall",
+          "it-IT": "Alto 180-189 cm"
+        },
+        "shortLabel": {
+          "en-US": "180-189 cm",
+          "it-IT": "180-189 cm"
+        }
+      }
+    ],
+    "cols": [
+      {
+        "id": "top-5-ranking",
+        "label": {
+          "en-US": "Reached top 5",
+          "it-IT": "È entrato in top 5"
+        },
+        "shortLabel": {
+          "en-US": "Top 5",
+          "it-IT": "Top 5"
+        }
+      },
+      {
+        "id": "modern-era",
+        "label": {
+          "en-US": "Modern era player",
+          "it-IT": "Giocatore dell'era moderna"
+        },
+        "shortLabel": {
+          "en-US": "Modern era",
+          "it-IT": "Era moderna"
+        }
+      },
+      {
+        "id": "spanish",
+        "label": {
+          "en-US": "Spanish player",
+          "it-IT": "Giocatore spagnolo"
+        },
+        "shortLabel": {
+          "en-US": "Spanish",
+          "it-IT": "Spagnolo"
+        }
+      }
+    ],
+    "solutions": {
+      "30-plus-titles_top-5-ranking": [
+        "Andre Agassi",
+        "Andy Murray",
+        "Andy Roddick",
+        "Arthur Ashe",
+        "Björn Borg",
+        "Boris Becker",
+        "Guillermo Vilas",
+        "Ilie Năstase",
+        "Ivan Lendl",
+        "Jimmy Connors",
+        "John McEnroe",
+        "John Newcombe",
+        "Ken Rosewall",
+        "Lleyton Hewitt",
+        "Mats Wilander",
+        "Michael Chang",
+        "Novak Đoković",
+        "Pete Sampras",
+        "Rafael Nadal",
+        "Rod Laver",
+        "Roger Federer",
+        "Stan Smith",
+        "Stefan Edberg",
+        "Thomas Muster",
+        "Tom Okker"
+      ],
+      "30-plus-titles_modern-era": [
+        "Andre Agassi",
+        "Andy Murray",
+        "Andy Roddick",
+        "Lleyton Hewitt",
+        "Michael Chang",
+        "Novak Đoković",
+        "Pete Sampras",
+        "Rafael Nadal",
+        "Roger Federer"
+      ],
+      "30-plus-titles_spanish": [
+        "Rafael Nadal"
+      ],
+      "won-olympic-gold_top-5-ranking": [
+        "Alexander Zverev",
+        "Andre Agassi",
+        "Andy Murray",
+        "Miloslav Mečíř",
+        "Novak Đoković",
+        "Rafael Nadal",
+        "Stan Wawrinka",
+        "Yevgeny Kafelnikov"
+      ],
+      "won-olympic-gold_modern-era": [
+        "Alexander Zverev",
+        "Andre Agassi",
+        "Andy Murray",
+        "Novak Đoković",
+        "Rafael Nadal",
+        "Stan Wawrinka",
+        "Yevgeny Kafelnikov"
+      ],
+      "won-olympic-gold_spanish": [
+        "Rafael Nadal"
+      ],
+      "height-180-189_top-5-ranking": [
+        "Adriano Panatta",
+        "Andre Agassi",
+        "Andrey Rublev",
+        "Andrés Gimeno",
+        "Andy Roddick",
+        "Arthur Ashe",
+        "Björn Borg",
+        "Brad Gilbert",
+        "Brian Gottfried",
+        "Carlos Alcaraz",
+        "Casper Ruud",
+        "Clark Graebner",
+        "Dominic Thiem",
+        "Guillermo Vilas",
+        "Holger Rune",
+        "Ilie Năstase",
+        "Ivan Lendl",
+        "Jim Courier",
+        "John McEnroe",
+        "John Newcombe",
+        "Juan Carlos Ferrero",
+        "Lorenzo Musetti",
+        "Mats Wilander",
+        "Novak Đoković",
+        "Pat Cash",
+        "Patrick Rafter",
+        "Pete Sampras",
+        "Rafael Nadal",
+        "Roger Federer",
+        "Sergi Bruguera",
+        "Stan Wawrinka",
+        "Stefan Edberg",
+        "Thomas Muster",
+        "Vitas Gerulaitis",
+        "Àlex Corretja",
+        "Željko Franulović"
+      ],
+      "height-180-189_modern-era": [
+        "Albert Costa",
+        "Alex de Minaur",
+        "Andre Agassi",
+        "Andrey Rublev",
+        "Andy Roddick",
+        "Carlos Alcaraz",
+        "Casper Ruud",
+        "Dominic Thiem",
+        "Fernando Verdasco",
+        "Gilles Simon",
+        "Holger Rune",
+        "Janko Tipsarević",
+        "Jim Courier",
+        "Juan Carlos Ferrero",
+        "Lorenzo Musetti",
+        "Mardy Fish",
+        "Novak Đoković",
+        "Patrick Rafter",
+        "Pete Sampras",
+        "Rafael Nadal",
+        "Richard Gasquet",
+        "Roger Federer",
+        "Sergi Bruguera",
+        "Stan Wawrinka",
+        "Àlex Corretja"
+      ],
+      "height-180-189_spanish": [
+        "Albert Costa",
+        "Andrés Gimeno",
+        "Carlos Alcaraz",
+        "Emilio Sánchez",
+        "Fernando Verdasco",
+        "Juan Carlos Ferrero",
+        "Rafael Nadal",
+        "Sergi Bruguera",
+        "Àlex Corretja"
+      ]
+    }
+  },
+  {
+    "id": "puzzle-2026-06-03",
+    "date": "2026-06-03",
+    "rows": [
+      {
+        "id": "right-handed",
+        "label": {
+          "en-US": "Right-handed",
+          "it-IT": "Destrorso"
+        },
+        "shortLabel": {
+          "en-US": "Righty",
+          "it-IT": "Destrorso"
+        }
+      },
+      {
+        "id": "swiss",
+        "label": {
+          "en-US": "Swiss player",
+          "it-IT": "Giocatore svizzero"
+        },
+        "shortLabel": {
+          "en-US": "Swiss",
+          "it-IT": "Svizzero"
+        }
+      },
+      {
+        "id": "spanish",
+        "label": {
+          "en-US": "Spanish player",
+          "it-IT": "Giocatore spagnolo"
+        },
+        "shortLabel": {
+          "en-US": "Spanish",
+          "it-IT": "Spagnolo"
+        }
+      }
+    ],
+    "cols": [
+      {
+        "id": "50-plus-titles",
+        "label": {
+          "en-US": "Won 50+ career titles",
+          "it-IT": "Ha vinto 50+ titoli"
+        },
+        "shortLabel": {
+          "en-US": "50+ titles",
+          "it-IT": "50+ titoli"
+        }
+      },
+      {
+        "id": "modern-era",
+        "label": {
+          "en-US": "Modern era player",
+          "it-IT": "Giocatore dell'era moderna"
+        },
+        "shortLabel": {
+          "en-US": "Modern era",
+          "it-IT": "Era moderna"
+        }
+      },
+      {
+        "id": "won-olympic-gold",
+        "label": {
+          "en-US": "Won Olympic gold",
+          "it-IT": "Ha vinto l'oro olimpico"
+        },
+        "shortLabel": {
+          "en-US": "Olympic gold",
+          "it-IT": "Oro olimpico"
+        }
+      }
+    ],
+    "solutions": {
+      "right-handed_50-plus-titles": [
+        "Andre Agassi",
+        "Björn Borg",
+        "Ilie Năstase",
+        "Ivan Lendl",
+        "Novak Đoković",
+        "Pete Sampras",
+        "Roger Federer"
+      ],
+      "right-handed_modern-era": [
+        "Albert Costa",
+        "Alex de Minaur",
+        "Alexander Zverev",
+        "Andre Agassi",
+        "Andrey Rublev",
+        "Andy Murray",
+        "Andy Roddick",
+        "Carlos Alcaraz",
+        "Carlos Moyá",
+        "Casper Ruud",
+        "Daniil Medvedev",
+        "David Ferrer",
+        "Diego Schwartzman",
+        "Dominic Thiem",
+        "Félix Auger-Aliassime",
+        "Gaël Monfils",
+        "Gilles Simon",
+        "Grigor Dimitrov",
+        "Gustavo Kuerten",
+        "Holger Rune",
+        "Hubert Hurkacz",
+        "Janko Tipsarević",
+        "Jannik Sinner",
+        "Jim Courier",
+        "John Isner",
+        "Juan Carlos Ferrero",
+        "Juan Martín del Potro",
+        "Kei Nishikori",
+        "Lleyton Hewitt",
+        "Lorenzo Musetti",
+        "Mardy Fish",
+        "Marin Čilić",
+        "Matteo Berrettini",
+        "Michael Chang",
+        "Novak Đoković",
+        "Patrick Rafter",
+        "Pete Sampras",
+        "Richard Gasquet",
+        "Roger Federer",
+        "Sergi Bruguera",
+        "Stan Wawrinka",
+        "Stefanos Tsitsipas",
+        "Taylor Fritz",
+        "Yevgeny Kafelnikov",
+        "Àlex Corretja"
+      ],
+      "right-handed_won-olympic-gold": [
+        "Alexander Zverev",
+        "Andre Agassi",
+        "Andy Murray",
+        "Miloslav Mečíř",
+        "Novak Đoković",
+        "Stan Wawrinka",
+        "Yevgeny Kafelnikov"
+      ],
+      "swiss_50-plus-titles": [
+        "Roger Federer"
+      ],
+      "swiss_modern-era": [
+        "Roger Federer",
+        "Stan Wawrinka"
+      ],
+      "swiss_won-olympic-gold": [
+        "Stan Wawrinka"
+      ],
+      "spanish_50-plus-titles": [
+        "Rafael Nadal"
+      ],
+      "spanish_modern-era": [
+        "Albert Costa",
+        "Carlos Alcaraz",
+        "Carlos Moyá",
+        "David Ferrer",
+        "Fernando Verdasco",
+        "Juan Carlos Ferrero",
+        "Rafael Nadal",
+        "Sergi Bruguera",
+        "Àlex Corretja"
+      ],
+      "spanish_won-olympic-gold": [
+        "Rafael Nadal"
+      ]
+    }
+  },
+  {
+    "id": "puzzle-2026-06-04",
+    "date": "2026-06-04",
+    "rows": [
+      {
+        "id": "swiss",
+        "label": {
+          "en-US": "Swiss player",
+          "it-IT": "Giocatore svizzero"
+        },
+        "shortLabel": {
+          "en-US": "Swiss",
+          "it-IT": "Svizzero"
+        }
+      },
+      {
+        "id": "50-plus-titles",
+        "label": {
+          "en-US": "Won 50+ career titles",
+          "it-IT": "Ha vinto 50+ titoli"
+        },
+        "shortLabel": {
+          "en-US": "50+ titles",
+          "it-IT": "50+ titoli"
+        }
+      },
+      {
+        "id": "won-australian-open",
+        "label": {
+          "en-US": "Won Australian Open",
+          "it-IT": "Ha vinto Australian Open"
+        },
+        "shortLabel": {
+          "en-US": "Australian Open",
+          "it-IT": "Australian Open"
+        }
+      }
+    ],
+    "cols": [
+      {
+        "id": "won-tour-finals",
+        "label": {
+          "en-US": "Won Tour Finals",
+          "it-IT": "Ha vinto le Finals"
+        },
+        "shortLabel": {
+          "en-US": "Tour Finals",
+          "it-IT": "Finals"
+        }
+      },
+      {
+        "id": "20-plus-titles",
+        "label": {
+          "en-US": "Won 20+ career titles",
+          "it-IT": "Ha vinto 20+ titoli"
+        },
+        "shortLabel": {
+          "en-US": "20+ titles",
+          "it-IT": "20+ titoli"
+        }
+      },
+      {
+        "id": "turned-pro-1990s",
+        "label": {
+          "en-US": "Turned pro in the 1990s",
+          "it-IT": "Professionista negli anni 1990"
+        },
+        "shortLabel": {
+          "en-US": "Pro in 1990s",
+          "it-IT": "Pro anni 1990"
+        }
+      }
+    ],
+    "solutions": {
+      "swiss_won-tour-finals": [
+        "Roger Federer"
+      ],
+      "swiss_20-plus-titles": [
+        "Roger Federer"
+      ],
+      "swiss_turned-pro-1990s": [
+        "Roger Federer"
+      ],
+      "50-plus-titles_won-tour-finals": [
+        "Andre Agassi",
+        "Björn Borg",
+        "Guillermo Vilas",
+        "Ilie Năstase",
+        "Ivan Lendl",
+        "Jimmy Connors",
+        "John McEnroe",
+        "Novak Đoković",
+        "Pete Sampras",
+        "Roger Federer"
+      ],
+      "50-plus-titles_20-plus-titles": [
+        "Andre Agassi",
+        "Björn Borg",
+        "Guillermo Vilas",
+        "Ilie Năstase",
+        "Ivan Lendl",
+        "Jimmy Connors",
+        "John McEnroe",
+        "Novak Đoković",
+        "Pete Sampras",
+        "Rafael Nadal",
+        "Rod Laver",
+        "Roger Federer"
+      ],
+      "50-plus-titles_turned-pro-1990s": [
+        "Roger Federer"
+      ],
+      "won-australian-open_won-tour-finals": [
+        "Andre Agassi",
+        "Boris Becker",
+        "Guillermo Vilas",
+        "Ivan Lendl",
+        "Jannik Sinner",
+        "Jimmy Connors",
+        "Novak Đoković",
+        "Pete Sampras",
+        "Roger Federer",
+        "Stefan Edberg"
+      ],
+      "won-australian-open_20-plus-titles": [
+        "Andre Agassi",
+        "Arthur Ashe",
+        "Boris Becker",
+        "Carlos Alcaraz",
+        "Guillermo Vilas",
+        "Ivan Lendl",
+        "Jannik Sinner",
+        "Jim Courier",
+        "Jimmy Connors",
+        "John Newcombe",
+        "Ken Rosewall",
+        "Mats Wilander",
+        "Novak Đoković",
+        "Pete Sampras",
+        "Rafael Nadal",
+        "Rod Laver",
+        "Roger Federer",
+        "Stefan Edberg",
+        "Vitas Gerulaitis",
+        "Yevgeny Kafelnikov"
+      ],
+      "won-australian-open_turned-pro-1990s": [
+        "Roger Federer",
+        "Yevgeny Kafelnikov"
+      ]
+    }
+  },
+  {
+    "id": "puzzle-2026-06-05",
+    "date": "2026-06-05",
+    "rows": [
+      {
+        "id": "won-tour-finals",
+        "label": {
+          "en-US": "Won Tour Finals",
+          "it-IT": "Ha vinto le Finals"
+        },
+        "shortLabel": {
+          "en-US": "Tour Finals",
+          "it-IT": "Finals"
+        }
+      },
+      {
+        "id": "10-plus-titles",
+        "label": {
+          "en-US": "Won 10+ career titles",
+          "it-IT": "Ha vinto 10+ titoli"
+        },
+        "shortLabel": {
+          "en-US": "10+ titles",
+          "it-IT": "10+ titoli"
+        }
+      },
+      {
+        "id": "won-wimbledon",
+        "label": {
+          "en-US": "Won Wimbledon",
+          "it-IT": "Ha vinto Wimbledon"
+        },
+        "shortLabel": {
+          "en-US": "Wimbledon",
+          "it-IT": "Wimbledon"
+        }
+      }
+    ],
+    "cols": [
+      {
+        "id": "serbian",
+        "label": {
+          "en-US": "Serbian player",
+          "it-IT": "Giocatore serbo"
+        },
+        "shortLabel": {
+          "en-US": "Serbian",
+          "it-IT": "Serbo"
+        }
+      },
+      {
+        "id": "non-european",
+        "label": {
+          "en-US": "Non-European player",
+          "it-IT": "Giocatore non europeo"
+        },
+        "shortLabel": {
+          "en-US": "Non-European",
+          "it-IT": "Non europeo"
+        }
+      },
+      {
+        "id": "active-player",
+        "label": {
+          "en-US": "Active player",
+          "it-IT": "Giocatore attivo"
+        },
+        "shortLabel": {
+          "en-US": "Active",
+          "it-IT": "Attivo"
+        }
+      }
+    ],
+    "solutions": {
+      "won-tour-finals_serbian": [
+        "Novak Đoković"
+      ],
+      "won-tour-finals_non-european": [
+        "Andre Agassi",
+        "Daniil Medvedev",
+        "Guillermo Vilas",
+        "Gustavo Kuerten",
+        "Jimmy Connors",
+        "John McEnroe",
+        "Lleyton Hewitt",
+        "Pete Sampras",
+        "Stan Smith"
+      ],
+      "won-tour-finals_active-player": [
+        "Alexander Zverev",
+        "Daniil Medvedev",
+        "Grigor Dimitrov",
+        "Jannik Sinner",
+        "Novak Đoković",
+        "Stefanos Tsitsipas"
+      ],
+      "10-plus-titles_serbian": [
+        "Novak Đoković"
+      ],
+      "10-plus-titles_non-european": [
+        "Alex de Minaur",
+        "Andre Agassi",
+        "Andrey Rublev",
+        "Andrés Gómez",
+        "Andy Roddick",
+        "Arthur Ashe",
+        "Brad Gilbert",
+        "Brian Gottfried",
+        "Clark Graebner",
+        "Cliff Richey",
+        "Daniil Medvedev",
+        "Eddie Dibbs",
+        "Guillermo Vilas",
+        "Gustavo Kuerten",
+        "Harold Solomon",
+        "Jim Courier",
+        "Jimmy Connors",
+        "Johan Kriek",
+        "John Isner",
+        "John McEnroe",
+        "John Newcombe",
+        "Juan Martín del Potro",
+        "Kei Nishikori",
+        "Ken Rosewall",
+        "Lleyton Hewitt",
+        "Marcelo Ríos",
+        "Michael Chang",
+        "Patrick Rafter",
+        "Pete Sampras",
+        "Rod Laver",
+        "Stan Smith",
+        "Taylor Fritz",
+        "Vitas Gerulaitis",
+        "Yevgeny Kafelnikov"
+      ],
+      "10-plus-titles_active-player": [
+        "Alex de Minaur",
+        "Alexander Zverev",
+        "Andrey Rublev",
+        "Carlos Alcaraz",
+        "Casper Ruud",
+        "Daniil Medvedev",
+        "Gaël Monfils",
+        "Jannik Sinner",
+        "Kei Nishikori",
+        "Marin Čilić",
+        "Matteo Berrettini",
+        "Novak Đoković",
+        "Stan Wawrinka",
+        "Stefanos Tsitsipas",
+        "Taylor Fritz"
+      ],
+      "won-wimbledon_serbian": [
+        "Novak Đoković"
+      ],
+      "won-wimbledon_non-european": [
+        "Andre Agassi",
+        "Arthur Ashe",
+        "Jimmy Connors",
+        "John McEnroe",
+        "John Newcombe",
+        "Lleyton Hewitt",
+        "Pat Cash",
+        "Pete Sampras",
+        "Rod Laver",
+        "Stan Smith"
+      ],
+      "won-wimbledon_active-player": [
+        "Carlos Alcaraz",
+        "Jannik Sinner",
+        "Novak Đoković"
+      ]
+    }
+  },
+  {
+    "id": "puzzle-2026-06-06",
+    "date": "2026-06-06",
+    "rows": [
+      {
+        "id": "modern-era",
+        "label": {
+          "en-US": "Modern era player",
+          "it-IT": "Giocatore dell'era moderna"
+        },
+        "shortLabel": {
+          "en-US": "Modern era",
+          "it-IT": "Era moderna"
+        }
+      },
+      {
+        "id": "30-plus-titles",
+        "label": {
+          "en-US": "Won 30+ career titles",
+          "it-IT": "Ha vinto 30+ titoli"
+        },
+        "shortLabel": {
+          "en-US": "30+ titles",
+          "it-IT": "30+ titoli"
+        }
+      },
+      {
+        "id": "left-handed",
+        "label": {
+          "en-US": "Left-handed",
+          "it-IT": "Mancino"
+        },
+        "shortLabel": {
+          "en-US": "Lefty",
+          "it-IT": "Mancino"
+        }
+      }
+    ],
+    "cols": [
+      {
+        "id": "20-plus-titles",
+        "label": {
+          "en-US": "Won 20+ career titles",
+          "it-IT": "Ha vinto 20+ titoli"
+        },
+        "shortLabel": {
+          "en-US": "20+ titles",
+          "it-IT": "20+ titoli"
+        }
+      },
+      {
+        "id": "american",
+        "label": {
+          "en-US": "American player",
+          "it-IT": "Giocatore statunitense"
+        },
+        "shortLabel": {
+          "en-US": "American",
+          "it-IT": "Statunitense"
+        }
+      },
+      {
+        "id": "australian",
+        "label": {
+          "en-US": "Australian player",
+          "it-IT": "Giocatore australiano"
+        },
+        "shortLabel": {
+          "en-US": "Australian",
+          "it-IT": "Australiano"
+        }
+      }
+    ],
+    "solutions": {
+      "modern-era_20-plus-titles": [
+        "Alexander Zverev",
+        "Andre Agassi",
+        "Andy Murray",
+        "Andy Roddick",
+        "Carlos Alcaraz",
+        "Carlos Moyá",
+        "Daniil Medvedev",
+        "David Ferrer",
+        "Goran Ivanišević",
+        "Gustavo Kuerten",
+        "Jannik Sinner",
+        "Jim Courier",
+        "Juan Martín del Potro",
+        "Lleyton Hewitt",
+        "Marin Čilić",
+        "Michael Chang",
+        "Novak Đoković",
+        "Pete Sampras",
+        "Rafael Nadal",
+        "Roger Federer",
+        "Yevgeny Kafelnikov"
+      ],
+      "modern-era_american": [
+        "Andre Agassi",
+        "Andy Roddick",
+        "Ben Shelton",
+        "Jim Courier",
+        "John Isner",
+        "Mardy Fish",
+        "Michael Chang",
+        "Pete Sampras",
+        "Taylor Fritz"
+      ],
+      "modern-era_australian": [
+        "Alex de Minaur",
+        "Lleyton Hewitt",
+        "Patrick Rafter"
+      ],
+      "30-plus-titles_20-plus-titles": [
+        "Andre Agassi",
+        "Andy Murray",
+        "Andy Roddick",
+        "Arthur Ashe",
+        "Björn Borg",
+        "Boris Becker",
+        "Cliff Richey",
+        "Guillermo Vilas",
+        "Ilie Năstase",
+        "Ivan Lendl",
+        "Jimmy Connors",
+        "John McEnroe",
+        "John Newcombe",
+        "Ken Rosewall",
+        "Lleyton Hewitt",
+        "Mats Wilander",
+        "Michael Chang",
+        "Novak Đoković",
+        "Pete Sampras",
+        "Rafael Nadal",
+        "Rod Laver",
+        "Roger Federer",
+        "Stan Smith",
+        "Stefan Edberg",
+        "Thomas Muster",
+        "Tom Okker"
+      ],
+      "30-plus-titles_american": [
+        "Andre Agassi",
+        "Andy Roddick",
+        "Arthur Ashe",
+        "Cliff Richey",
+        "Jimmy Connors",
+        "John McEnroe",
+        "Michael Chang",
+        "Pete Sampras",
+        "Stan Smith"
+      ],
+      "30-plus-titles_australian": [
+        "John Newcombe",
+        "Ken Rosewall",
+        "Lleyton Hewitt",
+        "Rod Laver"
+      ],
+      "left-handed_20-plus-titles": [
+        "Andrés Gómez",
+        "Goran Ivanišević",
+        "Guillermo Vilas",
+        "Jimmy Connors",
+        "John McEnroe",
+        "Rafael Nadal",
+        "Rod Laver",
+        "Thomas Muster"
+      ],
+      "left-handed_american": [
+        "Ben Shelton",
+        "Jimmy Connors",
+        "John McEnroe"
+      ],
+      "left-handed_australian": [
+        "Rod Laver"
+      ]
+    }
+  },
+  {
+    "id": "puzzle-2026-06-07",
+    "date": "2026-06-07",
+    "rows": [
+      {
+        "id": "right-handed",
+        "label": {
+          "en-US": "Right-handed",
+          "it-IT": "Destrorso"
+        },
+        "shortLabel": {
+          "en-US": "Righty",
+          "it-IT": "Destrorso"
+        }
+      },
+      {
+        "id": "classic-era",
+        "label": {
+          "en-US": "Classic era player",
+          "it-IT": "Giocatore dell'era classica"
+        },
+        "shortLabel": {
+          "en-US": "Classic era",
+          "it-IT": "Era classica"
+        }
+      },
+      {
+        "id": "retired-player",
+        "label": {
+          "en-US": "Retired player",
+          "it-IT": "Giocatore ritirato"
+        },
+        "shortLabel": {
+          "en-US": "Retired",
+          "it-IT": "Ritirato"
+        }
+      }
+    ],
+    "cols": [
+      {
+        "id": "won-multiple-french-opens",
+        "label": {
+          "en-US": "Won multiple French Opens",
+          "it-IT": "Ha vinto più Roland Garros"
+        },
+        "shortLabel": {
+          "en-US": "2+ French Opens",
+          "it-IT": "2+ Roland Garros"
+        }
+      },
+      {
+        "id": "number-1",
+        "label": {
+          "en-US": "Reached world No. 1",
+          "it-IT": "È stato numero 1"
+        },
+        "shortLabel": {
+          "en-US": "World No. 1",
+          "it-IT": "Numero 1"
+        }
+      },
+      {
+        "id": "won-multiple-wimbledons",
+        "label": {
+          "en-US": "Won multiple Wimbledons",
+          "it-IT": "Ha vinto più Wimbledon"
+        },
+        "shortLabel": {
+          "en-US": "2+ Wimbledons",
+          "it-IT": "2+ Wimbledon"
+        }
+      }
+    ],
+    "solutions": {
+      "right-handed_won-multiple-french-opens": [
+        "Björn Borg",
+        "Carlos Alcaraz",
+        "Gustavo Kuerten",
+        "Ivan Lendl",
+        "Jan Kodeš",
+        "Jim Courier",
+        "Ken Rosewall",
+        "Mats Wilander",
+        "Novak Đoković",
+        "Sergi Bruguera"
+      ],
+      "right-handed_number-1": [
+        "Andre Agassi",
+        "Andy Murray",
+        "Andy Roddick",
+        "Björn Borg",
+        "Boris Becker",
+        "Carlos Alcaraz",
+        "Carlos Moyá",
+        "Daniil Medvedev",
+        "Gustavo Kuerten",
+        "Ilie Năstase",
+        "Ivan Lendl",
+        "Jannik Sinner",
+        "Jim Courier",
+        "John Newcombe",
+        "Juan Carlos Ferrero",
+        "Ken Rosewall",
+        "Lleyton Hewitt",
+        "Mats Wilander",
+        "Novak Đoković",
+        "Patrick Rafter",
+        "Pete Sampras",
+        "Roger Federer",
+        "Stan Smith",
+        "Stefan Edberg",
+        "Yevgeny Kafelnikov"
+      ],
+      "right-handed_won-multiple-wimbledons": [
+        "Andy Murray",
+        "Björn Borg",
+        "Boris Becker",
+        "Carlos Alcaraz",
+        "John Newcombe",
+        "Novak Đoković",
+        "Pete Sampras",
+        "Roger Federer",
+        "Stefan Edberg"
+      ],
+      "classic-era_won-multiple-french-opens": [
+        "Björn Borg",
+        "Ivan Lendl",
+        "Jan Kodeš",
+        "Ken Rosewall",
+        "Mats Wilander",
+        "Rod Laver"
+      ],
+      "classic-era_number-1": [
+        "Björn Borg",
+        "Boris Becker",
+        "Ilie Năstase",
+        "Ivan Lendl",
+        "Jimmy Connors",
+        "John McEnroe",
+        "John Newcombe",
+        "Ken Rosewall",
+        "Mats Wilander",
+        "Rod Laver",
+        "Stan Smith",
+        "Stefan Edberg",
+        "Thomas Muster"
+      ],
+      "classic-era_won-multiple-wimbledons": [
+        "Björn Borg",
+        "Boris Becker",
+        "Jimmy Connors",
+        "John McEnroe",
+        "John Newcombe",
+        "Rod Laver",
+        "Stefan Edberg"
+      ],
+      "retired-player_won-multiple-french-opens": [
+        "Björn Borg",
+        "Gustavo Kuerten",
+        "Ivan Lendl",
+        "Jan Kodeš",
+        "Jim Courier",
+        "Ken Rosewall",
+        "Mats Wilander",
+        "Rafael Nadal",
+        "Rod Laver",
+        "Sergi Bruguera"
+      ],
+      "retired-player_number-1": [
+        "Andre Agassi",
+        "Andy Murray",
+        "Andy Roddick",
+        "Björn Borg",
+        "Boris Becker",
+        "Carlos Moyá",
+        "Gustavo Kuerten",
+        "Ilie Năstase",
+        "Ivan Lendl",
+        "Jim Courier",
+        "Jimmy Connors",
+        "John McEnroe",
+        "John Newcombe",
+        "Juan Carlos Ferrero",
+        "Ken Rosewall",
+        "Lleyton Hewitt",
+        "Marcelo Ríos",
+        "Mats Wilander",
+        "Patrick Rafter",
+        "Pete Sampras",
+        "Rafael Nadal",
+        "Rod Laver",
+        "Roger Federer",
+        "Stan Smith",
+        "Stefan Edberg",
+        "Thomas Muster",
+        "Yevgeny Kafelnikov"
+      ],
+      "retired-player_won-multiple-wimbledons": [
+        "Andy Murray",
+        "Björn Borg",
+        "Boris Becker",
+        "Jimmy Connors",
+        "John McEnroe",
+        "John Newcombe",
+        "Pete Sampras",
+        "Rafael Nadal",
+        "Rod Laver",
+        "Roger Federer",
+        "Stefan Edberg"
+      ]
+    }
+  }
+]

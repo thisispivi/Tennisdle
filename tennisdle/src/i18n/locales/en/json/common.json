@@ -186,6 +186,72 @@
     "step2Gray": "Gray = wrong",
     "step3": "Arrows indicate whether the correct value is higher or lower.",
     "step4": "You have 6 lives to find the correct player.",
+    "modes": {
+      "default": {
+        "title": "Tennisdle",
+        "description": "Pick a mode from the home screen and solve the tennis challenge using the clues on that page.",
+        "step1": "Choose a game mode from Classic, Challenges, or Browse.",
+        "step2": "Read the clue, image, list, or grid shown on the page.",
+        "step3": "Search for players or tournaments and submit your guesses.",
+        "step4": "Use the result feedback to narrow down the answer."
+      },
+      "daily": {
+        "title": "Daily Player Guess",
+        "description": "Find today's ATP or WTA player before your lives run out.",
+        "step1": "Search for a tennis player by name.",
+        "step2": "Each guess reveals colored tiles:",
+        "step3": "Arrows indicate whether the correct value is higher or lower.",
+        "step4": "You have 6 lives and the puzzle resets every day."
+      },
+      "unlimited": {
+        "title": "Unlimited Player Guess",
+        "description": "Play the classic player guessing mode as many times as you want.",
+        "step1": "Search for an ATP or WTA player by name.",
+        "step2": "Each guess reveals colored tiles:",
+        "step3": "Use colors and arrows to compare your guess with the target player.",
+        "step4": "After each game, start another challenge immediately."
+      },
+      "image": {
+        "title": "Guess by Image",
+        "description": "Identify the mystery player from a blurred photo that gets clearer after wrong guesses.",
+        "step1": "Look at the blurred player photo.",
+        "step2": "Search for the player you think is shown.",
+        "step3": "A wrong guess removes a life and reduces the blur.",
+        "step4": "Solve it before your 6 lives are gone."
+      },
+      "venue": {
+        "title": "Guess the Venue",
+        "description": "Name the tournament from its venue image and progressive hints.",
+        "step1": "Study the blurred venue photo.",
+        "step2": "Hints reveal surface, category, and country as lives drop.",
+        "step3": "Search for the tournament name and submit guesses.",
+        "step4": "Find the venue before you run out of lives."
+      },
+      "top10": {
+        "title": "Top 10",
+        "description": "Fill all ten ranking slots for the daily tennis category.",
+        "step1": "Read the category at the top of the board.",
+        "step2": "Search for players who belong in that all-time top 10.",
+        "step3": "Correct players fill their ranked slots automatically.",
+        "step4": "Use the flag hint toggle when you need an extra clue."
+      },
+      "grid": {
+        "title": "Tennis Grid",
+        "description": "Complete the 3x3 logic grid with players who match both row and column categories.",
+        "step1": "Choose an empty square in the grid.",
+        "step2": "Match the row category and the column category at the same time.",
+        "step3": "Search for a player who satisfies both clues.",
+        "step4": "Each player can be used once, and you have 9 total guesses."
+      },
+      "all": {
+        "title": "Player Browser",
+        "description": "Browse the full ATP or WTA player database available in Tennisdle.",
+        "step1": "Scroll through the player list.",
+        "step2": "Use player cards to compare key career details.",
+        "step3": "Look for names, countries, rankings, and titles.",
+        "step4": "Use what you learn to help with the guessing modes."
+      }
+    },
     "close": "Got it!"
   },
   "settings": {
@@ -245,6 +311,10 @@
   "grid": {
     "title": "Tennis Grid",
     "score": "Score",
+    "remaining": "Left",
+    "left": "left",
+    "dailyPuzzle": "Daily puzzle",
+    "matchBoth": "Match both",
     "newGame": "New Game",
     "selectPlayer": "Select a player",
     "categories": {

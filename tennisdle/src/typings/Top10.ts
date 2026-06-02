@@ -4,9 +4,15 @@ export interface Top10Entry {
   value: number | string;
 }
 
-export interface Top10Category {
+export interface LocalizedText {
+  "en-US": string;
+  "it-IT": string;
+}
+
+export interface Top10Game {
   id: string;
-  titleKey: string;
+  date: string;
+  titleOptions: LocalizedText;
   isAtp: boolean;
   players: Top10Entry[];
 }

@@ -6,7 +6,7 @@ const NUM_LIVES = 6;
 
 interface Top10Game {
   date: string;
-  categoryId: string;
+  top10Id: string;
   guessedPlayers: string[];
   lives: number;
   wrongAttempts: string[];
@@ -14,9 +14,9 @@ interface Top10Game {
   isSurrendered: boolean;
 }
 
-const initializeGame = (categoryId: string): Top10Game => ({
+const initializeGame = (top10Id: string): Top10Game => ({
   date: getDateAsKey(),
-  categoryId,
+  top10Id,
   guessedPlayers: [],
   lives: NUM_LIVES,
   wrongAttempts: [],
@@ -30,10 +30,10 @@ export const top10Slice = createSlice({
     games: {} as Record<string, Top10Game>,
   },
   reducers: {
-    checkGame: (state, action: PayloadAction<{ categoryId: string }>) => {
+    checkGame: (state, action: PayloadAction<{ top10Id: string }>) => {
       const dateKey = getDateAsKey();
       if (!state.games[dateKey]) {
-        state.games[dateKey] = initializeGame(action.payload.categoryId);
+        state.games[dateKey] = initializeGame(action.payload.top10Id);
       }
     },
     addAttempt: (

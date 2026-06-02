@@ -1,24 +1,44 @@
 <script setup lang="ts">
-import { onMounted } from "vue";
+import { computed, onMounted } from "vue";
 
 import { CloseIcon } from "../../../assets";
 
 const props = defineProps<{
   isOpen: boolean;
   onClose: () => void;
+  mode?: string;
 }>();
 
 const emit = defineEmits<{
   (e: "first-visit"): void;
 }>();
 
+const helpMode = computed(() => {
+  const mode = props.mode ?? "default";
+  if (mode.startsWith("daily-")) return "daily";
+  if (mode.startsWith("unlimited-")) return "unlimited";
+  if (mode.startsWith("image-")) return "image";
+  if (mode.startsWith("all-")) return "all";
+  if (["venue", "top10", "grid"].includes(mode)) return mode;
+  return "default";
+});
+
+const storageKey = computed(() => `tennisdle-howtoplay-seen-${helpMode.value}`);
+
+const stepKeys = computed(() => {
+  const prefix = `howToPlay.modes.${helpMode.value}`;
+  return ["step1", "step2", "step3", "step4"].map(
+    (step) => `${prefix}.${step}`
+  );
+});
+
 const handleClose = () => {
-  localStorage.setItem("tennisdle-howtoplay-seen", "true");
+  localStorage.setItem(storageKey.value, "true");
   props.onClose();
 };
 
 onMounted(() => {
-  const seen = localStorage.getItem("tennisdle-howtoplay-seen");
+  const seen = localStorage.getItem(storageKey.value);
   if (!seen) {
     emit("first-visit");
   }
@@ -38,19 +58,30 @@ onMounted(() => {
             <CloseIcon />
           </button>
 
-          <h2 class="htp-modal__title">{{ $t("howToPlay.title") }}</h2>
+          <p class="htp-modal__eyebrow">{{ $t("howToPlay.title") }}</p>
+          <h2 class="htp-modal__title">
+            {{ $t(`howToPlay.modes.${helpMode}.title`) }}
+          </h2>
+          <p class="htp-modal__description">
+            {{ $t(`howToPlay.modes.${helpMode}.description`) }}
+          </p>
 
           <div class="htp-modal__steps">
-            <div class="htp-modal__step">
-              <span class="htp-modal__step-number">1</span>
-              <p class="htp-modal__step-text">{{ $t("howToPlay.step1") }}</p>
-            </div>
-
-            <div class="htp-modal__step">
-              <span class="htp-modal__step-number">2</span>
+            <div
+              v-for="(stepKey, index) in stepKeys"
+              :key="stepKey"
+              class="htp-modal__step"
+            >
+              <span class="htp-modal__step-number">{{ index + 1 }}</span>
               <div class="htp-modal__step-text">
-                <p>{{ $t("howToPlay.step2") }}</p>
-                <div class="htp-modal__color-legend">
+                <p>{{ $t(stepKey) }}</p>
+                <div
+                  v-if="
+                    index === 1 &&
+                    (helpMode === 'daily' || helpMode === 'unlimited')
+                  "
+                  class="htp-modal__color-legend"
+                >
                   <div class="htp-modal__color-item">
                     <span
                       class="htp-modal__color-pill htp-modal__color-pill--green"
@@ -71,16 +102,6 @@ onMounted(() => {
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div class="htp-modal__step">
-              <span class="htp-modal__step-number">3</span>
-              <p class="htp-modal__step-text">{{ $t("howToPlay.step3") }}</p>
-            </div>
-
-            <div class="htp-modal__step">
-              <span class="htp-modal__step-number">4</span>
-              <p class="htp-modal__step-text">{{ $t("howToPlay.step4") }}</p>
             </div>
           </div>
 
@@ -150,6 +171,16 @@ onMounted(() => {
     text-align: left;
   }
 
+  &__eyebrow {
+    margin: 0 0 0.4rem;
+    color: v.$color900;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
   &__close {
     position: absolute;
     top: 0.75rem;
@@ -180,9 +211,18 @@ onMounted(() => {
   &__title {
     font-size: 1.5rem;
     margin-top: 0;
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.55rem;
     color: v.$fontColor;
     text-align: center;
+  }
+
+  &__description {
+    margin: 0 auto 1.25rem;
+    max-width: 24rem;
+    color: v.$fontMuted;
+    text-align: center;
+    font-size: 0.92rem;
+    line-height: 1.5;
   }
 
   &__steps {
@@ -198,6 +238,7 @@ onMounted(() => {
     background: v.$surface-2;
     border-radius: v.$radius-md;
     padding: 1rem;
+    border: 1px solid v.$border-subtle;
   }
 
   &__step-number {

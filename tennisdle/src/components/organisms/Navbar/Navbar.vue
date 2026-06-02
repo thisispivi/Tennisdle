@@ -103,7 +103,11 @@ defineExpose({ onScroll });
   </div>
 
   <StatsModal :is-open="showStats" :on-close="() => (showStats = false)" />
-  <HowToPlayModal :is-open="showHelp" :on-close="() => (showHelp = false)" />
+  <HowToPlayModal
+    :is-open="showHelp"
+    :on-close="() => (showHelp = false)"
+    :mode="routeName"
+  />
   <SettingsModal
     :is-open="showSettings"
     :on-close="() => (showSettings = false)"

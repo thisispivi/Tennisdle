@@ -106,11 +106,3 @@ const wtaPlayers: Players = wtaPlayersData.map((player) => ({
 }));
 
 export { allAtpPlayers, allWtaPlayers, atpPlayers, wtaPlayers };
-
-import { Schedule } from "../typings/Schedule";
-import scheduleData from "./db/player_schedule.json";
-const schedule: Schedule[] = scheduleData.map((schedule) => ({
-  ...schedule,
-  date: new Date(schedule.date),
-}));
-export { schedule };

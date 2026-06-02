@@ -1,14 +1,16 @@
-export interface GridCategory {
+import { LocalizedText } from "./Top10";
+
+export interface GridLabel {
   id: string;
-  labelKey: string;
-  type: "country" | "tournament" | "hand" | "ranking" | "era";
+  label: LocalizedText;
+  shortLabel: LocalizedText;
 }
 
 export interface GridPuzzle {
   id: string;
-  date?: string;
-  rows: string[];
-  cols: string[];
+  date: string;
+  rows: GridLabel[];
+  cols: GridLabel[];
   solutions: Record<string, string[]>;
 }
 
